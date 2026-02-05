@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intel Timeline Webpage</title>
+  <title>صفحة إنتل عبر الزمن</title>
 
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,57 +17,58 @@
   <header class="page-header">
     <div class="topbar">
       <h1 class="site-title">
-        <span class="intel-word" lang="en" dir="ltr">INTEL</span>-TIMELINE-WEBPAGE
+        <span class="intel-word notranslate" translate="no" lang="en" dir="ltr">INTEL</span>
+        -صفحة-الخط-الزمني
       </h1>
 
       <div class="lang-controls">
-        <button id="langToggle" class="lang-toggle" type="button" aria-pressed="false" data-i18n="toggleLang">
-          تبديل اللغة
-        </button>
-
-        <!-- ✅ Labels include English in parentheses -->
+        <!-- Dropdown that drives Google Translate -->
         <select id="langSelect" class="lang-select" aria-label="اختيار اللغة">
           <option value="ar" selected>العربية (Arabic)</option>
-          <option value="hi">हिन्दी (Hindi)</option>
-          <option value="he">עברית (Hebrew)</option>
-          <option value="fa">فارسی (Persian/Farsi)</option>
-          <option value="ur">اردو (Urdu)</option>
-          <option value="ps">پښتو (Pashto)</option>
-          <option value="ckb">کوردیی سۆرانی (Kurdish Sorani)</option>
-          <option value="zh">中文 (Chinese)</option>
-          <option value="fr">Français (French)</option>
-          <option value="es">Español (Spanish)</option>
-          <option value="de">Deutsch (German)</option>
-          <option value="nl">Nederlands (Dutch)</option>
-          <option value="vi">Tiếng Việt (Vietnamese)</option>
+          <option value="en">الإنجليزية (English)</option>
+          <option value="hi">الهندية (Hindi)</option>
+          <option value="he">العبرية (Hebrew)</option>
+          <option value="fa">الفارسية (Persian/Farsi)</option>
+          <option value="ur">الأردية (Urdu)</option>
+          <option value="ps">البشتوية (Pashto)</option>
+          <option value="ckb">الكردية سوراني (Kurdish Sorani)</option>
+          <option value="zh-CN">الصينية (Chinese)</option>
+          <option value="fr">الفرنسية (French)</option>
+          <option value="es">الإسبانية (Spanish)</option>
+          <option value="de">الألمانية (German)</option>
+          <option value="nl">الهولندية (Dutch)</option>
+          <option value="vi">الفيتنامية (Vietnamese)</option>
         </select>
+
+        <!-- Hidden Google widget container (we drive it ourselves) -->
+        <div id="google_translate_element" class="gtranslate-hidden" aria-hidden="true"></div>
       </div>
     </div>
 
     <div class="center-header">
-      <!-- ✅ only English word required -->
-      <div class="center-intel" lang="en" dir="ltr">INTEL</div>
-      <div class="center-future" data-i18n="futureLine">مستقبل الابتكار</div>
+      <!-- Only English word on page -->
+      <div class="center-intel notranslate" translate="no" lang="en" dir="ltr">INTEL</div>
+      <div class="center-future">مستقبل الابتكار</div>
     </div>
 
-    <div class="logo-row" aria-label="Intel logos">
+    <div class="logo-row" aria-label="شعارات إنتل">
       <figure class="logo-figure">
         <img class="logo-img" src="images/logo-old.png" alt="شعار إنتل القديم" />
-        <figcaption class="sr-only" data-i18n="oldLogo">شعار إنتل القديم</figcaption>
+        <figcaption class="sr-only">شعار إنتل القديم</figcaption>
       </figure>
 
       <div class="logo-arrow" aria-hidden="true">→</div>
 
       <figure class="logo-figure">
         <img class="logo-img" src="images/logo-new.png" alt="شعار إنتل الحديث" />
-        <figcaption class="sr-only" data-i18n="newLogo">شعار إنتل الحديث</figcaption>
+        <figcaption class="sr-only">شعار إنتل الحديث</figcaption>
       </figure>
     </div>
 
     <section class="hero">
       <div class="hero-box">
-        <h2 class="hero-title" data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</h2>
-        <p class="hero-sub" data-i18n="heroSub">
+        <h2 class="hero-title">الإنتاج والابتكار عبر السنين</h2>
+        <p class="hero-sub">
           مع صعود التكنولوجيا الحديثة، تواصل إنتل البقاء في المقدمة لضمان مواكبة المستقبل.
         </p>
       </div>
@@ -77,29 +78,26 @@
   <main class="page-main">
     <section class="timeline-section" aria-labelledby="timelineHeading">
       <div class="timeline-heading-row">
-        <h3 id="timelineHeading" class="timeline-heading" data-i18n="timelineHeading">الخط الزمني</h3>
+        <h3 id="timelineHeading" class="timeline-heading">الخط الزمني</h3>
 
-        <div class="timeline-controls" aria-label="Timeline controls">
-          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
-            ◀ <span data-i18n="prev">السابق</span>
-          </button>
-          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
-            <span data-i18n="next">التالي</span> ▶
-          </button>
+        <div class="timeline-controls" aria-label="أزرار التحكم بالخط الزمني">
+          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">◀ السابق</button>
+          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">التالي ▶</button>
         </div>
       </div>
 
-      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="Timeline cards">
+      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="بطاقات الخط الزمني">
         <!-- 1968 -->
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1968</div>
           <div class="card-media">
-            <img src="images/1968.png" alt="Intel founding image (1968)" />
+            <img src="images/1968.png" alt="صورة تأسيس إنتل عام 1968" />
           </div>
-          <div class="card-title" data-i18n="t1968Title">تأسست إنتل</div>
+          <div class="card-title"><strong>1968</strong> — تأسست إنتل</div>
           <div class="card-details">
-            <p data-i18n="t1968Body">
-              تأسست إنتل على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.
+            <p>
+              تأسست إنتل على يد روبرت نويس وجوردون مور، اللذين عملا معًا في شركة فيرتشايلد لأشباه الموصلات في سان خوسيه بولاية كاليفورنيا،
+              وكان هدفهما تصنيع شرائح ذاكرة أصغر وأكثر موثوقية وعالية الأداء.
             </p>
           </div>
         </article>
@@ -108,13 +106,14 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1971</div>
           <div class="card-media">
-            <img src="images/1971.png" alt="Intel 4004 microprocessor image (1971)" />
+            <img src="images/1971.png" alt="صورة المعالج 4004 عام 1971" />
           </div>
-          <div class="card-title">4004</div>
+          <div class="card-title"><strong>1971</strong> — 4004</div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> 4004</p>
-            <p data-i18n="t1971Body">
-              أول معالج دقيق تجاري (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.
+            <p><strong>الطراز:</strong> 4004</p>
+            <p>
+              قدّمت إنتل أول معالج دقيق تجاري، وكان معالجًا (4 بت)، وقد شكّل بداية الابتكار للعالم الحديث.
+              كما تم إيقاف إنتاج هذا المعالج عام 1982.
             </p>
           </div>
         </article>
@@ -123,13 +122,14 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1978</div>
           <div class="card-media">
-            <img src="images/1978.png" alt="Intel 8086 microprocessor image (1978)" />
+            <img src="images/1978.png" alt="صورة المعالج 8086 عام 1978" />
           </div>
-          <div class="card-title">8086</div>
+          <div class="card-title"><strong>1978</strong> — 8086</div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> 8086</p>
-            <p data-i18n="t1978Body">
-              ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.
+            <p><strong>الطراز:</strong> 8086</p>
+            <p>
+              قدّمت إنتل المعالج 8086 الذي بدأ ابتكار x86 في أجهزة الحاسوب الشخصية، وكان معالجًا (16 بت).
+              كما تم إيقاف إنتاجه عام 1998.
             </p>
           </div>
         </article>
@@ -138,13 +138,14 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1985</div>
           <div class="card-media">
-            <img src="images/1985.png" alt="Intel 80386 processor image (1985)" />
+            <img src="images/1985.png" alt="صورة المعالج 80386 عام 1985" />
           </div>
-          <div class="card-title">80386</div>
+          <div class="card-title"><strong>1985</strong> — 80386</div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> 80386</p>
-            <p data-i18n="t1985Body">
-              معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية.
+            <p><strong>الطراز:</strong> 80386</p>
+            <p>
+              قدّمت إنتل معالجًا (32 بت) يضم 275 ألف ترانزستور، وتم دمجه في العديد من أجهزة الحاسوب الشخصية.
+              كما تم إيقاف إنتاجه عام 2007.
             </p>
           </div>
         </article>
@@ -153,13 +154,14 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2006</div>
           <div class="card-media">
-            <img src="images/2006.png" alt="Intel Core 2 Duo processor image (2006)" />
+            <img src="images/2006.png" alt="صورة معالج كور 2 ديو عام 2006" />
           </div>
-          <div class="card-title">Core 2 Duo</div>
+          <div class="card-title"><strong>2006</strong> — كور 2 ديو</div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> Core 2 Duo</p>
-            <p data-i18n="t2006Body">
-              حسّن الأداء والكفاءة بشكل كبير لأجهزة اللابتوب والحواسيب المكتبية.
+            <p><strong>الطراز:</strong> كور 2 ديو</p>
+            <p>
+              قدّمت إنتل معالج كور 2 ديو (64 بت) الذي عزز الأداء وكان عنصرًا مهمًا للحواسيب المكتبية والمحمولة.
+              كما تم إيقاف إنتاجه عام 2008.
             </p>
           </div>
         </article>
@@ -168,235 +170,115 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2020</div>
           <div class="card-media">
-            <img src="images/2020.png" alt="Intel products image (2020)" />
+            <img src="images/2020.png" alt="صورة منتجات إنتل عام 2020" />
           </div>
-          <div class="card-title" data-i18n="t2020Title">تقدم المنتجات في 2020</div>
+          <div class="card-title"><strong>2020</strong> — منتجات وتقنيات</div>
           <div class="card-details">
-            <p data-i18n="t2020Body">
-              واصلت إنتل تطوير الأداء والطاقة والكفاءة عبر منتجات وتقنيات متعددة.
+            <p>
+              قدّمت إنتل عدة منتجات منها: أتوم PS900، وزيون القابلة للتوسع الجيل الثالث، ومعالجات كور الجيل الحادي عشر بتقنية 10 نانومتر.
+              هذه المنتجات لا تزال مستخدمة حتى اليوم ولم يتم إيقافها. كما كانت إنتل في طليعة تطوير الذكاء الاصطناعي وتقنيات الجيل الخامس 5G.
             </p>
           </div>
         </article>
       </div>
 
-      <p class="hint" data-i18n="hint">
-        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف سيتم ترتيب البطاقات عموديًا. مرّر فوق البطاقة أو استخدم Tab لعرض التفاصيل.
+      <p class="hint">
+        على الشاشات الكبيرة يمكنك السحب أفقيًا لرؤية جميع البطاقات. على الهواتف ستظهر البطاقات عموديًا.
+        مرّر المؤشر فوق البطاقة (أو استخدم زر Tab) لعرض التفاصيل.
       </p>
     </section>
 
-    <!-- ✅ 3 blocks: Arabic default + translate via i18n -->
-    <section class="info-threecol container my-5" aria-label="Info section">
+    <!-- 3 blocks -->
+    <section class="info-threecol container my-5" aria-label="قسم المعلومات">
       <div class="row g-4">
         <div class="col-12 col-md-4">
           <div class="info-card info-card-dark h-100">
-            <h3 class="info-title">
-              <i class="bi bi-people" aria-hidden="true"></i>
-              <span data-i18n="societyTitle">المجتمع</span>
-            </h3>
-            <p data-i18n="societyBody">
-              الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وخلق فرص أفضل للجميع.
-            </p>
-            <a class="btn btn-primary w-100" href="#subscribe">
-              <span data-i18n="subscribeJump">الاشتراك بالنشرة</span>
-            </a>
+            <h3 class="info-title"><i class="bi bi-people" aria-hidden="true"></i><span>المجتمع</span></h3>
+            <p>الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وتوفير فرص أفضل للجميع.</p>
+            <a class="btn btn-primary w-100" href="#subscribe">الاشتراك بالنشرة</a>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="info-card info-card-dark h-100">
-            <h3 class="info-title">
-              <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <span data-i18n="responsibilityTitle">المسؤولية</span>
-            </h3>
-            <p data-i18n="responsibilityBody">
-              السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.
-            </p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">
-              <span data-i18n="learnMore">اعرف المزيد</span>
-            </a>
+            <h3 class="info-title"><i class="bi bi-shield-check" aria-hidden="true"></i><span>المسؤولية</span></h3>
+            <p>السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.</p>
+            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
           <div class="info-card info-card-dark h-100">
-            <h3 class="info-title">
-              <i class="bi bi-globe2" aria-hidden="true"></i>
-              <span data-i18n="sustainabilityTitle">الاستدامة</span>
-            </h3>
-            <p data-i18n="sustainabilityBody">
-              تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين استدامة المستقبل، مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.
-            </p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">
-              <span data-i18n="learnMore">اعرف المزيد</span>
-            </a>
+            <h3 class="info-title"><i class="bi bi-globe2" aria-hidden="true"></i><span>الاستدامة</span></h3>
+            <p>تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين استدامة المستقبل مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.</p>
+            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Subscription -->
+    <!-- Subscribe -->
     <section id="subscribe" class="subscribe-section" aria-labelledby="subscribeHeading">
       <div class="subscribe-box">
-        <h3 id="subscribeHeading" class="subscribe-title" data-i18n="subHeading">
-          الاشتراك في النشرة الإخبارية للاستدامة
-        </h3>
+        <h3 id="subscribeHeading" class="subscribe-title">الاشتراك في نشرة الاستدامة</h3>
 
-        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="Subscription form">
+        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="نموذج الاشتراك">
           <div class="form-row">
-            <label for="name" data-i18n="nameLabel">الاسم</label>
+            <label for="name">الاسم</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
           </div>
 
           <div class="form-row">
-            <label for="email" data-i18n="emailLabel">البريد الإلكتروني</label>
+            <label for="email">البريد الإلكتروني</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
 
-          <button class="btn btn-success w-100" type="submit">
-            <span data-i18n="subBtn">اشترك</span>
-          </button>
+          <button class="btn btn-success w-100" type="submit">اشترك</button>
 
-          <p class="form-hint" data-i18n="privacyHint">
+          <p class="form-hint">
             سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
           </p>
         </form>
       </div>
 
       <footer class="page-footer">
-        <p>© <span class="intel-word" lang="en" dir="ltr">INTEL</span></p>
+        <p>© <span class="intel-word notranslate" translate="no" lang="en" dir="ltr">INTEL</span></p>
       </footer>
     </section>
   </main>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Google Translate -->
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        { pageLanguage: 'ar', autoDisplay: false },
+        'google_translate_element'
+      );
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
   <script>
     const timeline = document.getElementById('timelineScroll');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const toggle = document.getElementById('langToggle');
     const langSelect = document.getElementById('langSelect');
 
-    const RTL = new Set(["ar","he","fa","ur","ps","ckb"]);
-
-    // ✅ Arabic base + English fallback (you can expand later)
-    const i18n = {
-      ar: {
-        toggleLang: "تبديل اللغة",
-        futureLine: "مستقبل الابتكار",
-        oldLogo: "شعار إنتل القديم",
-        newLogo: "شعار إنتل الحديث",
-        heroTitle: "الإنتاج والابتكار عبر السنين",
-        heroSub: "مع صعود التكنولوجيا الحديثة، تواصل إنتل البقاء في المقدمة لضمان مواكبة المستقبل.",
-        timelineHeading: "الخط الزمني",
-        prev: "السابق",
-        next: "التالي",
-        model: "الطراز:",
-        hint: "مرّر أفقيًا على الشاشات الكبيرة. على الهواتف سيتم ترتيب البطاقات عموديًا. مرّر فوق البطاقة أو استخدم Tab لعرض التفاصيل.",
-        t1968Title: "تأسست إنتل",
-        t1968Body: "تأسست إنتل على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.",
-        t1971Body: "أول معالج دقيق تجاري (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.",
-        t1978Body: "ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.",
-        t1985Body: "معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية.",
-        t2006Body: "حسّن الأداء والكفاءة بشكل كبير لأجهزة اللابتوب والحواسيب المكتبية.",
-        t2020Title: "تقدم المنتجات في 2020",
-        t2020Body: "واصلت إنتل تطوير الأداء والطاقة والكفاءة عبر منتجات وتقنيات متعددة.",
-        societyTitle: "المجتمع",
-        societyBody: "الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وخلق فرص أفضل للجميع.",
-        responsibilityTitle: "المسؤولية",
-        responsibilityBody: "السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.",
-        sustainabilityTitle: "الاستدامة",
-        sustainabilityBody: "تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين استدامة المستقبل، مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.",
-        learnMore: "اعرف المزيد",
-        subscribeJump: "الاشتراك بالنشرة",
-        subHeading: "الاشتراك في النشرة الإخبارية للاستدامة",
-        nameLabel: "الاسم",
-        emailLabel: "البريد الإلكتروني",
-        subBtn: "اشترك",
-        privacyHint: "سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت."
-      },
-      en: {
-        toggleLang: "Switch Language",
-        futureLine: "THE FUTURE OF INNOVATION",
-        oldLogo: "Old Intel logo",
-        newLogo: "Modern Intel logo",
-        heroTitle: "Production and Innovation Through the Years",
-        heroSub: "With modern technology on the rise, Intel stays a step ahead to stay in sync with the future.",
-        timelineHeading: "Timeline",
-        prev: "Prev",
-        next: "Next",
-        model: "Model:",
-        hint: "Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) a card to reveal details.",
-        t1968Title: "Intel Founded",
-        t1968Body: "Intel was founded by Robert Noyce and Gordon Moore in California, launching semiconductor innovation.",
-        t1971Body: "Intel’s first commercial 4-bit microprocessor, helping ignite modern computing.",
-        t1978Body: "The 8086 helped expand personal computing and formed the basis of x86.",
-        t1985Body: "The 32-bit 386 generation enabled more powerful personal computers.",
-        t2006Body: "Major gains in performance and efficiency for laptops and desktops.",
-        t2020Title: "2020 Product Advances",
-        t2020Body: "Intel continued advancing performance, power, and efficiency across products and platforms.",
-        societyTitle: "The Society",
-        societyBody: "Investing in knowledge and digital skills to support the future for better opportunities for everyone.",
-        responsibilityTitle: "Responsibility",
-        responsibilityBody: "Safety, work standards, and transparency is Intel's commitment to the community.",
-        sustainabilityTitle: "Sustainability",
-        sustainabilityBody: "Intel continues to focus on reducing power consumption to improve longevity while advancing eco-friendly technology.",
-        learnMore: "Learn More",
-        subscribeJump: "Subscribe",
-        subHeading: "Sustainability Newsletter Subscription",
-        nameLabel: "Name",
-        emailLabel: "Email",
-        subBtn: "Subscribe",
-        privacyHint: "We’ll only use your email for sustainability updates. You can unsubscribe anytime."
-      }
-    };
-
-    function setDirAndLang(code){
-      document.documentElement.lang = code;
-      document.documentElement.dir = RTL.has(code) ? "rtl" : "ltr";
-    }
-
-    function applyI18n(code){
-      const dict = i18n[code] || i18n.ar; // fallback to Arabic
-      document.querySelectorAll("[data-i18n]").forEach(el => {
-        const key = el.getAttribute("data-i18n");
-        if (dict[key]) el.textContent = dict[key];
-      });
-    }
-
-    function applyLanguage(code){
-      setDirAndLang(code);
-      applyI18n(code);
-    }
-
-    // ✅ Start Arabic always
-    applyLanguage("ar");
-    langSelect.value = "ar";
-
-    // Toggle between Arabic and English quickly
-    toggle.addEventListener('click', () => {
-      const now = document.documentElement.lang;
-      const next = (now === "ar") ? "en" : "ar";
-      langSelect.value = next;
-      applyLanguage(next);
-    });
-
-    // Dropdown language change:
-    // If you pick a language we haven't filled yet, it will still switch RTL/LTR correctly,
-    // and the text will remain Arabic (until you add translations for that language).
-    langSelect.addEventListener('change', () => {
-      const code = langSelect.value;
-      applyLanguage(i18n[code] ? code : "ar");
-      // still apply direction even if translations not added
-      setDirAndLang(code);
-    });
-
+    // Timeline buttons
     function scrollByCards(dir) {
       const card = timeline.querySelector('.milestone-card');
       if (!card) return;
       const gap = 16;
       const amount = card.getBoundingClientRect().width + gap;
-      timeline.scrollBy({ left: dir * amount, behavior: 'smooth' });
+
+      // RTL-friendly scrolling
+      const isRTL = document.documentElement.dir === 'rtl';
+      const delta = (isRTL ? -dir : dir) * amount;
+
+      timeline.scrollBy({ left: delta, behavior: 'smooth' });
     }
     prevBtn.addEventListener('click', () => scrollByCards(-1));
     nextBtn.addEventListener('click', () => scrollByCards(1));
@@ -407,6 +289,35 @@
         if (e.target.closest('button, a, input, label, select')) return;
         card.classList.toggle('is-open');
       });
+    });
+
+    // Drive Google Translate from dropdown
+    function setTranslateLang(lang) {
+      const combo = document.querySelector('.goog-te-combo');
+      if (!combo) return;
+
+      combo.value = lang;
+      combo.dispatchEvent(new Event('change'));
+    }
+
+    // Set document dir based on language
+    const RTL = new Set(["ar","he","fa","ur","ps","ckb"]);
+    function setDir(lang){
+      document.documentElement.dir = RTL.has(lang) ? "rtl" : "ltr";
+      document.documentElement.lang = lang;
+    }
+
+    // Start Arabic always
+    window.addEventListener('load', () => {
+      setDir('ar');
+      setTranslateLang('ar');
+      langSelect.value = 'ar';
+    });
+
+    langSelect.addEventListener('change', () => {
+      const lang = langSelect.value;
+      setDir(lang);
+      setTranslateLang(lang);
     });
   </script>
 </body>
