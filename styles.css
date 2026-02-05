@@ -1,196 +1,467 @@
+/* ===== Base + Intel palette ===== */
 :root{
-  --bg: #e2e2e2;          /* page background grey */
-  --surface: #f2f2f2;     /* light grey surface */
-  --card-dark: #666666;   /* darker grey blocks */
-  --card-border: #4f4f4f;
-  --text: #111111;
-  --muted: #222222;
-  --btn: #0b6aa6;         /* Intel-ish blue */
-  --btn-hover: #095884;
+  --intel-blue: #0068B5;
+  --intel-blue-dark: #005a9c;
+
+  /* CHANGED: grey background instead of light blue */
+  --bg-light: #bdbdbd;          /* grey background */
+  --bg-light-2: #e7e7e7;         /* light grey for logo backplates */
+
+  --text: #0b1b2b;
   --white: #ffffff;
-  --radius: 16px;
-  --shadow: 0 10px 25px rgba(0,0,0,0.15);
+  --shadow: 0 10px 25px rgba(0,0,0,.12);
+
+  /* Added: darker grey for 3 cards */
+  --dark-card: #7a7a7a;
+  --dark-card-border: #606060;
 }
 
-/* Bold ALL text */
-body, body *{
-  font-weight: 800 !important;
-  box-sizing: border-box;
+* { box-sizing: border-box; }
+
+html, body {
+  height: 100%;
 }
 
-html, body{
+/* CHANGED: everything bold */
+body{
   margin: 0;
-  padding: 0;
-  background: var(--bg);
-  color: var(--text);
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg-light);
+  font-weight: 800;
+}
+
+/* Make sure all text stays bold (including Bootstrap text) */
+body *{
+  font-weight: 800;
+}
+
+/* Screen-reader only text */
+.sr-only{
+  position:absolute;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);
+  border:0;
+}
+
+/* ===== Header ===== */
+.page-header{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 18px 0;
 }
 
 .topbar{
-  padding: 18px 16px 8px;
-  text-align: center;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
 }
 
-.brand-english{
-  font-size: 24px;
-  letter-spacing: 2px;
+.site-title{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: .5px;
 }
 
-.tagline{
-  margin-top: 6px;
-  font-size: 18px;
+.intel-word{
+  font-weight: 900;
+  letter-spacing: .3px;
 }
 
-.lang-row{
-  margin-top: 14px;
-  display: inline-flex;
+/* Added: language controls container */
+.lang-controls{
+  display:flex;
+  align-items:center;
   gap: 10px;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 12px;
-  background: var(--surface);
-  border-radius: 999px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-}
-
-.lang-label{
-  font-size: 14px;
 }
 
 .lang-select{
-  font-size: 14px;
   padding: 8px 10px;
   border-radius: 10px;
-  border: 1px solid #bdbdbd;
-  background: #fff;
+  border: 1px solid rgba(0,0,0,.25);
+  background: var(--white);
+  color: var(--text);
 }
 
-.container{
-  width: min(1100px, 92vw);
-  margin: 18px auto 40px;
+/* Language toggle button */
+.lang-toggle{
+  border: 2px solid var(--intel-blue);
+  background: var(--white);
+  color: var(--intel-blue);
+  padding: 8px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.lang-toggle:focus{
+  outline: 3px solid rgba(0,104,181,.35);
+  outline-offset: 2px;
 }
 
-/* Responsive 3 columns (rubric) */
-.three-col{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+/* Added: centered header lines */
+.center-header{
+  text-align:center;
+  margin: 8px 0 6px;
 }
 
-.info-card{
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 16px 16px 14px;
-  border: 1px solid var(--card-border);
-  min-height: 220px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.center-intel{
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
 }
 
-.info-card.dark{
-  background: var(--card-dark);
+.center-future{
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+/* Logos row */
+.logo-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 14px;
+  margin: 14px 0 10px;
+}
+
+.logo-figure{
+  margin:0;
+}
+
+/* Requested: 4in x 4in, BUT responsive clamp so tablets/phones show full image */
+.logo-img{
+  width: 4in;
+  height: 4in;
+  max-width: min(44vw, 384px);
+  max-height: min(44vw, 384px);
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  background: var(--bg-light-2);
+}
+
+.logo-arrow{
+  font-size: 28px;
+  color: var(--intel-blue-dark);
+  font-weight: 800;
+}
+
+/* Hero */
+.hero{
+  display:flex;
+  justify-content:center;
+  padding: 10px 0 18px;
+}
+
+.hero-box{
+  width: min(980px, 100%);
+  background: var(--intel-blue);
   color: var(--white);
+  border-radius: 14px;
+  padding: 18px 18px;
+  box-shadow: var(--shadow);
+  text-align:center;
 }
 
-.card-title{
-  margin: 0 0 10px;
-  font-size: 18px;
+.hero-title{
+  margin: 0 0 6px;
+  font-weight: 900;
+  letter-spacing: .2px;
 }
 
-.card-text{
-  margin: 0 0 14px;
-  line-height: 1.6;
+.hero-sub{
+  margin: 0;
+  opacity: .95;
   font-size: 14px;
 }
 
-/* Buttons */
-.btn{
-  display: inline-block;
-  text-decoration: none;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: var(--btn);
-  color: var(--white);
-  text-align: center;
-  border: 1px solid rgba(255,255,255,0.15);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+/* ===== Main ===== */
+.page-main{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 18px 28px;
 }
 
-.btn:hover,
-.btn:focus{
-  background: var(--btn-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.18);
+/* ===== Timeline ===== */
+.timeline-section{
+  margin-top: 14px;
+}
+
+.timeline-heading-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.timeline-heading{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--intel-blue-dark);
+}
+
+.timeline-controls{
+  display:flex;
+  gap: 8px;
+}
+
+/* Horizontal scroll area with visible scrollbar + snap */
+.timeline-scroll{
+  background: linear-gradient(180deg, rgba(0,104,181,.20), rgba(0,104,181,.08));
+  border-radius: 16px;
+  padding: 14px;
+  display:flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Ensure scrollbar shows */
+.timeline-scroll::-webkit-scrollbar{ height: 10px; }
+.timeline-scroll::-webkit-scrollbar-thumb{
+  background: rgba(0,90,156,.45);
+  border-radius: 20px;
+}
+.timeline-scroll::-webkit-scrollbar-track{
+  background: rgba(255,255,255,.55);
+  border-radius: 20px;
+}
+
+/* Cards */
+.milestone-card{
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  width: 260px;
+  background: var(--intel-blue);
+  color: var(--white);
+  border-radius: 14px;
+  padding: 12px;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease;
   outline: none;
 }
 
-/* Subscription block */
-.subscribe{
+/* Bonus: transform on hover */
+.milestone-card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+}
+
+.milestone-card:focus{
+  outline: 3px solid rgba(255,255,255,.55);
+  outline-offset: 2px;
+}
+
+/* Year badge */
+.card-year{
+  position:absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(255,255,255,.18);
+  border: 1px solid rgba(255,255,255,.28);
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-weight: 900;
+  font-size: 12px;
+}
+
+/* Media box + REQUIRED 2in x 2in image sizing */
+.card-media{
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.20);
+  border-radius: 12px;
+  padding: 10px;
   margin-top: 18px;
-  background: var(--surface);
-  border-radius: var(--radius);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* Outline timeline pictures in Intel blue 2.5px (you requested earlier) */
+.card-media img{
+  width: 2in;
+  height: 2in;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  background: var(--white);
+  border: 2.5px solid var(--intel-blue);
+}
+
+/* Title line */
+.card-title{
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 15px;
+}
+
+/* Details hidden by default; shown on hover OR keyboard focus OR tap (is-open) */
+.card-details{
+  margin-top: 8px;
+  background: rgba(0,0,0,.12);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  padding: 10px;
+  font-size: 13px;
+  line-height: 1.35;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height .25s ease, opacity .25s ease;
+}
+
+.milestone-card:hover .card-details,
+.milestone-card:focus-within .card-details,
+.milestone-card.is-open .card-details{
+  max-height: 260px;
+  opacity: 1;
+}
+
+.hint{
+  margin: 10px 4px 0;
+  font-size: 13px;
+  color: rgba(11,27,43,.85);
+}
+
+/* ===== 3-column Bootstrap section (custom look) ===== */
+.info-card{
+  background: var(--white);
+  border-radius: 14px;
+  padding: 16px;
   box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* CHANGED: make those 3 blocks darker grey */
+.info-card-dark{
+  background: var(--dark-card);
+  border: 2px solid var(--dark-card-border);
+  color: #000;
+}
+
+.info-title{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin: 0 0 8px;
+  color: var(--intel-blue-dark);
+  font-weight: 900;
+}
+
+/* Make title readable on dark cards */
+.info-card-dark .info-title{
+  color: #000;
+}
+
+.info-title i{
+  font-size: 20px;
+  color: var(--intel-blue);
+}
+
+/* ===== Subscription ===== */
+.subscribe-section{
+  margin-top: 24px;
+  padding-top: 10px;
+}
+
+.subscribe-box{
+  width: min(700px, 100%);
+  margin: 0 auto;
+  background: var(--white);
+  border-radius: 16px;
   padding: 18px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(0,0,0,.06);
 }
 
 .subscribe-title{
-  margin: 0 0 14px;
-  font-size: 18px;
+  margin: 0 0 10px;
+  font-weight: 900;
+  color: var(--intel-blue-dark);
 }
 
 .subscribe-form{
-  display: flex;
+  display:grid;
   gap: 12px;
-  align-items: flex-end;
-  flex-wrap: wrap;
 }
 
-.field{
-  flex: 1 1 260px;
-  display: flex;
-  flex-direction: column;
+.form-row{
+  display:grid;
   gap: 6px;
 }
 
-.field-label{
-  font-size: 14px;
+.form-row label{
+  font-weight: 800;
+  color: rgba(11,27,43,.9);
 }
 
-.field-input{
-  padding: 12px 12px;
+.form-row input{
+  padding: 10px 12px;
   border-radius: 12px;
-  border: 1px solid #bdbdbd;
-  font-size: 14px;
+  border: 1px solid rgba(0,0,0,.18);
 }
 
-.subscribe-btn{
-  border: none;
-  cursor: pointer;
-  padding: 12px 14px;
+.form-row input:focus{
+  outline: 3px solid rgba(0,104,181,.25);
+  border-color: rgba(0,104,181,.55);
 }
 
-.subscribe-note{
-  margin: 12px 0 0;
-  font-size: 13px;
-  color: var(--muted);
+.form-hint{
+  margin: 0;
+  font-size: 12.5px;
+  color: rgba(11,27,43,.75);
 }
 
-/* Footer */
-.footer{
+.page-footer{
+  text-align:center;
   margin-top: 16px;
-  text-align: center;
-  padding: 12px;
-  color: var(--muted);
+  color: rgba(11,27,43,.7);
   font-size: 13px;
 }
 
-/* Responsive */
-@media (max-width: 900px){
-  .three-col{
-    grid-template-columns: 1fr;
+/* ===== Responsive behavior (MEETS rubric) ===== */
+@media (max-width: 768px){
+  /* stack logos more cleanly */
+  .logo-row{
+    flex-direction: column;
   }
-  .info-card{
-    min-height: auto;
+  .logo-arrow{
+    transform: rotate(90deg);
   }
+
+  /* Timeline stacks vertically on small screens */
+  .timeline-scroll{
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: visible;
+    scroll-snap-type: none;
+  }
+
+  .milestone-card{
+    width: 100%;
+    cursor: default;
+  }
+
+  /* Keep images reasonable on small screens */
+  .card-media img{
+    width: min(2in, 80vw);
+    height: min(2in, 80vw);
+  }
+
+  /* Keep the new centered header neat on small screens */
+  .center-intel{ font-size: 22px; }
+  .center-future{ font-size: 14px; }
 }
