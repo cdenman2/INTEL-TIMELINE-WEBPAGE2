@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intel Timeline Webpage</title>
 
-  <!-- Bootstrap (for the localization project rubric) -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Bootstrap Icons -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
@@ -20,36 +20,36 @@
         <span class="intel-word" lang="en" dir="ltr">INTEL</span>-TIMELINE-WEBPAGE
       </h1>
 
-      <!-- Controls: Language toggle + language dropdown -->
       <div class="lang-controls">
         <button id="langToggle" class="lang-toggle" type="button" aria-pressed="false">
           English
         </button>
 
-        <!-- Added: multi-language selector -->
         <select id="langSelect" class="lang-select" aria-label="Select language">
-          <option value="ar" selected>العربية</option>
-          <option value="he">עברית</option>
-          <option value="fa">فارسی</option>
-          <option value="ur">اردو</option>
-          <option value="ps">پښتو</option>
-          <option value="ckb">کوردیی سۆرانی</option>
-          <option value="zh">中文</option>
-          <option value="fr">Français</option>
-          <option value="es">Español</option>
-          <option value="de">Deutsch</option>
-          <option value="nl">Nederlands</option>
-          <option value="vi">Tiếng Việt</option>
+          <option value="en">English (English)</option>
+          <option value="ar" selected>Arabic (العربية)</option>
+          <option value="he">Hebrew (עברית)</option>
+          <option value="fa">Persian/Farsi (فارسی)</option>
+          <option value="ur">Urdu (اردو)</option>
+          <option value="ps">Pashto (پښتو)</option>
+          <option value="ckb">Kurdish Sorani (کوردیی سۆرانی)</option>
+          <option value="zh">Chinese (中文)</option>
+          <option value="fr">French (Français)</option>
+          <option value="es">Spanish (Español)</option>
+          <option value="de">German (Deutsch)</option>
+          <option value="nl">Dutch (Nederlands)</option>
+          <option value="vi">Vietnamese (Tiếng Việt)</option>
         </select>
       </div>
     </div>
 
-    <!-- Added: centered header lines you requested -->
+    <!-- Centered header lines (as requested) -->
     <div class="center-header">
       <div class="center-intel" lang="en" dir="ltr">INTEL</div>
-      <div class="center-future" data-i18n="futureLine">THE FUTURE OF INNOVATION</div>
+      <div class="center-future">THE FUTURE OF INNOVATION</div>
     </div>
 
+    <!-- IMPORTANT: this row is forced LTR in CSS so RTL never breaks it -->
     <div class="logo-row" aria-label="Intel logos">
       <figure class="logo-figure">
         <img class="logo-img" src="images/logo-old.png" alt="Old Intel logo" />
@@ -67,10 +67,10 @@
     <section class="hero">
       <div class="hero-box">
         <h2 class="hero-title">
-          <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</span>
+          <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="heroTitle">Production and Innovation Through the Years (الإنتاج والابتكار عبر السنين)</span>
         </h2>
         <p class="hero-sub" data-i18n="heroSub">
-          مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.
+          With modern technology on the rise, Intel stays a step ahead to stay in sync with the future. (مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.)
         </p>
       </div>
     </section>
@@ -81,20 +81,19 @@
     <section class="timeline-section" aria-labelledby="timelineHeading">
       <div class="timeline-heading-row">
         <h3 id="timelineHeading" class="timeline-heading">
-          <span data-i18n="timelineHeading">الخط الزمني</span>
+          <span data-i18n="timelineHeading">Timeline (الخط الزمني)</span>
         </h3>
 
         <div class="timeline-controls" aria-label="Timeline controls">
           <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
-            ◀ <span data-i18n="prev">السابق</span>
+            ◀ <span data-i18n="prev">Prev (السابق)</span>
           </button>
           <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
-            <span data-i18n="next">التالي</span> ▶
+            <span data-i18n="next">Next (التالي)</span> ▶
           </button>
         </div>
       </div>
 
-      <!-- Scroll container (desktop horizontal w/ scrollbar + snap) -->
       <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="Timeline cards">
         <!-- 1968 -->
         <article class="milestone-card" tabindex="0">
@@ -103,12 +102,11 @@
             <img src="images/1968.png" alt="Intel founding image (1968)" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> <span data-i18n="t1968Title">تأسست</span>
+            <span class="intel-word" lang="en" dir="ltr">Intel</span> <span data-i18n="t1968Title">Founded (تأسست)</span>
           </div>
-
           <div class="card-details">
             <p data-i18n="t1968Body">
-              تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.
+              Intel was founded by Robert Noyce and Gordon Moore in California. (تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا.)
             </p>
           </div>
         </article>
@@ -122,11 +120,10 @@
           <div class="card-title">
             <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004
           </div>
-
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004</p>
+            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004</p>
             <p data-i18n="t1971Body">
-              أول معالج دقيق تجاري من Intel (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.
+              First commercial microprocessor (4-bit). (أول معالج دقيق تجاري من Intel (4-bit).)
             </p>
           </div>
         </article>
@@ -140,11 +137,10 @@
           <div class="card-title">
             <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086
           </div>
-
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086</p>
+            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086</p>
             <p data-i18n="t1978Body">
-              قدمت Intel معالج 8086 الذي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.
+              Key step toward x86 personal computing. (خطوة رئيسية نحو انتشار الحواسيب الشخصية وبناء أساس x86.)
             </p>
           </div>
         </article>
@@ -158,11 +154,10 @@
           <div class="card-title">
             <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386
           </div>
-
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386</p>
+            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386</p>
             <p data-i18n="t1985Body">
-              معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية ودعم قدرات متقدمة للأنظمة.
+              32-bit (386) enabled more powerful PCs. (معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة.)
             </p>
           </div>
         </article>
@@ -176,11 +171,10 @@
           <div class="card-title">
             <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo
           </div>
-
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo</p>
+            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo</p>
             <p data-i18n="t2006Body">
-              حسّن الأداء والكفاءة بشكل كبير، وكان نقطة تحوّل مهمة لأجهزة اللابتوب والحواسيب المكتبية.
+              Big gains in performance and efficiency. (تحسن كبير في الأداء والكفاءة.)
             </p>
           </div>
         </article>
@@ -192,23 +186,23 @@
             <img src="images/2020.png" alt="Intel products image (2020)" />
           </div>
           <div class="card-title">
-            <span data-i18n="t2020Title">تقدم المنتجات في 2020</span>
+            <span data-i18n="t2020Title">2020 Product Advances (تقدم المنتجات في 2020)</span>
           </div>
-
           <div class="card-details">
             <p data-i18n="t2020Body">
-              واصلت Intel تطوير معالجات وتقنيات تدعم الأداء والطاقة والكفاءة، مع توسع الاستخدامات من الحوسبة إلى مراكز البيانات.
+              Intel continued advancing performance, power, and efficiency. (واصلت Intel تطوير الأداء والطاقة والكفاءة.)
             </p>
           </div>
         </article>
       </div>
 
       <p class="hint" data-i18n="hint">
-        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.
+        Scroll horizontally on large screens; on phones cards stack vertically. Hover (or Tab) to reveal details.
+        (مرّر أفقيًا على الشاشات الكبيرة، وعلى الهواتف ستُرتّب البطاقات عموديًا. حرّك المؤشر أو استخدم Tab لعرض التفاصيل.)
       </p>
     </section>
 
-    <!-- Responsive 3-column section (UPDATED content + darker grey cards) -->
+    <!-- 3-column section -->
     <section class="info-threecol container my-5" aria-label="Info section">
       <div class="row g-4">
         <!-- Sustainability -->
@@ -216,14 +210,13 @@
           <div class="info-card info-card-dark h-100">
             <h3 class="info-title">
               <i class="bi bi-globe2" aria-hidden="true"></i>
-              <span data-i18n="c1Title">الاستدامة</span>
+              <span>Sustainability (الاستدامة)</span>
             </h3>
-            <p data-i18n="c1Body">
-              تواصل Intel التركيز على تقليل استهلاك الطاقة لتحسين استدامة مستقبل الشركة مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.
+            <p>
+              Intel continues to focus on reducing power consumption to improve longevity of the future of the company as well as being eco-friendly while advancing in technology.
             </p>
-            <!-- Learn more goes to eco-friendly page -->
             <a class="btn btn-primary w-100" href="eco-friendly.html">
-              <span data-i18n="learnMore">اعرف المزيد</span>
+              Learn More (اعرف المزيد)
             </a>
           </div>
         </div>
@@ -233,13 +226,13 @@
           <div class="info-card info-card-dark h-100">
             <h3 class="info-title">
               <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <span data-i18n="c2Title">المسؤولية</span>
+              <span>Responsibility (المسؤولية)</span>
             </h3>
-            <p data-i18n="c2Body">
-              السلامة ومعايير العمل والشفافية هي التزام Intel تجاه المجتمع.
+            <p>
+              Safety, work standards, and transparency is Intel's commitment to the community.
             </p>
             <a class="btn btn-primary w-100" href="eco-friendly.html">
-              <span data-i18n="learnMore">اعرف المزيد</span>
+              Learn More (اعرف المزيد)
             </a>
           </div>
         </div>
@@ -249,89 +242,54 @@
           <div class="info-card info-card-dark h-100">
             <h3 class="info-title">
               <i class="bi bi-people" aria-hidden="true"></i>
-              <span data-i18n="c3Title">The Society</span>
+              <span>The Society (المجتمع)</span>
             </h3>
-            <p data-i18n="c3Body">
+            <p>
               Investing in knowledge and digital skills to support the future for better opportunities for everyone.
             </p>
-            <!-- Button scrolls to subscribe section -->
             <a class="btn btn-primary w-100" href="#subscribe">
-              <span data-i18n="subscribeJump">الاشتراك بالنشرة</span>
+              Subscribe (اشترك)
             </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Keep your collapse/accordion (still valid for rubric) -->
-      <div class="collapse mt-3" id="collapseDetails">
-        <div class="accordion" id="accordionExtra">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <span data-i18n="acc1Title">كيف تدعم Intel الاستدامة؟</span>
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExtra">
-              <div class="accordion-body" data-i18n="acc1Body">
-                من خلال تحسين كفاءة الطاقة، وتقليل النفايات، ودعم الابتكار الذي يقلل الأثر البيئي.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <span data-i18n="acc2Title">لماذا يهم ذلك للمستقبل؟</span>
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExtra">
-              <div class="accordion-body" data-i18n="acc2Body">
-                لأن التكنولوجيا المسؤولة تساعد على بناء اقتصاد رقمي مستدام يخدم الناس والكوكب.
-              </div>
-            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Subscription form + footer (UPDATED title + action to page) -->
+    <!-- Subscription -->
     <section id="subscribe" class="subscribe-section" aria-labelledby="subscribeHeading">
       <div class="subscribe-box">
         <h3 id="subscribeHeading" class="subscribe-title">
-          <span data-i18n="subTitle">Sustainability Newsletter Subscription</span>
+          Sustainability Newsletter Subscription
         </h3>
 
-        <!-- action goes to newsletter.html -->
         <form class="subscribe-form" action="newsletter.html" method="get" aria-label="Subscription form">
           <div class="form-row">
-            <label for="name" data-i18n="nameLabel">الاسم</label>
+            <label for="name">Name (الاسم)</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
           </div>
 
           <div class="form-row">
-            <label for="email" data-i18n="emailLabel">البريد الإلكتروني</label>
+            <label for="email">Email (البريد الإلكتروني)</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
 
           <button class="btn btn-success w-100" type="submit">
-            <span data-i18n="subBtn">اشترك</span>
+            Subscribe (اشترك)
           </button>
 
-          <p class="form-hint" data-i18n="privacyHint">
-            سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
+          <p class="form-hint">
+            We’ll only use your email for sustainability updates. Unsubscribe anytime.
+            (سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.)
           </p>
         </form>
       </div>
 
       <footer class="page-footer">
-        <p>
-          © <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="footer">صفحة تدريبية للمقرر</span>
-        </p>
+        <p>© <span class="intel-word" lang="en" dir="ltr">Intel</span> — Course practice webpage</p>
       </footer>
     </section>
   </main>
 
-  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
@@ -341,129 +299,30 @@
     const toggle = document.getElementById('langToggle');
     const langSelect = document.getElementById('langSelect');
 
-    // Languages that should use RTL
     const RTL = new Set(["ar","he","fa","ur","ps","ckb"]);
 
-    // NOTE: You asked for many languages; this implements the switch + correct direction.
-    // For full translation strings for every language, I can add them the same way as Arabic/English.
-    // Right now: Arabic + English fully translated; other languages will keep Arabic text but set direction.
-    const i18n = {
-      ar: {
-        futureLine: "مستقبل الابتكار",
-        heroTitle: "الإنتاج والابتكار عبر السنين",
-        heroSub: "مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.",
-        timelineHeading: "الخط الزمني",
-        prev: "السابق",
-        next: "التالي",
-        hint: "مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.",
-        model: "الطراز:",
-        t1968Title: "تأسست",
-        t1968Body: "تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.",
-        t1971Body: "أول معالج دقيق تجاري من Intel (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.",
-        t1978Body: "قدمت Intel معالج 8086 الذي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.",
-        t1985Body: "معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية ودعم قدرات متقدمة للأنظمة.",
-        t2006Body: "حسّن الأداء والكفاءة بشكل كبير، وكان نقطة تحوّل مهمة لأجهزة اللابتوب والحواسيب المكتبية.",
-        t2020Title: "تقدم المنتجات في 2020",
-        t2020Body: "واصلت Intel تطوير معالجات وتقنيات تدعم الأداء والطاقة والكفاءة، مع توسع الاستخدامات من الحوسبة إلى مراكز البيانات.",
-        c1Title: "الاستدامة",
-        c1Body: "تواصل Intel التركيز على تقليل استهلاك الطاقة لتحسين استدامة مستقبل الشركة مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.",
-        c2Title: "المسؤولية",
-        c2Body: "السلامة ومعايير العمل والشفافية هي التزام Intel تجاه المجتمع.",
-        c3Title: "The Society",
-        c3Body: "Investing in knowledge and digital skills to support the future for better opportunities for everyone.",
-        learnMore: "اعرف المزيد",
-        subscribeJump: "الاشتراك بالنشرة",
-        acc1Title: "كيف تدعم Intel الاستدامة؟",
-        acc1Body: "من خلال تحسين كفاءة الطاقة، وتقليل النفايات، ودعم الابتكار الذي يقلل الأثر البيئي.",
-        acc2Title: "لماذا يهم ذلك للمستقبل؟",
-        acc2Body: "لأن التكنولوجيا المسؤولة تساعد على بناء اقتصاد رقمي مستدام يخدم الناس والكوكب.",
-        subTitle: "Sustainability Newsletter Subscription",
-        nameLabel: "الاسم",
-        emailLabel: "البريد الإلكتروني",
-        subBtn: "اشترك",
-        privacyHint: "سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.",
-        footer: "صفحة تدريبية للمقرر",
-        close: "إغلاق"
-      },
-      en: {
-        futureLine: "THE FUTURE OF INNOVATION",
-        heroTitle: "Production and Innovation Through the Years",
-        heroSub: "With modern technology on the rise, Intel stays a step ahead to stay in sync with the future.",
-        timelineHeading: "Timeline",
-        prev: "Prev",
-        next: "Next",
-        hint: "Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) a card to reveal details.",
-        model: "Model:",
-        t1968Title: "Founded",
-        t1968Body: "Intel was founded by Robert Noyce and Gordon Moore in California, launching a new era of semiconductor innovation.",
-        t1971Body: "Intel’s first commercial microprocessor (4-bit), helping ignite the modern computing era.",
-        t1978Body: "Intel introduced the 8086, a key step toward widespread personal computing and the x86 architecture.",
-        t1985Body: "The 32-bit 386 generation enabled more powerful PCs and advanced operating system capabilities.",
-        t2006Body: "Major gains in performance and efficiency for laptops and desktops—an important turning point.",
-        t2020Title: "2020 Product Advances",
-        t2020Body: "Intel continued advancing performance, power, and efficiency across computing and data center technologies.",
-        c1Title: "Sustainability",
-        c1Body: "Intel continues to focus on reducing power consumption to improve long-term sustainability while remaining eco-friendly and advancing technology.",
-        c2Title: "Responsibility",
-        c2Body: "Safety, work standards, and transparency is Intel's commitment to the community.",
-        c3Title: "The Society",
-        c3Body: "Investing in knowledge and digital skills to support the future for better opportunities for everyone.",
-        learnMore: "Learn More",
-        subscribeJump: "Subscribe",
-        acc1Title: "How does Intel support sustainability?",
-        acc1Body: "By improving energy efficiency, reducing waste, and enabling innovation that lowers environmental impact.",
-        acc2Title: "Why does this matter for the future?",
-        acc2Body: "Because responsible tech helps build a sustainable digital economy for people and planet.",
-        subTitle: "Sustainability Newsletter Subscription",
-        nameLabel: "Name",
-        emailLabel: "Email",
-        subBtn: "Subscribe",
-        privacyHint: "We’ll only use your email for sustainability updates. Unsubscribe anytime.",
-        footer: "Course practice webpage",
-        close: "Close"
-      }
-    };
-
-    function applyLang(lang) {
-      const pack = i18n[lang] || i18n.ar;
-
-      document.documentElement.lang = lang;
-      document.documentElement.dir = RTL.has(lang) ? 'rtl' : 'ltr';
-
-      // Button label
-      toggle.textContent = (lang === 'ar') ? 'English' : 'العربية';
-
-      // Replace text by data-i18n keys
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (pack[key] != null) el.textContent = pack[key];
-      });
+    function setDirAndLang(code){
+      document.documentElement.lang = code;
+      document.documentElement.dir = RTL.has(code) ? "rtl" : "ltr";
     }
 
-    // Default Arabic, allow toggle English/Arabic
-    applyLang('ar');
+    // Default Arabic
+    setDirAndLang("ar");
+    langSelect.value = "ar";
 
+    // Toggle just flips Arabic <-> English quickly
     toggle.addEventListener('click', () => {
-      const current = document.documentElement.lang;
-      const next = (current === 'ar') ? 'en' : 'ar';
+      const now = document.documentElement.lang;
+      const next = (now === "ar") ? "en" : "ar";
+      setDirAndLang(next);
       langSelect.value = next;
-      applyLang(next);
     });
 
-    // Dropdown sets language direction and (if available) translations
+    // Dropdown sets lang + direction
     langSelect.addEventListener('change', () => {
-      const code = langSelect.value;
-      // For non-en languages, we keep Arabic text but set direction correctly
-      if (code !== 'ar' && code !== 'en') {
-        document.documentElement.lang = code;
-        document.documentElement.dir = RTL.has(code) ? 'rtl' : 'ltr';
-        // Keep Arabic content as-is (rubric mainly checks layout direction changes)
-        return;
-      }
-      applyLang(code);
+      setDirAndLang(langSelect.value);
     });
 
-    // Timeline Prev/Next buttons: scroll by one card width
     function scrollByCards(dir) {
       const card = timeline.querySelector('.milestone-card');
       if (!card) return;
@@ -474,10 +333,9 @@
     prevBtn.addEventListener('click', () => scrollByCards(-1));
     nextBtn.addEventListener('click', () => scrollByCards(1));
 
-    // Touch support: tap card to toggle details open/closed
     document.querySelectorAll('.milestone-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        if (e.target.closest('button, a, input, label')) return;
+        if (e.target.closest('button, a, input, label, select')) return;
         card.classList.toggle('is-open');
       });
     });
