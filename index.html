@@ -3,82 +3,64 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>صفحة إنتل عبر الزمن</title>
+  <title>Intel Timeline Webpage</title>
 
-  <!-- Bootstrap (CDN) -->
+  <!-- Bootstrap (for rubric: responsive grid + components) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <!-- Top center ENGLISH ONLY -->
   <header class="page-header">
-    <div class="topbar">
-      <h1 class="site-title">
-        <span class="intel-word notranslate" translate="no" lang="en" dir="ltr">INTEL</span>
-        -صفحة-الخط-الزمني
-      </h1>
-
-      <div class="lang-controls">
-        <!-- Language dropdown (labels show Arabic + English-in-parentheses) -->
-        <select id="langSelect" class="lang-select" aria-label="اختيار اللغة">
-          <option value="ar" selected>العربية (Arabic)</option>
-          <option value="en">الإنجليزية (English)</option>
-          <option value="hi">الهندية (Hindi)</option>
-          <option value="he">العبرية (Hebrew)</option>
-          <option value="fa">الفارسية (Persian/Farsi)</option>
-          <option value="ur">الأردية (Urdu)</option>
-          <option value="ps">البشتوية (Pashto)</option>
-          <option value="ckb">الكردية سوراني (Kurdish Sorani)</option>
-          <option value="zh-CN">الصينية (Chinese)</option>
-          <option value="fr">الفرنسية (French)</option>
-          <option value="es">الإسبانية (Spanish)</option>
-          <option value="de">الألمانية (German)</option>
-          <option value="nl">الهولندية (Dutch)</option>
-          <option value="vi">الفيتنامية (Vietnamese)</option>
-        </select>
-
-        <!-- Hidden translate widget container (script loads ONLY when user selects a non-Arabic language) -->
-        <div id="google_translate_element" class="gtranslate-hidden" aria-hidden="true"></div>
-      </div>
+    <div class="top-center">
+      <div class="top-intel" lang="en" dir="ltr">INTEL</div>
+      <div class="top-tagline" data-i18n="topTagline">مستقبل الابتكار</div>
     </div>
 
-    <div class="center-header">
-      <!-- Only English word on page -->
-      <div class="center-intel notranslate" translate="no" lang="en" dir="ltr">INTEL</div>
-      <div class="center-future">مستقبل الابتكار</div>
+    <!-- Language dropdown (native name + English in parentheses) -->
+    <div class="lang-row">
+      <label class="lang-label" for="langSelect" data-i18n="languageLabel">اللغة</label>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="ar">العربية (Arabic)</option>
+        <option value="en">English (English)</option>
+        <option value="he">עברית (Hebrew)</option>
+        <option value="fa">فارسی (Persian/Farsi)</option>
+        <option value="ur">اردو (Urdu)</option>
+        <option value="ps">پښتو (Pashto)</option>
+        <option value="ckb">کوردیی ناوەندی (Kurdish (Sorani))</option>
+        <option value="zh">中文 (Chinese)</option>
+        <option value="fr">Français (French)</option>
+        <option value="es">Español (Spanish)</option>
+        <option value="de">Deutsch (German)</option>
+        <option value="nl">Nederlands (Dutch)</option>
+        <option value="vi">Tiếng Việt (Vietnamese)</option>
+        <option value="hi">हिन्दी (Hindi)</option>
+      </select>
     </div>
 
-    <div class="logo-row" aria-label="شعارات إنتل">
+    <!-- Logos row (keep your files exactly) -->
+    <div class="logo-row" aria-label="Intel logos">
       <figure class="logo-figure">
-        <img class="logo-img"
-             src="images/logo-old.png"
-             alt="شعار إنتل القديم"
-             width="384" height="384"
-             loading="eager"
-             decoding="async" />
-        <figcaption class="sr-only">شعار إنتل القديم</figcaption>
+        <img class="logo-img" src="images/logo-old.png" alt="Old Intel logo"
+             width="384" height="384" loading="eager" decoding="async" />
       </figure>
 
       <div class="logo-arrow" aria-hidden="true">→</div>
 
       <figure class="logo-figure">
-        <img class="logo-img"
-             src="images/logo-new.png"
-             alt="شعار إنتل الحديث"
-             width="384" height="384"
-             loading="lazy"
-             decoding="async" />
-        <figcaption class="sr-only">شعار إنتل الحديث</figcaption>
+        <img class="logo-img" src="images/logo-new.png" alt="Modern Intel logo"
+             width="384" height="384" loading="eager" decoding="async" />
       </figure>
     </div>
 
+    <!-- Hero -->
     <section class="hero">
       <div class="hero-box">
-        <h2 class="hero-title">الإنتاج والابتكار عبر السنين</h2>
-        <p class="hero-sub">
+        <h2 class="hero-title" data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</h2>
+        <p class="hero-sub" data-i18n="heroSub">
           مع صعود التكنولوجيا الحديثة، تواصل إنتل البقاء في المقدمة لضمان مواكبة المستقبل.
         </p>
       </div>
@@ -86,32 +68,32 @@
   </header>
 
   <main class="page-main">
+    <!-- Timeline -->
     <section class="timeline-section" aria-labelledby="timelineHeading">
       <div class="timeline-heading-row">
-        <h3 id="timelineHeading" class="timeline-heading">الخط الزمني</h3>
+        <h3 id="timelineHeading" class="timeline-heading" data-i18n="timelineHeading">الخط الزمني</h3>
 
-        <div class="timeline-controls" aria-label="أزرار التحكم بالخط الزمني">
-          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">◀ السابق</button>
-          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">التالي ▶</button>
+        <div class="timeline-controls" aria-label="Timeline controls">
+          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
+            ◀ <span data-i18n="prev">السابق</span>
+          </button>
+          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
+            <span data-i18n="next">التالي</span> ▶
+          </button>
         </div>
       </div>
 
-      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="بطاقات الخط الزمني">
+      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="Timeline cards">
         <!-- 1968 -->
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1968</div>
           <div class="card-media">
-            <img src="images/1968.png"
-                 alt="صورة تأسيس إنتل عام 1968"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/1968.png" alt="صورة تأسيس إنتل (1968)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>1968</strong> — تأسست إنتل</div>
+          <div class="card-title" data-i18n="t1968Title">تأسست إنتل</div>
           <div class="card-details">
-            <p>
-              تأسست إنتل على يد روبرت نويس وجوردون مور، اللذين عملا معًا في شركة فيرتشايلد لأشباه الموصلات في سان خوسيه بولاية كاليفورنيا،
-              وكان هدفهما تصنيع شرائح ذاكرة أصغر وأكثر موثوقية وعالية الأداء.
+            <p data-i18n="t1968Body">
+              تأسست إنتل على يد روبرت نويس وجوردون مور، وبدأت رحلة الابتكار في أشباه الموصلات.
             </p>
           </div>
         </article>
@@ -120,18 +102,13 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1971</div>
           <div class="card-media">
-            <img src="images/1971.png"
-                 alt="صورة المعالج 4004 عام 1971"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/1971.png" alt="المعالج الدقيق 4004 (1971)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>1971</strong> — 4004</div>
+          <div class="card-title" data-i18n="t1971Title">المعالج الدقيق الأول — 4004</div>
           <div class="card-details">
-            <p><strong>الطراز:</strong> 4004</p>
-            <p>
-              قدّمت إنتل أول معالج دقيق تجاري، وكان معالجًا (4 بت)، وقد شكّل بداية الابتكار للعالم الحديث.
-              كما تم إيقاف إنتاج هذا المعالج عام 1982.
+            <p><span data-i18n="model">الطراز:</span> <span dir="ltr">4004</span></p>
+            <p data-i18n="t1971Body">
+              أول معالج دقيق تجاري (4-bit) ساهم في إطلاق عصر الحوسبة الحديثة.
             </p>
           </div>
         </article>
@@ -140,18 +117,13 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1978</div>
           <div class="card-media">
-            <img src="images/1978.png"
-                 alt="صورة المعالج 8086 عام 1978"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/1978.png" alt="المعالج الدقيق 8086 (1978)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>1978</strong> — 8086</div>
+          <div class="card-title" data-i18n="t1978Title">المعالج 8086</div>
           <div class="card-details">
-            <p><strong>الطراز:</strong> 8086</p>
-            <p>
-              قدّمت إنتل المعالج 8086 الذي بدأ ابتكار x86 في أجهزة الحاسوب الشخصية، وكان معالجًا (16 بت).
-              كما تم إيقاف إنتاجه عام 1998.
+            <p><span data-i18n="model">الطراز:</span> <span dir="ltr">8086</span></p>
+            <p data-i18n="t1978Body">
+              ساعد في انتشار الحواسيب الشخصية وأسّس لمعمارية x86.
             </p>
           </div>
         </article>
@@ -160,18 +132,13 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1985</div>
           <div class="card-media">
-            <img src="images/1985.png"
-                 alt="صورة المعالج 80386 عام 1985"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/1985.png" alt="المعالج 80386 (1985)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>1985</strong> — 80386</div>
+          <div class="card-title" data-i18n="t1985Title">المعالج 80386</div>
           <div class="card-details">
-            <p><strong>الطراز:</strong> 80386</p>
-            <p>
-              قدّمت إنتل معالجًا (32 بت) يضم 275 ألف ترانزستور، وتم دمجه في العديد من أجهزة الحاسوب الشخصية.
-              كما تم إيقاف إنتاجه عام 2007.
+            <p><span data-i18n="model">الطراز:</span> <span dir="ltr">80386</span></p>
+            <p data-i18n="t1985Body">
+              جيل 32-bit مكّن قدرات أعلى للحواسيب الشخصية ودعم أنظمة أكثر تقدماً.
             </p>
           </div>
         </article>
@@ -180,18 +147,13 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2006</div>
           <div class="card-media">
-            <img src="images/2006.png"
-                 alt="صورة معالج كور 2 ديو عام 2006"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/2006.png" alt="المعالج Core 2 Duo (2006)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>2006</strong> — كور 2 ديو</div>
+          <div class="card-title" data-i18n="t2006Title">المعالج Core 2 Duo</div>
           <div class="card-details">
-            <p><strong>الطراز:</strong> كور 2 ديو</p>
-            <p>
-              قدّمت إنتل معالج كور 2 ديو (64 بت) الذي عزز الأداء وكان عنصرًا مهمًا للحواسيب المكتبية والمحمولة.
-              كما تم إيقاف إنتاجه عام 2008.
+            <p><span data-i18n="model">الطراز:</span> <span dir="ltr">Core 2 Duo</span></p>
+            <p data-i18n="t2006Body">
+              تحسين كبير في الأداء والكفاءة لأجهزة اللابتوب والمكتبي.
             </p>
           </div>
         </article>
@@ -200,178 +162,405 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2020</div>
           <div class="card-media">
-            <img src="images/2020.png"
-                 alt="صورة منتجات إنتل عام 2020"
-                 width="192" height="192"
-                 loading="lazy"
-                 decoding="async" />
+            <img src="images/2020.png" alt="المعالج Atom (2020)" width="192" height="192" loading="lazy" decoding="async" />
           </div>
-          <div class="card-title"><strong>2020</strong> — منتجات وتقنيات</div>
+          <div class="card-title" data-i18n="t2020Title">تقدم المنتجات — Atom</div>
           <div class="card-details">
-            <p>
-              قدّمت إنتل عدة منتجات منها: أتوم PS900، وزيون القابلة للتوسع الجيل الثالث، ومعالجات كور الجيل الحادي عشر بتقنية 10 نانومتر.
-              تم تصميم أتوم PS900 لاستهلاك منخفض للطاقة، وزيون الجيل الثالث لأحمال عمل عالية وكفاءة طاقة، وكور الجيل الحادي عشر لدقة عالية ورسومات قوية.
-              هذه المنتجات لا تزال مستخدمة حتى اليوم ولم يتم إيقافها. كما كانت إنتل في طليعة تطوير الذكاء الاصطناعي وتقنيات الجيل الخامس 5G.
+            <p data-i18n="t2020Body">
+              واصلت إنتل تطوير تقنيات تدعم الأداء وكفاءة الطاقة عبر الحوسبة ومراكز البيانات.
             </p>
           </div>
         </article>
       </div>
 
-      <p class="hint">
-        على الشاشات الكبيرة يمكنك السحب أفقيًا لرؤية جميع البطاقات. على الهواتف ستظهر البطاقات عموديًا.
-        مرّر المؤشر فوق البطاقة (أو استخدم زر Tab) لعرض التفاصيل.
+      <p class="hint" data-i18n="hint">
+        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. مرّر المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.
       </p>
     </section>
 
-    <!-- 3 blocks -->
-    <section class="info-threecol container my-5" aria-label="قسم المعلومات">
+    <!-- 3-column section (dark grey blocks) -->
+    <section class="info-threecol container my-5" aria-label="Info section">
       <div class="row g-4">
         <div class="col-12 col-md-4">
-          <div class="info-card info-card-dark h-100">
-            <h3 class="info-title"><i class="bi bi-people" aria-hidden="true"></i><span>المجتمع</span></h3>
-            <p>الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وتوفير فرص أفضل للجميع.</p>
-            <a class="btn btn-primary w-100" href="#subscribe">الاشتراك بالنشرة</a>
+          <div class="info-card dark-block h-100">
+            <h3 class="info-title" data-i18n="societyTitle">المجتمع</h3>
+            <p data-i18n="societyBody">
+              الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل بفرص أفضل للجميع.
+            </p>
+            <a class="btn btn-outline-light w-100" href="newsletter.html" data-i18n="subscribeBtn">
+              الاشتراك في النشرة
+            </a>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="info-card info-card-dark h-100">
-            <h3 class="info-title"><i class="bi bi-shield-check" aria-hidden="true"></i><span>المسؤولية</span></h3>
-            <p>السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.</p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
+          <div class="info-card dark-block h-100">
+            <h3 class="info-title" data-i18n="responsibilityTitle">المسؤولية</h3>
+            <p data-i18n="responsibilityBody">
+              السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.
+            </p>
+            <a class="btn btn-outline-light w-100" href="eco.html" data-i18n="learnMoreBtn">
+              اعرف المزيد
+            </a>
           </div>
         </div>
 
         <div class="col-12 col-md-4">
-          <div class="info-card info-card-dark h-100">
-            <h3 class="info-title"><i class="bi bi-globe2" aria-hidden="true"></i><span>الاستدامة</span></h3>
-            <p>تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين استدامة المستقبل، مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.</p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
+          <div class="info-card dark-block h-100">
+            <h3 class="info-title" data-i18n="sustainabilityTitle">الاستدامة</h3>
+            <p data-i18n="sustainabilityBody">
+              تواصل إنتل تقليل استهلاك الطاقة لتحسين الاستدامة وطول عمر التقنيات مع الحفاظ على صداقة البيئة.
+            </p>
+            <a class="btn btn-outline-light w-100" href="eco.html" data-i18n="learnMoreBtn2">
+              اعرف المزيد
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Subscription -->
+    <!-- Subscription (outlined dark grey) -->
     <section id="subscribe" class="subscribe-section" aria-labelledby="subscribeHeading">
       <div class="subscribe-box">
-        <h3 id="subscribeHeading" class="subscribe-title">الاشتراك في نشرة الاستدامة</h3>
+        <h3 id="subscribeHeading" class="subscribe-title" data-i18n="subscribeTitle">
+          الاشتراك في النشرة الإخبارية للاستدامة
+        </h3>
 
-        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="نموذج الاشتراك">
+        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="Subscription form">
           <div class="form-row">
-            <label for="name">الاسم</label>
+            <label for="name" data-i18n="nameLabel">الاسم</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
           </div>
 
           <div class="form-row">
-            <label for="email">البريد الإلكتروني</label>
+            <label for="email" data-i18n="emailLabel">البريد الإلكتروني</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
 
-          <button class="btn btn-success w-100" type="submit">اشترك</button>
+          <button class="btn btn-success w-100" type="submit" data-i18n="subBtn">
+            اشترك
+          </button>
 
-          <p class="form-hint">سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.</p>
+          <p class="form-hint" data-i18n="privacyHint">
+            سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
+          </p>
         </form>
       </div>
 
       <footer class="page-footer">
-        <p>© <span class="intel-word notranslate" translate="no" lang="en" dir="ltr">INTEL</span></p>
+        <p><span data-i18n="footer">© صفحة تدريبية للمقرر</span></p>
       </footer>
     </section>
   </main>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
   <script>
+    // Languages: keep Arabic default; switch changes translations + direction
+    const langSelect = document.getElementById('langSelect');
     const timeline = document.getElementById('timelineScroll');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
-    const langSelect = document.getElementById('langSelect');
 
-    // Timeline scroll buttons
-    function scrollByCards(dir) {
-      const card = timeline.querySelector('.milestone-card');
-      if (!card) return;
-      const gap = 16;
+    const rtlLangs = new Set(["ar","he","fa","ur","ps","ckb"]);
+
+    const i18n = {
+      ar: {
+        languageLabel:"اللغة",
+        topTagline:"مستقبل الابتكار",
+        heroTitle:"الإنتاج والابتكار عبر السنين",
+        heroSub:"مع صعود التكنولوجيا الحديثة، تواصل إنتل البقاء في المقدمة لضمان مواكبة المستقبل.",
+        timelineHeading:"الخط الزمني",
+        prev:"السابق",
+        next:"التالي",
+        hint:"مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. مرّر المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.",
+        model:"الطراز:",
+        t1968Title:"تأسست إنتل",
+        t1968Body:"تأسست إنتل على يد روبرت نويس وجوردون مور، وبدأت رحلة الابتكار في أشباه الموصلات.",
+        t1971Title:"المعالج الدقيق الأول — 4004",
+        t1971Body:"أول معالج دقيق تجاري (4-bit) ساهم في إطلاق عصر الحوسبة الحديثة.",
+        t1978Title:"المعالج 8086",
+        t1978Body:"ساعد في انتشار الحواسيب الشخصية وأسّس لمعمارية x86.",
+        t1985Title:"المعالج 80386",
+        t1985Body:"جيل 32-bit مكّن قدرات أعلى للحواسيب الشخصية ودعم أنظمة أكثر تقدماً.",
+        t2006Title:"المعالج Core 2 Duo",
+        t2006Body:"تحسين كبير في الأداء والكفاءة لأجهزة اللابتوب والمكتبي.",
+        t2020Title:"تقدم المنتجات — Atom",
+        t2020Body:"واصلت إنتل تطوير تقنيات تدعم الأداء وكفاءة الطاقة عبر الحوسبة ومراكز البيانات.",
+        societyTitle:"المجتمع",
+        societyBody:"الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل بفرص أفضل للجميع.",
+        responsibilityTitle:"المسؤولية",
+        responsibilityBody:"السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.",
+        sustainabilityTitle:"الاستدامة",
+        sustainabilityBody:"تواصل إنتل تقليل استهلاك الطاقة لتحسين الاستدامة وطول عمر التقنيات مع الحفاظ على صداقة البيئة.",
+        subscribeBtn:"الاشتراك في النشرة",
+        learnMoreBtn:"اعرف المزيد",
+        learnMoreBtn2:"اعرف المزيد",
+        subscribeTitle:"الاشتراك في النشرة الإخبارية للاستدامة",
+        nameLabel:"الاسم",
+        emailLabel:"البريد الإلكتروني",
+        subBtn:"اشترك",
+        privacyHint:"سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.",
+        footer:"© صفحة تدريبية للمقرر"
+      },
+
+      // NOTE: these are concise translations (you can expand later).
+      en: {
+        languageLabel:"Language",
+        topTagline:"THE FUTURE OF INNOVATION",
+        heroTitle:"Production and Innovation Through the Years",
+        heroSub:"With the rise of modern technology, Intel continues to stay ahead to ensure it keeps pace with the future.",
+        timelineHeading:"Timeline",
+        prev:"Prev",
+        next:"Next",
+        hint:"Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) a card to reveal details.",
+        model:"Model:",
+        t1968Title:"Intel Founded",
+        t1968Body:"Intel was founded by Robert Noyce and Gordon Moore, launching a new era of semiconductor innovation.",
+        t1971Title:"First Microprocessor — 4004",
+        t1971Body:"First commercial microprocessor (4-bit) that helped ignite modern computing.",
+        t1978Title:"Processor 8086",
+        t1978Body:"Helped popularize personal computing and laid the foundation for x86.",
+        t1985Title:"Processor 80386",
+        t1985Body:"32-bit generation enabling more powerful PCs and advanced systems.",
+        t2006Title:"Core 2 Duo Processor",
+        t2006Body:"Major gains in performance and efficiency for laptops and desktops.",
+        t2020Title:"Product Advances — Atom",
+        t2020Body:"Continued advances in performance and power efficiency across computing.",
+        societyTitle:"The Society",
+        societyBody:"Investing in knowledge and digital skills to support the future with better opportunities for everyone.",
+        responsibilityTitle:"Responsibility",
+        responsibilityBody:"Safety, work standards, and transparency are Intel’s commitment to the community.",
+        sustainabilityTitle:"Sustainability",
+        sustainabilityBody:"Intel continues focusing on reducing power consumption to improve longevity while staying eco-friendly and advancing technology.",
+        subscribeBtn:"Subscribe to Newsletter",
+        learnMoreBtn:"Learn More",
+        learnMoreBtn2:"Learn More",
+        subscribeTitle:"Sustainability Newsletter Subscription",
+        nameLabel:"Name",
+        emailLabel:"Email",
+        subBtn:"Subscribe",
+        privacyHint:"We’ll only use your email for sustainability updates. Unsubscribe anytime.",
+        footer:"© Course practice webpage"
+      },
+
+      he:{ languageLabel:"שפה", topTagline:"עתיד החדשנות", heroTitle:"ייצור וחדשנות לאורך השנים", heroSub:"עם עליית הטכנולוגיה המודרנית, אינטל ממשיכה להוביל כדי להישאר בקצב העתיד.",
+        timelineHeading:"ציר זמן", prev:"הקודם", next:"הבא", hint:"גלילה אופקית במסכים גדולים. בטלפון הכרטיסים נערמים אנכית. רחף/Tab כדי להציג פרטים.",
+        model:"דגם:", t1968Title:"אינטל נוסדה", t1968Body:"אינטל נוסדה על ידי רוברט נויס וגורדון מור והובילה חדשנות בשבבים.",
+        t1971Title:"המיקרו־מעבד הראשון — 4004", t1971Body:"המיקרו־מעבד המסחרי הראשון (4-bit).",
+        t1978Title:"מעבד 8086", t1978Body:"בסיס לארכיטקטורת x86.",
+        t1985Title:"מעבד 80386", t1985Body:"דור 32-bit למחשבים חזקים יותר.",
+        t2006Title:"מעבד Core 2 Duo", t2006Body:"שיפור גדול בביצועים וביעילות.",
+        t2020Title:"התפתחויות — Atom", t2020Body:"התקדמות בביצועים וביעילות אנרגטית.",
+        societyTitle:"החברה", societyBody:"השקעה בידע ובכישורים דיגיטליים לעתיד טוב יותר לכולם.",
+        responsibilityTitle:"אחריות", responsibilityBody:"בטיחות, סטנדרטי עבודה ושקיפות הם מחויבות אינטל לקהילה.",
+        sustainabilityTitle:"קיימות", sustainabilityBody:"התמקדות בהפחתת צריכת חשמל וחדשנות ידידותית לסביבה.",
+        subscribeBtn:"הרשמה לניוזלטר", learnMoreBtn:"למד עוד", learnMoreBtn2:"למד עוד",
+        subscribeTitle:"הרשמה לניוזלטר קיימות", nameLabel:"שם", emailLabel:"אימייל", subBtn:"הרשמה",
+        privacyHint:"נשתמש באימייל רק לעדכוני קיימות. אפשר לבטל בכל עת.", footer:"© דף תרגול לקורס" },
+
+      fa:{ languageLabel:"زبان", topTagline:"آینده نوآوری", heroTitle:"تولید و نوآوری در گذر سال‌ها", heroSub:"با رشد فناوری مدرن، اینتل برای همگامی با آینده پیشتاز می‌ماند.",
+        timelineHeading:"خط زمان", prev:"قبلی", next:"بعدی", hint:"در صفحه‌های بزرگ افقی اسکرول کنید. در موبایل کارت‌ها عمودی می‌شوند. برای جزئیات هاور/Tab کنید.",
+        model:"مدل:", t1968Title:"تأسیس اینتل", t1968Body:"اینتل توسط رابرت نویس و گوردون مور تأسیس شد و نوآوری را آغاز کرد.",
+        t1971Title:"اولین ریزپردازنده — 4004", t1971Body:"اولین ریزپردازنده تجاری (۴ بیت).",
+        t1978Title:"پردازنده 8086", t1978Body:"پایه معماری x86.",
+        t1985Title:"پردازنده 80386", t1985Body:"نسل ۳۲ بیت برای رایانه‌های قوی‌تر.",
+        t2006Title:"پردازنده Core 2 Duo", t2006Body:"افزایش چشمگیر کارایی و بهره‌وری.",
+        t2020Title:"پیشرفت‌ها — Atom", t2020Body:"پیشرفت در کارایی و مصرف انرژی.",
+        societyTitle:"جامعه", societyBody:"سرمایه‌گذاری در دانش و مهارت‌های دیجیتال برای فرصت‌های بهتر.",
+        responsibilityTitle:"مسئولیت", responsibilityBody:"ایمنی، استانداردهای کاری و شفافیت تعهد اینتل به جامعه است.",
+        sustainabilityTitle:"پایداری", sustainabilityBody:"تمرکز بر کاهش مصرف انرژی و نوآوری سازگار با محیط زیست.",
+        subscribeBtn:"عضویت در خبرنامه", learnMoreBtn:"بیشتر بدانید", learnMoreBtn2:"بیشتر بدانید",
+        subscribeTitle:"عضویت در خبرنامه پایداری", nameLabel:"نام", emailLabel:"ایمیل", subBtn:"عضویت",
+        privacyHint:"ایمیل فقط برای ارسال به‌روزرسانی‌ها استفاده می‌شود.", footer:"© صفحه تمرینی درس" },
+
+      ur:{ languageLabel:"زبان", topTagline:"جدت کا مستقبل", heroTitle:"سالوں میں پیداوار اور جدت", heroSub:"جدید ٹیکنالوجی کے ساتھ، انٹل مستقبل کے ساتھ ہم قدم رہنے کے لیے آگے رہتی ہے۔",
+        timelineHeading:"ٹائم لائن", prev:"پچھلا", next:"اگلا", hint:"بڑی اسکرین پر افقی اسکرول کریں۔ موبائل پر کارڈ عمودی ہوں گے۔ تفصیل کے لیے ہَوَر/Tab کریں۔",
+        model:"ماڈل:", t1968Title:"انٹل کی بنیاد", t1968Body:"انٹل کی بنیاد رکھی گئی اور سیمی کنڈکٹر جدت کا آغاز ہوا۔",
+        t1971Title:"پہلا مائیکرو پروسیسر — 4004", t1971Body:"پہلا کمرشل (4-bit) مائیکرو پروسیسر۔",
+        t1978Title:"8086 پروسیسر", t1978Body:"x86 کی بنیاد۔",
+        t1985Title:"80386 پروسیسر", t1985Body:"32-bit نسل زیادہ طاقتور سسٹمز کے لیے۔",
+        t2006Title:"Core 2 Duo پروسیسر", t2006Body:"کارکردگی اور افادیت میں بڑا اضافہ۔",
+        t2020Title:"پیش رفت — Atom", t2020Body:"کارکردگی اور توانائی میں بہتری۔",
+        societyTitle:"معاشرہ", societyBody:"علم اور ڈیجیٹل مہارتوں میں سرمایہ کاری۔",
+        responsibilityTitle:"ذمہ داری", responsibilityBody:"حفاظت، ورک اسٹینڈرڈز، اور شفافیت کمیونٹی کے لیے عزم۔",
+        sustainabilityTitle:"پائیداری", sustainabilityBody:"توانائی کم کرنا اور ماحول دوست جدت۔",
+        subscribeBtn:"نیوز لیٹر سبسکرائب", learnMoreBtn:"مزید جانیں", learnMoreBtn2:"مزید جانیں",
+        subscribeTitle:"پائیداری نیوز لیٹر سبسکرپشن", nameLabel:"نام", emailLabel:"ای میل", subBtn:"سبسکرائب",
+        privacyHint:"ای میل صرف اپ ڈیٹس کے لیے استعمال ہوگی۔", footer:"© کورس پریکٹس پیج" },
+
+      ps:{ languageLabel:"ژبه", topTagline:"د نوښت راتلونکی", heroTitle:"د کلونو په اوږدو کې تولید او نوښت", heroSub:"د عصري ټکنالوژۍ له ودې سره، انتل د راتلونکي سره د همغږۍ لپاره مخکې پاتې کېږي.",
+        timelineHeading:"مهالویش", prev:"مخکینی", next:"بل", hint:"په لویو سکرینونو کې افقي سکرول کړئ. په موبایل کې کارتونه عمودي کېږي. د جزئیاتو لپاره Hover/Tab وکاروئ.",
+        model:"ماډل:", t1968Title:"انتل تاسیس شو", t1968Body:"انتل تاسیس شو او د نیمه‌هادي نوښت پیل شو.",
+        t1971Title:"لومړی مایکروپروسېسر — 4004", t1971Body:"لومړی تجارتي (4-bit) مایکروپروسېسر.",
+        t1978Title:"8086 پروسېسر", t1978Body:"د x86 بنسټ.",
+        t1985Title:"80386 پروسېسر", t1985Body:"32-bit نسل د قوي کمپیوټرونو لپاره.",
+        t2006Title:"Core 2 Duo پروسېسر", t2006Body:"په کړنه او موثریت کې لوی پرمختګ.",
+        t2020Title:"پرمختګونه — Atom", t2020Body:"په کړنه او انرژۍ کې پرمختګ.",
+        societyTitle:"ټولنه", societyBody:"په پوهه او ډیجیټلي مهارتونو کې پانګه‌اچونه.",
+        responsibilityTitle:"مسؤولیت", responsibilityBody:"خوندیتوب، کاري معیارونه، او شفافیت د ټولنې لپاره ژمنتیا ده.",
+        sustainabilityTitle:"پایښت", sustainabilityBody:"د انرژۍ کم مصرف او چاپېریال دوست نوښت.",
+        subscribeBtn:"خبرپاڼې ته ګډون", learnMoreBtn:"نور معلومات", learnMoreBtn2:"نور معلومات",
+        subscribeTitle:"د پایښت خبرپاڼې ګډون", nameLabel:"نوم", emailLabel:"برېښنالیک", subBtn:"ګډون",
+        privacyHint:"برېښنالیک یوازې د پایښت د تازه معلوماتو لپاره کارول کېږي.", footer:"© د کورس تمرین پاڼه" },
+
+      ckb:{ languageLabel:"زمان", topTagline:"داهاتووی داهێنان", heroTitle:"بەرهەمهێنان و داهێنان لە ماوەی ساڵاندا", heroSub:"لەگەڵ بەرزبوونی تەکنەلۆژیای نوێ، ئینتێل پێشەنگ دەبێت بۆ هاوسەنگی لەگەڵ داهاتوو.",
+        timelineHeading:"کاتی-هێڵ", prev:"پێشوو", next:"دواتر", hint:"لە سکرینی گەورەدا بە ئاسۆیی سکرۆڵ بکە. لە مۆبایلدا کارتەکان ستوونی دەبن. بۆ وردەکاری Hover/Tab بکە.",
+        model:"مۆدێل:", t1968Title:"دامەزراندنی ئینتێل", t1968Body:"ئینتێل دامەزرا و دەستی بە داهێنان کرد.",
+        t1971Title:"یەکەم مایکڕۆپرۆسێسەر — 4004", t1971Body:"یەکەم مایکڕۆپرۆسێسەری بازرگانی (4-bit).",
+        t1978Title:"پرۆسێسەری 8086", t1978Body:"بنچینەی x86.",
+        t1985Title:"پرۆسێسەری 80386", t1985Body:"نەوەی 32-bit بۆ توانای زیاتر.",
+        t2006Title:"Core 2 Duo", t2006Body:"باشترکردنی کارایی و کاریگەری.",
+        t2020Title:"پێشکەوتنەکان — Atom", t2020Body:"پێشکەوتن لە کارایی و وزەدا.",
+        societyTitle:"کۆمەڵگا", societyBody:"وەستاندن لە زانست و لێهاتوویی دیجیتاڵ.",
+        responsibilityTitle:"بەرپرسیارێتی", responsibilityBody:"سەلامەتی، ستانداردەکانی کار، و ڕووناکی پابەندێتییەتی.",
+        sustainabilityTitle:"پایداربوون", sustainabilityBody:"کەمکردنەوەی بەکارهێنانی وزە و داهێنانی دۆست بە ژینگە.",
+        subscribeBtn:"بەشداری خبرنامە", learnMoreBtn:"زیاتر بزانە", learnMoreBtn2:"زیاتر بزانە",
+        subscribeTitle:"بەشداری خبرنامەی پایداربوون", nameLabel:"ناو", emailLabel:"ئیمەیڵ", subBtn:"بەشداری",
+        privacyHint:"ئیمەیڵ تەنها بۆ نوێکارییەکان بەکاردێت.", footer:"© پەڕەی تاقیکردنەوەی وانە" },
+
+      zh:{ languageLabel:"语言", topTagline:"创新的未来", heroTitle:"多年来的生产与创新", heroSub:"随着现代技术的发展，英特尔持续领先以跟上未来。",
+        timelineHeading:"时间线", prev:"上一页", next:"下一页", hint:"大屏可横向滚动；手机上卡片将纵向排列。悬停/Tab 显示详情。",
+        model:"型号：", t1968Title:"英特尔成立", t1968Body:"英特尔由罗伯特·诺伊斯和戈登·摩尔创立，开启半导体创新。",
+        t1971Title:"首款微处理器—4004", t1971Body:"首款商用（4-bit）微处理器。",
+        t1978Title:"8086 处理器", t1978Body:"奠定 x86 架构基础。",
+        t1985Title:"80386 处理器", t1985Body:"32-bit 时代带来更强 PC 能力。",
+        t2006Title:"Core 2 Duo 处理器", t2006Body:"显著提升性能与能效。",
+        t2020Title:"产品进展—Atom", t2020Body:"持续推进性能与能效。",
+        societyTitle:"社会", societyBody:"投资知识与数字技能，为每个人创造更好机会。",
+        responsibilityTitle:"责任", responsibilityBody:"安全、工作标准与透明度是对社区的承诺。",
+        sustainabilityTitle:"可持续发展", sustainabilityBody:"持续降低能耗，兼顾环保与技术进步。",
+        subscribeBtn:"订阅通讯", learnMoreBtn:"了解更多", learnMoreBtn2:"了解更多",
+        subscribeTitle:"可持续发展通讯订阅", nameLabel:"姓名", emailLabel:"邮箱", subBtn:"订阅",
+        privacyHint:"邮箱仅用于可持续更新，可随时退订。", footer:"© 课程练习页面" },
+
+      fr:{ languageLabel:"Langue", topTagline:"L’AVENIR DE L’INNOVATION", heroTitle:"Production et innovation au fil des années", heroSub:"Avec l’essor des technologies modernes, Intel reste en tête pour suivre le futur.",
+        timelineHeading:"Chronologie", prev:"Préc.", next:"Suiv.", hint:"Faites défiler horizontalement sur grand écran. Sur mobile, les cartes s’empilent. Survolez/Tab pour détails.",
+        model:"Modèle :", t1968Title:"Fondation", t1968Body:"Intel a été fondée par Robert Noyce et Gordon Moore, lançant une ère d’innovation.",
+        t1971Title:"Premier microprocesseur — 4004", t1971Body:"Premier microprocesseur commercial (4-bit).",
+        t1978Title:"Processeur 8086", t1978Body:"Base de l’architecture x86.",
+        t1985Title:"Processeur 80386", t1985Body:"Génération 32-bit pour des PC plus puissants.",
+        t2006Title:"Processeur Core 2 Duo", t2006Body:"Grand bond de performance et d’efficacité.",
+        t2020Title:"Avancées — Atom", t2020Body:"Progrès en performance et énergie.",
+        societyTitle:"La Société", societyBody:"Investir dans les compétences numériques pour de meilleures opportunités.",
+        responsibilityTitle:"Responsabilité", responsibilityBody:"Sécurité, standards du travail et transparence : engagement envers la communauté.",
+        sustainabilityTitle:"Durabilité", sustainabilityBody:"Réduire la consommation d’énergie et rester éco-responsable tout en innovant.",
+        subscribeBtn:"S’abonner", learnMoreBtn:"En savoir plus", learnMoreBtn2:"En savoir plus",
+        subscribeTitle:"Inscription à la newsletter Durabilité", nameLabel:"Nom", emailLabel:"E-mail", subBtn:"S’inscrire",
+        privacyHint:"Email utilisé uniquement pour des mises à jour. Désinscription possible.", footer:"© Page d’entraînement du cours" },
+
+      es:{ languageLabel:"Idioma", topTagline:"EL FUTURO DE LA INNOVACIÓN", heroTitle:"Producción e innovación a través de los años", heroSub:"Con el auge de la tecnología moderna, Intel sigue adelante para mantenerse al ritmo del futuro.",
+        timelineHeading:"Línea de tiempo", prev:"Anterior", next:"Siguiente", hint:"Desplázate horizontalmente en pantallas grandes. En móviles, las tarjetas se apilan. Hover/Tab para detalles.",
+        model:"Modelo:", t1968Title:"Fundación", t1968Body:"Intel fue fundada por Robert Noyce y Gordon Moore, iniciando una era de innovación.",
+        t1971Title:"Primer microprocesador — 4004", t1971Body:"Primer microprocesador comercial (4-bit).",
+        t1978Title:"Procesador 8086", t1978Body:"Base de la arquitectura x86.",
+        t1985Title:"Procesador 80386", t1985Body:"Generación 32-bit para PCs más potentes.",
+        t2006Title:"Procesador Core 2 Duo", t2006Body:"Gran mejora de rendimiento y eficiencia.",
+        t2020Title:"Avances — Atom", t2020Body:"Mejoras en rendimiento y energía.",
+        societyTitle:"La Sociedad", societyBody:"Invertir en conocimiento y habilidades digitales para mejores oportunidades.",
+        responsibilityTitle:"Responsabilidad", responsibilityBody:"Seguridad, estándares laborales y transparencia: compromiso con la comunidad.",
+        sustainabilityTitle:"Sostenibilidad", sustainabilityBody:"Reducir el consumo de energía y ser ecológico mientras se avanza en tecnología.",
+        subscribeBtn:"Suscribirse", learnMoreBtn:"Más información", learnMoreBtn2:"Más información",
+        subscribeTitle:"Suscripción al boletín de sostenibilidad", nameLabel:"Nombre", emailLabel:"Correo", subBtn:"Suscribirse",
+        privacyHint:"Usamos tu correo solo para actualizaciones. Puedes darte de baja cuando quieras.", footer:"© Página de práctica del curso" },
+
+      de:{ languageLabel:"Sprache", topTagline:"DIE ZUKUNFT DER INNOVATION", heroTitle:"Produktion und Innovation im Laufe der Jahre", heroSub:"Mit dem Aufstieg moderner Technologie bleibt Intel voraus, um mit der Zukunft Schritt zu halten.",
+        timelineHeading:"Zeitachse", prev:"Zurück", next:"Weiter", hint:"Auf großen Bildschirmen horizontal scrollen. Auf dem Handy stapeln sich Karten. Hover/Tab für Details.",
+        model:"Modell:", t1968Title:"Gründung", t1968Body:"Intel wurde von Robert Noyce und Gordon Moore gegründet und startete eine Innovationsära.",
+        t1971Title:"Erster Mikroprozessor — 4004", t1971Body:"Erster kommerzieller Mikroprozessor (4-bit).",
+        t1978Title:"Prozessor 8086", t1978Body:"Grundlage der x86-Architektur.",
+        t1985Title:"Prozessor 80386", t1985Body:"32-bit Generation für leistungsfähigere PCs.",
+        t2006Title:"Core 2 Duo Prozessor", t2006Body:"Großer Sprung bei Leistung und Effizienz.",
+        t2020Title:"Fortschritte — Atom", t2020Body:"Fortschritte bei Leistung und Energieeffizienz.",
+        societyTitle:"Die Gesellschaft", societyBody:"Investitionen in Wissen und digitale Fähigkeiten für bessere Chancen.",
+        responsibilityTitle:"Verantwortung", responsibilityBody:"Sicherheit, Arbeitsstandards und Transparenz sind Intels Verpflichtung.",
+        sustainabilityTitle:"Nachhaltigkeit", sustainabilityBody:"Energieverbrauch senken und umweltfreundlich innovieren.",
+        subscribeBtn:"Newsletter", learnMoreBtn:"Mehr erfahren", learnMoreBtn2:"Mehr erfahren",
+        subscribeTitle:"Nachhaltigkeits-Newsletter", nameLabel:"Name", emailLabel:"E-Mail", subBtn:"Abonnieren",
+        privacyHint:"E-Mail nur für Updates. Abmeldung jederzeit.", footer:"© Kurs-Übungsseite" },
+
+      nl:{ languageLabel:"Taal", topTagline:"DE TOEKOMST VAN INNOVATIE", heroTitle:"Productie en innovatie door de jaren heen", heroSub:"Met moderne technologie blijft Intel voorop om gelijke tred te houden met de toekomst.",
+        timelineHeading:"Tijdlijn", prev:"Vorige", next:"Volgende", hint:"Scroll horizontaal op grote schermen. Op mobiel stapelen kaarten. Hover/Tab voor details.",
+        model:"Model:", t1968Title:"Oprichting", t1968Body:"Intel werd opgericht door Robert Noyce en Gordon Moore en startte innovatie.",
+        t1971Title:"Eerste microprocessor — 4004", t1971Body:"Eerste commerciële microprocessor (4-bit).",
+        t1978Title:"Processor 8086", t1978Body:"Basis van x86-architectuur.",
+        t1985Title:"Processor 80386", t1985Body:"32-bit generatie voor krachtigere pc’s.",
+        t2006Title:"Core 2 Duo Processor", t2006Body:"Grote sprong in prestaties en efficiëntie.",
+        t2020Title:"Vooruitgang — Atom", t2020Body:"Voortdurende verbeteringen in prestaties en energie.",
+        societyTitle:"De Samenleving", societyBody:"Investeren in kennis en digitale vaardigheden voor betere kansen.",
+        responsibilityTitle:"Verantwoordelijkheid", responsibilityBody:"Veiligheid, werkstandaarden en transparantie: Intel’s inzet voor de community.",
+        sustainabilityTitle:"Duurzaamheid", sustainabilityBody:"Energieverbruik verminderen en milieuvriendelijk innoveren.",
+        subscribeBtn:"Abonneren", learnMoreBtn:"Meer info", learnMoreBtn2:"Meer info",
+        subscribeTitle:"Duurzaamheidsnieuwsbrief", nameLabel:"Naam", emailLabel:"E-mail", subBtn:"Abonneren",
+        privacyHint:"E-mail alleen voor updates. Uitschrijven kan altijd.", footer:"© Oefenpagina voor de cursus" },
+
+      vi:{ languageLabel:"Ngôn ngữ", topTagline:"TƯƠNG LAI CỦA ĐỔI MỚI", heroTitle:"Sản xuất và đổi mới qua các năm", heroSub:"Với công nghệ hiện đại phát triển, Intel luôn đi trước để theo kịp tương lai.",
+        timelineHeading:"Dòng thời gian", prev:"Trước", next:"Tiếp", hint:"Cuộn ngang trên màn hình lớn. Trên điện thoại, thẻ xếp dọc. Hover/Tab để xem chi tiết.",
+        model:"Mẫu:", t1968Title:"Thành lập", t1968Body:"Intel được thành lập bởi Robert Noyce và Gordon Moore, mở ra kỷ nguyên đổi mới.",
+        t1971Title:"Vi xử lý đầu tiên — 4004", t1971Body:"Vi xử lý thương mại đầu tiên (4-bit).",
+        t1978Title:"Bộ xử lý 8086", t1978Body:"Nền tảng kiến trúc x86.",
+        t1985Title:"Bộ xử lý 80386", t1985Body:"Thế hệ 32-bit cho PC mạnh hơn.",
+        t2006Title:"Bộ xử lý Core 2 Duo", t2006Body:"Cải thiện lớn về hiệu năng và hiệu quả.",
+        t2020Title:"Tiến bộ — Atom", t2020Body:"Tiếp tục cải tiến hiệu năng và năng lượng.",
+        societyTitle:"Xã hội", societyBody:"Đầu tư vào kiến thức và kỹ năng số cho cơ hội tốt hơn.",
+        responsibilityTitle:"Trách nhiệm", responsibilityBody:"An toàn, tiêu chuẩn lao động và minh bạch là cam kết với cộng đồng.",
+        sustainabilityTitle:"Bền vững", sustainabilityBody:"Giảm tiêu thụ điện và thân thiện môi trường khi đổi mới công nghệ.",
+        subscribeBtn:"Đăng ký bản tin", learnMoreBtn:"Tìm hiểu thêm", learnMoreBtn2:"Tìm hiểu thêm",
+        subscribeTitle:"Đăng ký bản tin bền vững", nameLabel:"Tên", emailLabel:"Email", subBtn:"Đăng ký",
+        privacyHint:"Email chỉ dùng cho cập nhật. Có thể hủy bất cứ lúc nào.", footer:"© Trang luyện tập môn học" },
+
+      hi:{ languageLabel:"भाषा", topTagline:"नवाचार का भविष्य", heroTitle:"वर्षों में उत्पादन और नवाचार", heroSub:"आधुनिक तकनीक के बढ़ने के साथ, इंटेल भविष्य के साथ तालमेल के लिए आगे रहता है।",
+        timelineHeading:"समयरेखा", prev:"पिछला", next:"अगला", hint:"बड़ी स्क्रीन पर क्षैतिज स्क्रॉल करें। मोबाइल पर कार्ड लंबवत होंगे। विवरण के लिए Hover/Tab करें।",
+        model:"मॉडल:", t1968Title:"इंटेल की स्थापना", t1968Body:"इंटेल की स्थापना रॉबर्ट नॉयस और गॉर्डन मूर ने की और नवाचार का दौर शुरू हुआ।",
+        t1971Title:"पहला माइक्रोप्रोसेसर — 4004", t1971Body:"पहला व्यावसायिक माइक्रोप्रोसेसर (4-bit).",
+        t1978Title:"8086 प्रोसेसर", t1978Body:"x86 आर्किटेक्चर की नींव।",
+        t1985Title:"80386 प्रोसेसर", t1985Body:"32-bit पीढ़ी ने अधिक शक्तिशाली PC संभव किए।",
+        t2006Title:"Core 2 Duo प्रोसेसर", t2006Body:"प्रदर्शन और दक्षता में बड़ा सुधार।",
+        t2020Title:"उन्नति — Atom", t2020Body:"प्रदर्शन और ऊर्जा दक्षता में सुधार।",
+        societyTitle:"समाज", societyBody:"ज्ञान और डिजिटल कौशल में निवेश करके सभी के लिए बेहतर अवसर।",
+        responsibilityTitle:"जिम्मेदारी", responsibilityBody:"सुरक्षा, कार्य मानक और पारदर्शिता समुदाय के प्रति प्रतिबद्धता है।",
+        sustainabilityTitle:"स्थिरता", sustainabilityBody:"ऊर्जा खपत कम करना और पर्यावरण के अनुकूल नवाचार।",
+        subscribeBtn:"न्यूज़लेटर सब्सक्राइब", learnMoreBtn:"और जानें", learnMoreBtn2:"और जानें",
+        subscribeTitle:"स्थिरता न्यूज़लेटर सदस्यता", nameLabel:"नाम", emailLabel:"ईमेल", subBtn:"सब्सक्राइब",
+        privacyHint:"ईमेल केवल अपडेट के लिए। कभी भी अनसब्सक्राइब करें।", footer:"© कोर्स अभ्यास पृष्ठ" }
+    };
+
+    function applyLang(lang){
+      const dict = i18n[lang] || i18n.ar;
+      const isRTL = rtlLangs.has(lang);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL ? "rtl" : "ltr";
+
+      document.querySelectorAll("[data-i18n]").forEach(el=>{
+        const key = el.getAttribute("data-i18n");
+        if(dict[key]) el.textContent = dict[key];
+      });
+    }
+
+    // Default to Arabic on load (as you requested)
+    langSelect.value = "ar";
+    applyLang("ar");
+
+    langSelect.addEventListener("change", (e)=> applyLang(e.target.value));
+
+    // Timeline prev/next (scroll by 1 card)
+    function scrollByCards(dir){
+      const card = timeline.querySelector(".milestone-card");
+      if(!card) return;
+      const gap = 14;
       const amount = card.getBoundingClientRect().width + gap;
-
-      const isRTL = document.documentElement.dir === 'rtl';
-      const delta = (isRTL ? -dir : dir) * amount;
-
-      timeline.scrollBy({ left: delta, behavior: 'smooth' });
+      timeline.scrollBy({ left: dir * amount, behavior: "smooth" });
     }
-    prevBtn.addEventListener('click', () => scrollByCards(-1));
-    nextBtn.addEventListener('click', () => scrollByCards(1));
+    prevBtn.addEventListener("click", ()=>scrollByCards(-1));
+    nextBtn.addEventListener("click", ()=>scrollByCards(1));
 
-    // Tap-to-open details on touch
-    document.querySelectorAll('.milestone-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('button, a, input, label, select')) return;
-        card.classList.toggle('is-open');
+    // Touch support: tap to open details
+    document.querySelectorAll(".milestone-card").forEach(card=>{
+      card.addEventListener("click",(e)=>{
+        if(e.target.closest("a,button,input,label,select")) return;
+        card.classList.toggle("is-open");
       });
-    });
-
-    // RTL/LTR language list
-    const RTL = new Set(["ar","he","fa","ur","ps","ckb"]);
-    function setDir(lang){
-      document.documentElement.dir = RTL.has(lang) ? "rtl" : "ltr";
-      document.documentElement.lang = lang.startsWith("zh") ? "zh" : lang;
-    }
-
-    // --- Google Translate: load ONLY when user chooses a non-Arabic language (better Lighthouse) ---
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'ar', autoDisplay: false },
-        'google_translate_element'
-      );
-    }
-
-    let translateLoaded = false;
-
-    function loadTranslateScriptOnce() {
-      if (translateLoaded) return Promise.resolve();
-      translateLoaded = true;
-
-      return new Promise((resolve) => {
-        window.googleTranslateElementInit = () => {
-          googleTranslateElementInit();
-          resolve();
-        };
-
-        const s = document.createElement('script');
-        s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-        s.async = true;
-        document.body.appendChild(s);
-      });
-    }
-
-    function setTranslateLang(lang) {
-      const combo = document.querySelector('.goog-te-combo');
-      if (!combo) return false;
-      combo.value = lang;
-      combo.dispatchEvent(new Event('change'));
-      return true;
-    }
-
-    // Start Arabic WITHOUT loading Google Translate
-    window.addEventListener('load', () => {
-      setDir('ar');
-      langSelect.value = 'ar';
-    });
-
-    // When user selects another language, load translate and apply
-    langSelect.addEventListener('change', async () => {
-      const lang = langSelect.value;
-      setDir(lang);
-
-      if (lang === 'ar') return; // keep original Arabic (no third-party cookies loaded)
-
-      await loadTranslateScriptOnce();
-
-      const t = setInterval(() => {
-        if (setTranslateLang(lang)) clearInterval(t);
-      }, 200);
     });
   </script>
 </body>
