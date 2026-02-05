@@ -1,15 +1,15 @@
-/* ===== Base + Intel palette ===== */
+//* ===== Base + Intel palette ===== */
 :root{
   --intel-blue: #0068B5;
   --intel-blue-dark: #005a9c;
 
-  /* Background (grey) */
+  /* Grey background (requested) */
   --bg-light: #d0d0d0;
   --bg-light-2: #e6e6e6;
 
   --text: #0b1b2b;
   --white: #ffffff;
-  --shadow: 0 10px 25px rgba(0,0,0,.12);
+  --shadow: 0 6px 16px rgba(0,0,0,.10); /* slightly lighter for performance */
 }
 
 * { box-sizing: border-box; }
@@ -185,7 +185,7 @@ body{
   gap: 8px;
 }
 
-/* Horizontal scroll with scrollbar + snap */
+/* Horizontal scroll with visible scrollbar + snap */
 .timeline-scroll{
   background: linear-gradient(180deg, rgba(0,104,181,.20), rgba(0,104,181,.08));
   border-radius: 16px;
@@ -249,7 +249,7 @@ body{
   font-size: 12px;
 }
 
-/* Media box + 2in x 2in image sizing */
+/* Media box + 2in x 2in images */
 .card-media{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.20);
@@ -411,7 +411,7 @@ body{
   .logo-row{ flex-direction: column; }
   .logo-arrow{ transform: rotate(90deg); }
 
-  /* stack timeline vertically on small screens */
+  /* Stack timeline vertically on small screens */
   .timeline-scroll{
     flex-direction: column;
     overflow-x: hidden;
