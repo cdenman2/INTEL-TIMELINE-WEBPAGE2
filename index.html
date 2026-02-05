@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTEL-TIMELINE-WEBPAGE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="page-header">
+    <h1>INTEL-TIMELINE-WEBPAGE</h1>
+  </header>
+
+  <main class="container">
+    <!-- Logos row -->
+    <section class="logos">
+      <!-- ONLY old logo has logo-old class -->
+      <img class="logo logo-old" src="images/logo-old.png" alt="Old Intel logo" />
+      <div class="arrow" aria-hidden="true">→</div>
+      <img class="logo" src="images/logo-new.png" alt="Modern Intel logo" />
+    </section>
+
+    <!-- Big banner block -->
+    <section class="hero">
+      <h2>INTEL'S PRODUCTION AND INNOVATION THROUGH THE YEARS.</h2>
+      <p>with the modern technology on the rise, Intel is staying a step ahead to ensure we are in sync with the future.</p>
+    </section>
+
+    <!-- Timeline title + controls -->
+    <section class="timeline-header">
+      <h3>Timeline</h3>
+
+      <div class="controls">
+        <button class="btn" type="button" id="prevBtn" aria-label="Scroll timeline left">◄ Prev</button>
+        <button class="btn" type="button" id="nextBtn" aria-label="Scroll timeline right">Next ►</button>
+      </div>
+    </section>
+
+    <!-- Timeline scroller -->
+    <section class="timeline-shell">
+      <div class="timeline" id="timeline" tabindex="0" aria-label="Intel timeline (scroll horizontally on desktop)">
+
+        <!-- 1968 -->
+        <article class="card" tabindex="0">
+          <span class="year">1968</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/1968.png" alt="Intel founded / early Intel building" />
+          </div>
+
+          <div class="card-title">Intel Founded</div>
+
+          <div class="card-details">
+            <p>
+              Intel was founded by Robert Noyce and Gordon Moore, who worked together at Fairchild Semiconductor in San Jose, California,
+              with the determination to make memory chips smaller, dependable, and high performance.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1971 -->
+        <article class="card" tabindex="0">
+          <span class="year">1971</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/1971.png" alt="Intel 4004 microprocessor" />
+          </div>
+
+          <div class="card-title">First Microprocessor</div>
+          <div class="card-subtitle">Model: Intel 4004</div>
+
+          <div class="card-details">
+            <p>
+              Intel produced and introduced the first commercial microprocessor (Intel 4004), a 4-bit processor that helped spark modern computing innovation.
+              The Intel 4004 was discontinued in 1982.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1978 -->
+        <article class="card" tabindex="0">
+          <span class="year">1978</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/1978.png" alt="Intel 8086 processor" />
+          </div>
+
+          <div class="card-title">Intel 8086</div>
+          <div class="card-subtitle">Model: Intel 8086</div>
+
+          <div class="card-details">
+            <p>
+              Intel introduced the Intel 8086 Microprocessor, which helped start the x86 innovation into personal computers with a 16-bit processor.
+              It was discontinued in 1998.
+            </p>
+          </div>
+        </article>
+
+        <!-- 1985 -->
+        <article class="card" tabindex="0">
+          <span class="year">1985</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/1985.png" alt="Intel 80386 processor" />
+          </div>
+
+          <div class="card-title">Intel 80386</div>
+          <div class="card-subtitle">Model: Intel 80386</div>
+
+          <div class="card-details">
+            <p>
+              Intel introduced the Intel 80386, a major 32-bit processor advancement with 275K transistors.
+              It was incorporated into many personal computers and helped drive performance forward.
+              It was discontinued in 2007.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2006 -->
+        <article class="card" tabindex="0">
+          <span class="year">2006</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/2006.png" alt="Intel Core 2 Duo processor" />
+          </div>
+
+          <div class="card-title">Intel Core 2 Duo</div>
+          <div class="card-subtitle">Model: Intel Core 2 Duo</div>
+
+          <div class="card-details">
+            <p>
+              Intel introduced the Intel Core 2 Duo microprocessor, a 64-bit CPU that improved performance and efficiency for personal computers and laptops.
+              It was discontinued in 2008.
+            </p>
+          </div>
+        </article>
+
+        <!-- 2020 -->
+        <article class="card" tabindex="0">
+          <span class="year">2020</span>
+
+          <div class="image-wrap">
+            <img class="card-img" src="images/2020.png" alt="Intel 2020 product advances" />
+          </div>
+
+          <div class="card-title">2020 Product Advances</div>
+          <div class="card-subtitle">Still Active: Not discontinued</div>
+
+          <div class="card-details">
+            <p>
+              Intel introduces a few products including the Intel Atom PS900, the Intel 3rd Gen Xeon Scalable, and the 10nm-based 11th Gen Intel Core.
+            </p>
+            <ul>
+              <li><strong>Intel Atom PS900</strong>: primarily built for low power consumption and embedded-style applications on netbooks.</li>
+              <li><strong>3rd Gen Xeon Scalable</strong>: could achieve 80 cores, built for high workloads and performance with power efficiency.</li>
+              <li><strong>11th Gen Intel Core</strong>: built for high resolution with graphics.</li>
+            </ul>
+            <p>
+              All three processors are still being used to this day and not discontinued. Another fact is that Intel was at the frontlines of AI and 5G production.
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Prev/Next scroll buttons
+    const timeline = document.getElementById("timeline");
+    const prevBtn = document.getElementById("prevBtn");
+    const nextBtn = document.getElementById("nextBtn");
+
+    function scrollByCards(dir) {
+      const card = timeline.querySelector(".card");
+      const step = card ? (card.offsetWidth + 18) : 320;
+      timeline.scrollBy({ left: dir * step, behavior: "smooth" });
+    }
+
+    prevBtn.addEventListener("click", () => scrollByCards(-1));
+    nextBtn.addEventListener("click", () => scrollByCards(1));
+  </script>
+</body>
+</html>

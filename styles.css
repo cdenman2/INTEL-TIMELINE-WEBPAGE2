@@ -1,0 +1,310 @@
+/* ========= Base ========= */
+* { box-sizing: border-box; }
+
+:root{
+  --intel-blue: #0068B5;
+  --intel-blue-dark: #005A9E;
+  --light-blue: #EAF4FF;
+  --card-border: #0068B5;
+  --text: #0b1220;
+  --muted: #4b5563;
+  --shadow: 0 10px 20px rgba(0,0,0,0.12);
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: var(--light-blue);
+}
+
+.page-header{
+  padding: 16px 20px;
+  font-weight: 800;
+}
+
+.page-header h1{
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.5px;
+}
+
+/* ========= Layout ========= */
+.container{
+  width: min(1200px, 92vw);
+  margin: 0 auto 50px auto;
+}
+
+/* ========= Logos ========= */
+.logos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin: 12px 0 18px;
+}
+
+/* Default logo size */
+.logo{
+  width: 400px;   /* big on desktop */
+  height: 400px;
+  object-fit: contain;
+  background: transparent;
+}
+
+/* Tablet fix: shrink ONLY old logo so it shows fully */
+@media (min-width: 768px) and (max-width: 1024px){
+  .logo-old{
+    width: 280px;
+    height: 280px;
+  }
+}
+
+.arrow{
+  font-size: 42px;
+  color: var(--intel-blue-dark);
+  font-weight: 800;
+  line-height: 1;
+}
+
+/* ========= Hero Banner ========= */
+.hero{
+  background: var(--intel-blue);
+  color: white;
+  border-radius: 12px;
+  padding: 22px 26px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  margin: 10px auto 26px auto;
+}
+
+.hero h2{
+  margin: 0 0 8px;
+  font-size: 28px;
+  letter-spacing: 0.4px;
+}
+
+.hero p{
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
+
+/* ========= Timeline Header ========= */
+.timeline-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+
+.timeline-header h3{
+  margin: 0;
+  font-size: 22px;
+}
+
+.controls{
+  display: flex;
+  gap: 10px;
+}
+
+.btn{
+  border: 2px solid #7aaee0;
+  background: #f6fbff;
+  color: #0b3b63;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:hover{
+  filter: brightness(0.98);
+}
+
+/* ========= Timeline Shell ========= */
+.timeline-shell{
+  background: var(--intel-blue);
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+/* Desktop: horizontal scroll */
+.timeline{
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Visible scrollbar (Chrome/Edge) */
+.timeline::-webkit-scrollbar{
+  height: 12px;
+}
+.timeline::-webkit-scrollbar-track{
+  background: rgba(255,255,255,0.25);
+  border-radius: 999px;
+}
+.timeline::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,0.7);
+  border-radius: 999px;
+}
+
+/* ========= Cards ========= */
+.card{
+  position: relative;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 12px;
+  width: 260px;
+  min-width: 260px;
+  scroll-snap-align: start;
+  border: 2.5px solid var(--card-border);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+  outline: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.card:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.14);
+}
+
+/* Year badge */
+.year{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: var(--intel-blue);
+  color: #fff;
+  font-weight: 800;
+  font-size: 13px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  z-index: 2;
+}
+
+/* Image wrap */
+.image-wrap{
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 8px;
+  margin-top: 18px;
+  border: 2.5px solid var(--card-border);
+}
+
+/* Timeline images size (keeps your 2" target) */
+.card-img{
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Title text */
+.card-title{
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 900;
+  color: #0b2a45;
+}
+
+.card-subtitle{
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #184a73;
+}
+
+/* Hover reveal */
+.card-details{
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  transition: max-height 0.25s ease, opacity 0.25s ease;
+}
+
+.card:hover .card-details,
+.card:focus .card-details,
+.card:focus-within .card-details{
+  max-height: 320px;
+  opacity: 1;
+}
+
+.card-details ul{
+  padding-left: 16px;
+  margin: 8px 0 0;
+}
+.card-details li{
+  margin: 6px 0;
+}
+
+/* ========= Responsive ========= */
+@media (max-width: 768px){
+  .logos{
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .logo{
+    width: 240px;
+    height: 240px;
+  }
+
+  .arrow{
+    font-size: 34px;
+  }
+
+  .hero h2{
+    font-size: 20px;
+  }
+
+  .timeline-header{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .controls{
+    width: 100%;
+  }
+
+  .btn{
+    flex: 1;
+  }
+
+  /* Stack timeline vertically */
+  .timeline{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+    overflow: visible;
+    padding-bottom: 0;
+    scroll-snap-type: none;
+  }
+
+  .card{
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* keep images consistent */
+  .card-img{
+    width: 200px;
+    height: 200px;
+  }
+}
