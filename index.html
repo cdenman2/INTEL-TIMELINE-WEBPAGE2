@@ -21,56 +21,56 @@
       </h1>
 
       <div class="lang-controls">
+        <!-- زر باللغة العربية (لا يوجد نص إنجليزي هنا) -->
         <button id="langToggle" class="lang-toggle" type="button" aria-pressed="false">
-          English
+          تبديل اللغة
         </button>
 
-        <select id="langSelect" class="lang-select" aria-label="Select language">
-          <option value="en">English (English)</option>
-          <option value="ar" selected>Arabic (العربية)</option>
-          <option value="he">Hebrew (עברית)</option>
-          <option value="fa">Persian/Farsi (فارسی)</option>
-          <option value="ur">Urdu (اردو)</option>
-          <option value="ps">Pashto (پښتو)</option>
-          <option value="ckb">Kurdish Sorani (کوردیی سۆرانی)</option>
-          <option value="zh">Chinese (中文)</option>
-          <option value="fr">French (Français)</option>
-          <option value="es">Spanish (Español)</option>
-          <option value="de">German (Deutsch)</option>
-          <option value="nl">Dutch (Nederlands)</option>
-          <option value="vi">Vietnamese (Tiếng Việt)</option>
+        <!-- أسماء اللغات ليست بالإنجليزية (حتى لا نخالف شرطك) -->
+        <select id="langSelect" class="lang-select" aria-label="اختيار اللغة">
+          <option value="ar" selected>العربية</option>
+          <option value="hi">हिन्दी</option>
+          <option value="he">עברית</option>
+          <option value="fa">فارسی</option>
+          <option value="ur">اردو</option>
+          <option value="ps">پښتو</option>
+          <option value="ckb">کوردیی سۆرانی</option>
+          <option value="zh">中文</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="de">Deutsch</option>
+          <option value="nl">Nederlands</option>
+          <option value="vi">Tiếng Việt</option>
         </select>
       </div>
     </div>
 
-    <!-- Centered header lines (as requested) -->
+    <!-- العنوانين في الأعلى (بدون إنجليزي سوى INTEL فقط) -->
     <div class="center-header">
       <div class="center-intel" lang="en" dir="ltr">INTEL</div>
-      <div class="center-future">THE FUTURE OF INNOVATION</div>
+      <div class="center-future">مستقبل الابتكار</div>
     </div>
 
-    <!-- IMPORTANT: this row is forced LTR in CSS so RTL never breaks it -->
-    <div class="logo-row" aria-label="Intel logos">
+    <!-- صف الشعارات: يبقى مضبوط حتى مع RTL -->
+    <div class="logo-row" aria-label="شعارات إنتل">
       <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-old.png" alt="Old Intel logo" />
-        <figcaption class="sr-only">Old Intel logo</figcaption>
+        <img class="logo-img" src="images/logo-old.png" alt="شعار إنتل القديم" />
+        <figcaption class="sr-only">شعار إنتل القديم</figcaption>
       </figure>
 
       <div class="logo-arrow" aria-hidden="true">→</div>
 
       <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-new.png" alt="Modern Intel logo" />
-        <figcaption class="sr-only">Modern Intel logo</figcaption>
+        <img class="logo-img" src="images/logo-new.png" alt="شعار إنتل الحديث" />
+        <figcaption class="sr-only">شعار إنتل الحديث</figcaption>
       </figure>
     </div>
 
     <section class="hero">
       <div class="hero-box">
-        <h2 class="hero-title">
-          <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="heroTitle">Production and Innovation Through the Years (الإنتاج والابتكار عبر السنين)</span>
-        </h2>
-        <p class="hero-sub" data-i18n="heroSub">
-          With modern technology on the rise, Intel stays a step ahead to stay in sync with the future. (مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.)
+        <h2 class="hero-title">الإنتاج والابتكار عبر السنين</h2>
+        <p class="hero-sub">
+          مع صعود التكنولوجيا الحديثة، تواصل إنتل البقاء في المقدمة لضمان مواكبة المستقبل.
         </p>
       </div>
     </section>
@@ -80,33 +80,29 @@
     <!-- Timeline -->
     <section class="timeline-section" aria-labelledby="timelineHeading">
       <div class="timeline-heading-row">
-        <h3 id="timelineHeading" class="timeline-heading">
-          <span data-i18n="timelineHeading">Timeline (الخط الزمني)</span>
-        </h3>
+        <h3 id="timelineHeading" class="timeline-heading">الخط الزمني</h3>
 
-        <div class="timeline-controls" aria-label="Timeline controls">
+        <div class="timeline-controls" aria-label="التحكم بالخط الزمني">
           <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
-            ◀ <span data-i18n="prev">Prev (السابق)</span>
+            ◀ السابق
           </button>
           <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
-            <span data-i18n="next">Next (التالي)</span> ▶
+            التالي ▶
           </button>
         </div>
       </div>
 
-      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="Timeline cards">
+      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="بطاقات الخط الزمني">
         <!-- 1968 -->
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1968</div>
           <div class="card-media">
-            <img src="images/1968.png" alt="Intel founding image (1968)" />
+            <img src="images/1968.png" alt="صورة تأسيس إنتل (1968)" />
           </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> <span data-i18n="t1968Title">Founded (تأسست)</span>
-          </div>
+          <div class="card-title">تأسست إنتل</div>
           <div class="card-details">
-            <p data-i18n="t1968Body">
-              Intel was founded by Robert Noyce and Gordon Moore in California. (تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا.)
+            <p>
+              تأسست إنتل على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.
             </p>
           </div>
         </article>
@@ -115,16 +111,12 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1971</div>
           <div class="card-media">
-            <img src="images/1971.png" alt="Intel 4004 microprocessor image (1971)" />
+            <img src="images/1971.png" alt="صورة المعالج 4004 (1971)" />
           </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004
-          </div>
+          <div class="card-title">4004</div>
           <div class="card-details">
-            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004</p>
-            <p data-i18n="t1971Body">
-              First commercial microprocessor (4-bit). (أول معالج دقيق تجاري من Intel (4-bit).)
-            </p>
+            <p><strong>الطراز:</strong> 4004</p>
+            <p>أول معالج دقيق تجاري (4-bit) وساهم في إطلاق عصر الحوسبة الحديثة.</p>
           </div>
         </article>
 
@@ -132,16 +124,12 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1978</div>
           <div class="card-media">
-            <img src="images/1978.png" alt="Intel 8086 microprocessor image (1978)" />
+            <img src="images/1978.png" alt="صورة المعالج 8086 (1978)" />
           </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086
-          </div>
+          <div class="card-title">8086</div>
           <div class="card-details">
-            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086</p>
-            <p data-i18n="t1978Body">
-              Key step toward x86 personal computing. (خطوة رئيسية نحو انتشار الحواسيب الشخصية وبناء أساس x86.)
-            </p>
+            <p><strong>الطراز:</strong> 8086</p>
+            <p>ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.</p>
           </div>
         </article>
 
@@ -149,16 +137,12 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1985</div>
           <div class="card-media">
-            <img src="images/1985.png" alt="Intel 80386 processor image (1985)" />
+            <img src="images/1985.png" alt="صورة المعالج 80386 (1985)" />
           </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386
-          </div>
+          <div class="card-title">80386</div>
           <div class="card-details">
-            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386</p>
-            <p data-i18n="t1985Body">
-              32-bit (386) enabled more powerful PCs. (معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة.)
-            </p>
+            <p><strong>الطراز:</strong> 80386</p>
+            <p>معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية.</p>
           </div>
         </article>
 
@@ -166,16 +150,12 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2006</div>
           <div class="card-media">
-            <img src="images/2006.png" alt="Intel Core 2 Duo processor image (2006)" />
+            <img src="images/2006.png" alt="صورة Core 2 Duo (2006)" />
           </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo
-          </div>
+          <div class="card-title">Core 2 Duo</div>
           <div class="card-details">
-            <p><strong data-i18n="model">Model (الطراز):</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo</p>
-            <p data-i18n="t2006Body">
-              Big gains in performance and efficiency. (تحسن كبير في الأداء والكفاءة.)
-            </p>
+            <p><strong>الطراز:</strong> Core 2 Duo</p>
+            <p>حسّن الأداء والكفاءة بشكل كبير لأجهزة اللابتوب والحواسيب المكتبية.</p>
           </div>
         </article>
 
@@ -183,73 +163,60 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2020</div>
           <div class="card-media">
-            <img src="images/2020.png" alt="Intel products image (2020)" />
+            <img src="images/2020.png" alt="صورة تطورات منتجات 2020" />
           </div>
-          <div class="card-title">
-            <span data-i18n="t2020Title">2020 Product Advances (تقدم المنتجات في 2020)</span>
-          </div>
+          <div class="card-title">تقدم المنتجات في 2020</div>
           <div class="card-details">
-            <p data-i18n="t2020Body">
-              Intel continued advancing performance, power, and efficiency. (واصلت Intel تطوير الأداء والطاقة والكفاءة.)
-            </p>
+            <p>واصلت إنتل تطوير الأداء والطاقة والكفاءة عبر منتجات وتقنيات متعددة.</p>
           </div>
         </article>
       </div>
 
-      <p class="hint" data-i18n="hint">
-        Scroll horizontally on large screens; on phones cards stack vertically. Hover (or Tab) to reveal details.
-        (مرّر أفقيًا على الشاشات الكبيرة، وعلى الهواتف ستُرتّب البطاقات عموديًا. حرّك المؤشر أو استخدم Tab لعرض التفاصيل.)
+      <p class="hint">
+        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف سيتم ترتيب البطاقات عموديًا.
+        حرّك المؤشر فوق البطاقة أو استخدم Tab لعرض التفاصيل.
       </p>
     </section>
 
-    <!-- 3-column section -->
-    <section class="info-threecol container my-5" aria-label="Info section">
+    <!-- Three-column section -->
+    <section class="info-threecol container my-5" aria-label="قسم المعلومات">
       <div class="row g-4">
-        <!-- Sustainability -->
-        <div class="col-12 col-md-4">
-          <div class="info-card info-card-dark h-100">
-            <h3 class="info-title">
-              <i class="bi bi-globe2" aria-hidden="true"></i>
-              <span>Sustainability (الاستدامة)</span>
-            </h3>
-            <p>
-              Intel continues to focus on reducing power consumption to improve longevity of the future of the company as well as being eco-friendly while advancing in technology.
-            </p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">
-              Learn More (اعرف المزيد)
-            </a>
-          </div>
-        </div>
-
-        <!-- Responsibility -->
-        <div class="col-12 col-md-4">
-          <div class="info-card info-card-dark h-100">
-            <h3 class="info-title">
-              <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <span>Responsibility (المسؤولية)</span>
-            </h3>
-            <p>
-              Safety, work standards, and transparency is Intel's commitment to the community.
-            </p>
-            <a class="btn btn-primary w-100" href="eco-friendly.html">
-              Learn More (اعرف المزيد)
-            </a>
-          </div>
-        </div>
-
-        <!-- The Society -->
         <div class="col-12 col-md-4">
           <div class="info-card info-card-dark h-100">
             <h3 class="info-title">
               <i class="bi bi-people" aria-hidden="true"></i>
-              <span>The Society (المجتمع)</span>
+              <span>المجتمع</span>
             </h3>
             <p>
               Investing in knowledge and digital skills to support the future for better opportunities for everyone.
             </p>
-            <a class="btn btn-primary w-100" href="#subscribe">
-              Subscribe (اشترك)
-            </a>
+            <a class="btn btn-primary w-100" href="#subscribe">الاشتراك بالنشرة</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="info-card info-card-dark h-100">
+            <h3 class="info-title">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <span>المسؤولية</span>
+            </h3>
+            <p>
+              Safety, work standards, and transparency is Intel's commitment to the community.
+            </p>
+            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="info-card info-card-dark h-100">
+            <h3 class="info-title">
+              <i class="bi bi-globe2" aria-hidden="true"></i>
+              <span>الاستدامة</span>
+            </h3>
+            <p>
+              Intel continues to focus on the reducing power consumption to improve longevity of the future of the company as well as being eco-friendly while advancing in technology.
+            </p>
+            <a class="btn btn-primary w-100" href="eco-friendly.html">اعرف المزيد</a>
           </div>
         </div>
       </div>
@@ -262,30 +229,27 @@
           Sustainability Newsletter Subscription
         </h3>
 
-        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="Subscription form">
+        <form class="subscribe-form" action="newsletter.html" method="get" aria-label="نموذج الاشتراك">
           <div class="form-row">
-            <label for="name">Name (الاسم)</label>
+            <label for="name">الاسم</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
           </div>
 
           <div class="form-row">
-            <label for="email">Email (البريد الإلكتروني)</label>
+            <label for="email">البريد الإلكتروني</label>
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
 
-          <button class="btn btn-success w-100" type="submit">
-            Subscribe (اشترك)
-          </button>
+          <button class="btn btn-success w-100" type="submit">اشترك</button>
 
           <p class="form-hint">
-            We’ll only use your email for sustainability updates. Unsubscribe anytime.
-            (سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.)
+            سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
           </p>
         </form>
       </div>
 
       <footer class="page-footer">
-        <p>© <span class="intel-word" lang="en" dir="ltr">Intel</span> — Course practice webpage</p>
+        <p>© INTEL</p>
       </footer>
     </section>
   </main>
@@ -306,19 +270,19 @@
       document.documentElement.dir = RTL.has(code) ? "rtl" : "ltr";
     }
 
-    // Default Arabic
+    // ✅ يبدأ بالعربية دائمًا
     setDirAndLang("ar");
     langSelect.value = "ar";
 
-    // Toggle just flips Arabic <-> English quickly
+    // زر سريع: يبدّل بين العربية والهندية فقط (بدون كلمات إنجليزية)
     toggle.addEventListener('click', () => {
       const now = document.documentElement.lang;
-      const next = (now === "ar") ? "en" : "ar";
+      const next = (now === "ar") ? "hi" : "ar";
       setDirAndLang(next);
       langSelect.value = next;
     });
 
-    // Dropdown sets lang + direction
+    // القائمة تغير اللغة والاتجاه
     langSelect.addEventListener('change', () => {
       setDirAndLang(langSelect.value);
     });
@@ -330,9 +294,11 @@
       const amount = card.getBoundingClientRect().width + gap;
       timeline.scrollBy({ left: dir * amount, behavior: 'smooth' });
     }
+
     prevBtn.addEventListener('click', () => scrollByCards(-1));
     nextBtn.addEventListener('click', () => scrollByCards(1));
 
+    // دعم الجوال: ضغط لفتح التفاصيل
     document.querySelectorAll('.milestone-card').forEach(card => {
       card.addEventListener('click', (e) => {
         if (e.target.closest('button, a, input, label, select')) return;
