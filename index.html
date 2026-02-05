@@ -1,457 +1,376 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Intel Timeline Webpage</title>
-
-  <!-- Bootstrap (for the localization project rubric) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>INTEL - Localization</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
-  <header class="page-header">
-    <div class="topbar">
-      <h1 class="site-title">
-        <span class="intel-word" lang="en" dir="ltr">INTEL</span>-TIMELINE-WEBPAGE
-      </h1>
+  <header class="topbar" aria-label="Header">
+    <!-- Only English text on page -->
+    <div class="brand-english" aria-label="Intel brand">INTEL</div>
 
-      <!-- Language toggle (meets “auto-detect + adjust layout” + gives you control) -->
-      <button id="langToggle" class="lang-toggle" type="button" aria-pressed="false">
-        English
-      </button>
+    <!-- This line will be translated (Arabic by default) -->
+    <div class="tagline" id="tagline">مستقبل الابتكار</div>
+
+    <!-- Language control -->
+    <div class="lang-row">
+      <label class="lang-label" for="langSelect" id="langLabel">اختر اللغة:</label>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="ar" selected>العربية (Arabic)</option>
+        <option value="he">עברית (Hebrew)</option>
+        <option value="fa">فارسی (Persian/Farsi)</option>
+        <option value="ur">اردو (Urdu)</option>
+        <option value="ps">پښتو (Pashto)</option>
+        <option value="ckb">کوردیی سۆرانی (Kurdish - Sorani)</option>
+        <option value="zh">中文 (Chinese)</option>
+        <option value="fr">Français (French)</option>
+        <option value="es">Español (Spanish)</option>
+        <option value="de">Deutsch (German)</option>
+        <option value="nl">Nederlands (Dutch)</option>
+        <option value="vi">Tiếng Việt (Vietnamese)</option>
+      </select>
     </div>
-
-    <div class="logo-row" aria-label="Intel logos">
-      <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-old.png" alt="Old Intel logo" />
-        <figcaption class="sr-only">Old Intel logo</figcaption>
-      </figure>
-
-      <div class="logo-arrow" aria-hidden="true">→</div>
-
-      <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-new.png" alt="Modern Intel logo" />
-        <figcaption class="sr-only">Modern Intel logo</figcaption>
-      </figure>
-    </div>
-
-    <section class="hero">
-      <div class="hero-box">
-        <h2 class="hero-title">
-          <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</span>
-        </h2>
-        <p class="hero-sub" data-i18n="heroSub">
-          مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.
-        </p>
-      </div>
-    </section>
   </header>
 
-  <main class="page-main">
-    <!-- Timeline -->
-    <section class="timeline-section" aria-labelledby="timelineHeading">
-      <div class="timeline-heading-row">
-        <h3 id="timelineHeading" class="timeline-heading">
-          <span data-i18n="timelineHeading">الخط الزمني</span>
-        </h3>
+  <main class="container">
+    <!-- Three-column section -->
+    <section class="three-col" aria-label="Three column content">
+      <article class="info-card dark" id="societyCard">
+        <h2 class="card-title" id="societyTitle">المجتمع</h2>
+        <p class="card-text" id="societyText">
+          الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وتوفير فرص أفضل للجميع.
+        </p>
+        <a class="btn learn" id="societyLearn" href="eco-friendly.html">اقرأ المزيد</a>
+      </article>
 
-        <div class="timeline-controls" aria-label="Timeline controls">
-          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
-            ◀ <span data-i18n="prev">السابق</span>
-          </button>
-          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
-            <span data-i18n="next">التالي</span> ▶
-          </button>
+      <article class="info-card dark" id="responsibilityCard">
+        <h2 class="card-title" id="responsibilityTitle">المسؤولية</h2>
+        <p class="card-text" id="responsibilityText">
+          السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.
+        </p>
+        <a class="btn learn" id="responsibilityLearn" href="eco-friendly.html">اقرأ المزيد</a>
+      </article>
+
+      <article class="info-card dark" id="sustainabilityCard">
+        <h2 class="card-title" id="sustainabilityTitle">الاستدامة</h2>
+        <p class="card-text" id="sustainabilityText">
+          تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين الاستدامة على المدى الطويل، مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.
+        </p>
+        <a class="btn learn" id="sustainabilityLearn" href="eco-friendly.html">اقرأ المزيد</a>
+      </article>
+    </section>
+
+    <!-- Subscription form + footer -->
+    <section class="subscribe" aria-label="Newsletter subscription">
+      <h2 class="subscribe-title" id="subscribeTitle">الاشتراك في نشرة الاستدامة</h2>
+
+      <form class="subscribe-form" action="newsletter.html" method="GET">
+        <div class="field">
+          <label for="email" class="field-label" id="emailLabel">البريد الإلكتروني</label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            class="field-input"
+            placeholder="name@example.com"
+            required
+            aria-required="true"
+          />
         </div>
-      </div>
 
-      <!-- Scroll container (desktop horizontal w/ scrollbar + snap) -->
-      <div class="timeline-scroll" id="timelineScroll" tabindex="0" aria-label="Timeline cards">
-        <!-- 1968 -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">1968</div>
-          <div class="card-media">
-            <img src="images/1968.png" alt="Intel founding image (1968)" />
-          </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> <span data-i18n="t1968Title">تأسست</span>
-          </div>
+        <button type="submit" class="btn subscribe-btn" id="subscribeBtn">
+          اشترك
+        </button>
+      </form>
 
-          <!-- Hidden details shown on hover/focus (rubric) -->
-          <div class="card-details">
-            <p data-i18n="t1968Body">
-              تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.
-            </p>
-          </div>
-        </article>
-
-        <!-- 1971 -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">1971</div>
-          <div class="card-media">
-            <img src="images/1971.png" alt="Intel 4004 microprocessor image (1971)" />
-          </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004
-          </div>
-
-          <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004</p>
-            <p data-i18n="t1971Body">
-              أول معالج دقيق تجاري من Intel (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.
-            </p>
-          </div>
-        </article>
-
-        <!-- 1978 -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">1978</div>
-          <div class="card-media">
-            <img src="images/1978.png" alt="Intel 8086 microprocessor image (1978)" />
-          </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086
-          </div>
-
-          <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086</p>
-            <p data-i18n="t1978Body">
-              قدمت Intel معالج 8086 الذي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.
-            </p>
-          </div>
-        </article>
-
-        <!-- 1985 (REPLACED TITLE as requested) -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">1985</div>
-          <div class="card-media">
-            <img src="images/1985.png" alt="Intel 80386 processor image (1985)" />
-          </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386
-          </div>
-
-          <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386</p>
-            <p data-i18n="t1985Body">
-              معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية ودعم قدرات متقدمة للأنظمة.
-            </p>
-          </div>
-        </article>
-
-        <!-- 2006 (TITLE as requested) -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">2006</div>
-          <div class="card-media">
-            <img src="images/2006.png" alt="Intel Core 2 Duo processor image (2006)" />
-          </div>
-          <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo
-          </div>
-
-          <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo</p>
-            <p data-i18n="t2006Body">
-              حسّن الأداء والكفاءة بشكل كبير، وكان نقطة تحوّل مهمة لأجهزة اللابتوب والحواسيب المكتبية.
-            </p>
-          </div>
-        </article>
-
-        <!-- 2020 -->
-        <article class="milestone-card" tabindex="0">
-          <div class="card-year">2020</div>
-          <div class="card-media">
-            <img src="images/2020.png" alt="Intel products image (2020)" />
-          </div>
-          <div class="card-title">
-            <span data-i18n="t2020Title">تقدم المنتجات في 2020</span>
-          </div>
-
-          <div class="card-details">
-            <p data-i18n="t2020Body">
-              واصلت Intel تطوير معالجات وتقنيات تدعم الأداء والطاقة والكفاءة، مع توسع الاستخدامات من الحوسبة إلى مراكز البيانات.
-            </p>
-          </div>
-        </article>
-      </div>
-
-      <p class="hint" data-i18n="hint">
-        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.
+      <p class="subscribe-note" id="subscribeNote">
+        بالنقر على “اشترك”، سيتم فتح صفحة اشتراك النشرة.
       </p>
     </section>
 
-    <!-- Responsive 3-column section (Localization rubric) -->
-    <section class="info-threecol container my-5" aria-label="Info section">
-      <div class="row g-4">
-        <div class="col-12 col-md-4">
-          <div class="info-card h-100">
-            <h3 class="info-title">
-              <i class="bi bi-globe2" aria-hidden="true"></i>
-              <span data-i18n="c1Title">الاستدامة</span>
-            </h3>
-            <p data-i18n="c1Body">
-              تركز Intel على تقليل الانبعاثات وتحسين كفاءة الطاقة عبر سلسلة القيمة.
-            </p>
-            <button class="btn btn-primary w-100" type="button" data-bs-toggle="modal" data-bs-target="#learnMoreModal">
-              <span data-i18n="learnMore">اعرف المزيد</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="info-card h-100">
-            <h3 class="info-title">
-              <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <span data-i18n="c2Title">المسؤولية</span>
-            </h3>
-            <p data-i18n="c2Body">
-              الالتزام بالشفافية، ومعايير العمل، وسلامة المنتجات والمجتمع.
-            </p>
-            <button class="btn btn-primary w-100" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDetails" aria-expanded="false" aria-controls="collapseDetails">
-              <span data-i18n="learnMore">اعرف المزيد</span>
-            </button>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-4">
-          <div class="info-card h-100">
-            <h3 class="info-title">
-              <i class="bi bi-people" aria-hidden="true"></i>
-              <span data-i18n="c3Title">المجتمع</span>
-            </h3>
-            <p data-i18n="c3Body">
-              الاستثمار في التعليم والمهارات الرقمية لدعم فرص أفضل للأفراد.
-            </p>
-            <a class="btn btn-primary w-100" href="#subscribe">
-              <span data-i18n="subscribeJump">الاشتراك بالنشرة</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div class="collapse mt-3" id="collapseDetails">
-        <div class="accordion" id="accordionExtra">
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingOne">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                <span data-i18n="acc1Title">كيف تدعم Intel الاستدامة؟</span>
-              </button>
-            </h2>
-            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExtra">
-              <div class="accordion-body" data-i18n="acc1Body">
-                من خلال تحسين كفاءة الطاقة، وتقليل النفايات، ودعم الابتكار الذي يقلل الأثر البيئي.
-              </div>
-            </div>
-          </div>
-
-          <div class="accordion-item">
-            <h2 class="accordion-header" id="headingTwo">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                <span data-i18n="acc2Title">لماذا يهم ذلك للمستقبل؟</span>
-              </button>
-            </h2>
-            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExtra">
-              <div class="accordion-body" data-i18n="acc2Body">
-                لأن التكنولوجيا المسؤولة تساعد على بناء اقتصاد رقمي مستدام يخدم الناس والكوكب.
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Subscription form + footer (Localization rubric) -->
-    <section id="subscribe" class="subscribe-section" aria-labelledby="subscribeHeading">
-      <div class="subscribe-box">
-        <h3 id="subscribeHeading" class="subscribe-title">
-          <span class="intel-word" lang="en" dir="ltr">Intel</span>
-          <span data-i18n="subTitle">— نشرة الاستدامة</span>
-        </h3>
-
-        <form class="subscribe-form" action="#" method="post" aria-label="Subscription form">
-          <div class="form-row">
-            <label for="name" data-i18n="nameLabel">الاسم</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-
-          <div class="form-row">
-            <label for="email" data-i18n="emailLabel">البريد الإلكتروني</label>
-            <input id="email" name="email" type="email" autocomplete="email" required />
-          </div>
-
-          <button class="btn btn-success w-100" type="submit">
-            <span data-i18n="subBtn">اشترك</span>
-          </button>
-
-          <p class="form-hint" data-i18n="privacyHint">
-            سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
-          </p>
-        </form>
-      </div>
-
-      <footer class="page-footer">
-        <p>
-          © <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="footer">صفحة تدريبية للمقرر</span>
-        </p>
-      </footer>
-    </section>
+    <footer class="footer" aria-label="Footer">
+      <div id="footerText">© 2026 إنتل — جميع الحقوق محفوظة</div>
+    </footer>
   </main>
 
-  <!-- Learn More Modal (Bootstrap interactivity bonus) -->
-  <div class="modal fade" id="learnMoreModal" tabindex="-1" aria-labelledby="learnMoreLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="learnMoreLabel">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> — <span data-i18n="modalTitle">معلومات إضافية</span>
-          </h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body" data-i18n="modalBody">
-          هذا مثال لمكوّن Bootstrap (Modal) لزيادة التفاعلية وتحقيق نقاط الـ LevelUp.
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-i18n="close">إغلاق</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Minimal JS: language + RTL/LTR + timeline prev/next + tap-to-open for touch -->
   <script>
-    const timeline = document.getElementById('timelineScroll');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const toggle = document.getElementById('langToggle');
-
-    const i18n = {
+    // Language packs (page text only; "INTEL" stays English always)
+    const langData = {
       ar: {
-        heroTitle: "الإنتاج والابتكار عبر السنين",
-        heroSub: "مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.",
-        timelineHeading: "الخط الزمني",
-        prev: "السابق",
-        next: "التالي",
-        hint: "مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.",
-        model: "الطراز:",
-        t1968Title: "تأسست",
-        t1968Body: "تأسست Intel على يد روبرت نويس وجوردون مور في كاليفورنيا، وبدأت رحلة الابتكار في أشباه الموصلات.",
-        t1971Body: "أول معالج دقيق تجاري من Intel (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.",
-        t1978Body: "قدمت Intel معالج 8086 الذي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.",
-        t1985Body: "معالج 32-bit (386) فتح الباب لتجارب أقوى في الحوسبة الشخصية ودعم قدرات متقدمة للأنظمة.",
-        t2006Body: "حسّن الأداء والكفاءة بشكل كبير، وكان نقطة تحوّل مهمة لأجهزة اللابتوب والحواسيب المكتبية.",
-        t2020Title: "تقدم المنتجات في 2020",
-        t2020Body: "واصلت Intel تطوير معالجات وتقنيات تدعم الأداء والطاقة والكفاءة، مع توسع الاستخدامات من الحوسبة إلى مراكز البيانات.",
-        c1Title: "الاستدامة",
-        c1Body: "تركز Intel على تقليل الانبعاثات وتحسين كفاءة الطاقة عبر سلسلة القيمة.",
-        c2Title: "المسؤولية",
-        c2Body: "الالتزام بالشفافية، ومعايير العمل، وسلامة المنتجات والمجتمع.",
-        c3Title: "المجتمع",
-        c3Body: "الاستثمار في التعليم والمهارات الرقمية لدعم فرص أفضل للأفراد.",
-        learnMore: "اعرف المزيد",
-        subscribeJump: "الاشتراك بالنشرة",
-        acc1Title: "كيف تدعم Intel الاستدامة؟",
-        acc1Body: "من خلال تحسين كفاءة الطاقة، وتقليل النفايات، ودعم الابتكار الذي يقلل الأثر البيئي.",
-        acc2Title: "لماذا يهم ذلك للمستقبل؟",
-        acc2Body: "لأن التكنولوجيا المسؤولة تساعد على بناء اقتصاد رقمي مستدام يخدم الناس والكوكب.",
-        subTitle: "— نشرة الاستدامة",
-        nameLabel: "الاسم",
+        dir: "rtl", lang: "ar",
+        langLabel: "اختر اللغة:",
+        tagline: "مستقبل الابتكار",
+        societyTitle: "المجتمع",
+        societyText: "الاستثمار في المعرفة والمهارات الرقمية لدعم المستقبل وتوفير فرص أفضل للجميع.",
+        responsibilityTitle: "المسؤولية",
+        responsibilityText: "السلامة ومعايير العمل والشفافية هي التزام إنتل تجاه المجتمع.",
+        sustainabilityTitle: "الاستدامة",
+        sustainabilityText: "تواصل إنتل التركيز على تقليل استهلاك الطاقة لتحسين الاستدامة على المدى الطويل، مع الحفاظ على نهج صديق للبيئة أثناء التقدم التقني.",
+        learn: "اقرأ المزيد",
+        subscribeTitle: "الاشتراك في نشرة الاستدامة",
         emailLabel: "البريد الإلكتروني",
-        subBtn: "اشترك",
-        privacyHint: "سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.",
-        footer: "صفحة تدريبية للمقرر",
-        modalTitle: "معلومات إضافية",
-        modalBody: "هذا مثال لمكوّن Bootstrap (Modal) لزيادة التفاعلية وتحقيق نقاط الـ LevelUp.",
-        close: "إغلاق"
+        subscribeBtn: "اشترك",
+        subscribeNote: "بالنقر على “اشترك”، سيتم فتح صفحة اشتراك النشرة.",
+        footer: "© 2026 إنتل — جميع الحقوق محفوظة"
       },
-      en: {
-        heroTitle: "Production and Innovation Through the Years",
-        heroSub: "With modern technology on the rise, Intel stays a step ahead to stay in sync with the future.",
-        timelineHeading: "Timeline",
-        prev: "Prev",
-        next: "Next",
-        hint: "Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) a card to reveal details.",
-        model: "Model:",
-        t1968Title: "Founded",
-        t1968Body: "Intel was founded by Robert Noyce and Gordon Moore in California, launching a new era of semiconductor innovation.",
-        t1971Body: "Intel’s first commercial microprocessor (4-bit), helping ignite the modern computing era.",
-        t1978Body: "Intel introduced the 8086, a key step toward widespread personal computing and the x86 architecture.",
-        t1985Body: "The 32-bit 386 generation enabled more powerful PCs and advanced operating system capabilities.",
-        t2006Body: "Major gains in performance and efficiency for laptops and desktops—an important turning point.",
-        t2020Title: "2020 Product Advances",
-        t2020Body: "Intel continued advancing performance, power, and efficiency across computing and data center technologies.",
-        c1Title: "Sustainability",
-        c1Body: "Intel focuses on reducing emissions and improving energy efficiency across the value chain.",
-        c2Title: "Responsibility",
-        c2Body: "Commitment to transparency, labor standards, and product & community safety.",
-        c3Title: "Community",
-        c3Body: "Investing in education and digital skills to create better opportunities.",
-        learnMore: "Learn More",
-        subscribeJump: "Subscribe",
-        acc1Title: "How does Intel support sustainability?",
-        acc1Body: "By improving energy efficiency, reducing waste, and enabling innovation that lowers environmental impact.",
-        acc2Title: "Why does this matter for the future?",
-        acc2Body: "Because responsible tech helps build a sustainable digital economy for people and planet.",
-        subTitle: "— Sustainability Newsletter",
-        nameLabel: "Name",
+
+      he: {
+        dir: "rtl", lang: "he",
+        langLabel: "בחר שפה:",
+        tagline: "עתיד החדשנות",
+        societyTitle: "החברה",
+        societyText: "השקעה בידע ובמיומנויות דיגיטליות כדי לתמוך בעתיד וליצור הזדמנויות טובות יותר לכולם.",
+        responsibilityTitle: "אחריות",
+        responsibilityText: "בטיחות, סטנדרטים בעבודה ושקיפות הם מחויבות אינטל לקהילה.",
+        sustainabilityTitle: "קיימות",
+        sustainabilityText: "אינטל ממשיכה להתמקד בהפחתת צריכת החשמל כדי לשפר את הקיימות לטווח הארוך, תוך שמירה על גישה ידידותית לסביבה לצד התקדמות טכנולוגית.",
+        learn: "למידע נוסף",
+        subscribeTitle: "הרשמה לניוזלטר קיימות",
+        emailLabel: "אימייל",
+        subscribeBtn: "הרשמה",
+        subscribeNote: "בלחיצה על “הרשמה” תיפתח דף הרשמה לניוזלטר.",
+        footer: "© 2026 אינטל — כל הזכויות שמורות"
+      },
+
+      fa: {
+        dir: "rtl", lang: "fa",
+        langLabel: "انتخاب زبان:",
+        tagline: "آینده نوآوری",
+        societyTitle: "جامعه",
+        societyText: "سرمایه‌گذاری در دانش و مهارت‌های دیجیتال برای حمایت از آینده و ایجاد فرصت‌های بهتر برای همه.",
+        responsibilityTitle: "مسئولیت",
+        responsibilityText: "ایمنی، استانداردهای کاری و شفافیت تعهد اینتل به جامعه است.",
+        sustainabilityTitle: "پایداری",
+        sustainabilityText: "اینتل همچنان بر کاهش مصرف انرژی تمرکز دارد تا پایداری بلندمدت را تقویت کند و همزمان رویکردی دوستدار محیط زیست را در پیشرفت فناوری حفظ کند.",
+        learn: "بیشتر بدانید",
+        subscribeTitle: "اشتراک خبرنامه پایداری",
+        emailLabel: "ایمیل",
+        subscribeBtn: "اشتراک",
+        subscribeNote: "با کلیک روی «اشتراک»، صفحه اشتراک خبرنامه باز می‌شود.",
+        footer: "© 2026 اینتل — تمامی حقوق محفوظ است"
+      },
+
+      ur: {
+        dir: "rtl", lang: "ur",
+        langLabel: "زبان منتخب کریں:",
+        tagline: "جدت کا مستقبل",
+        societyTitle: "معاشرہ",
+        societyText: "علم اور ڈیجیٹل مہارتوں میں سرمایہ کاری تاکہ مستقبل کی حمایت ہو اور سب کے لیے بہتر مواقع پیدا ہوں۔",
+        responsibilityTitle: "ذمہ داری",
+        responsibilityText: "حفاظت، کام کے معیارات اور شفافیت کمیونٹی کے لیے انٹیل کے عزم کا حصہ ہیں۔",
+        sustainabilityTitle: "پائیداری",
+        sustainabilityText: "انٹیل توانائی کے استعمال میں کمی پر توجہ جاری رکھتا ہے تاکہ طویل مدتی پائیداری بہتر ہو اور ماحول دوست جدت کو فروغ ملے۔",
+        learn: "مزید جانیں",
+        subscribeTitle: "پائیداری نیوز لیٹر سبسکرپشن",
+        emailLabel: "ای میل",
+        subscribeBtn: "سبسکرائب",
+        subscribeNote: "“سبسکرائب” پر کلک کرنے سے سبسکرپشن صفحہ کھل جائے گا۔",
+        footer: "© 2026 انٹیل — جملہ حقوق محفوظ ہیں"
+      },
+
+      ps: {
+        dir: "rtl", lang: "ps",
+        langLabel: "ژبه وټاکئ:",
+        tagline: "د نوښت راتلونکی",
+        societyTitle: "ټولنه",
+        societyText: "په پوهه او ډیجیټلي مهارتونو کې پانګونه د راتلونکي ملاتړ او د ټولو لپاره د غوره فرصتونو لپاره.",
+        responsibilityTitle: "مسؤولیت",
+        responsibilityText: "خوندیتوب، د کار معیارونه او روڼتیا د ټولنې لپاره د انټل ژمنتیا ده.",
+        sustainabilityTitle: "پایښت",
+        sustainabilityText: "انټل د برېښنا مصرف کمولو ته دوام ورکوي ترڅو اوږدمهاله پایښت ښه کړي او چاپېریال-دوست پرمختګ ته دوام ورکړي.",
+        learn: "نور ولولئ",
+        subscribeTitle: "د پایښت خبرپاڼې ګډون",
+        emailLabel: "برېښنالیک",
+        subscribeBtn: "ګډون",
+        subscribeNote: "د “ګډون” په کلیک کولو سره د ګډون پاڼه پرانیستل کېږي.",
+        footer: "© 2026 انټل — ټول حقوق خوندي دي"
+      },
+
+      ckb: {
+        dir: "rtl", lang: "ckb",
+        langLabel: "زمان هەڵبژێرە:",
+        tagline: "داهاتووی نوێکاری",
+        societyTitle: "کۆمەڵگا",
+        societyText: "وەبەرهێنان لە زانیاری و تواناکانی دیجیتاڵ بۆ پشتیوانی داهاتوو و دروستکردنی هەلی باشتر بۆ هەمووان.",
+        responsibilityTitle: "بەرپرسیارێتی",
+        responsibilityText: "سەلامەتی، ستانداردی کار و ڕوونکردنەوە، پابەندبوونی ئینتەلە بۆ کۆمەڵگا.",
+        sustainabilityTitle: "بەردەوامی",
+        sustainabilityText: "ئینتەل بەردەوامە لە سەر کەمکردنەوەی بەکارهێنانی وزە بۆ باشترکردنی بەردەوامی و هاوکات بەرزکردنەوەی پێشکەوتنی تەکنەلۆژیا بە شێوەیەکی دۆست بە ژینگە.",
+        learn: "زیاتر بزانە",
+        subscribeTitle: "بەشداربوون لە هەواڵنامەی بەردەوامی",
+        emailLabel: "ئیمەیل",
+        subscribeBtn: "بەشداربە",
+        subscribeNote: "بە کلیککردن لە “بەشداربە”، پەڕەی بەشداربوون دەکرێتەوە.",
+        footer: "© 2026 ئینتەل — هەموو مافەکان پارێزراون"
+      },
+
+      zh: {
+        dir: "ltr", lang: "zh",
+        langLabel: "选择语言：",
+        tagline: "创新的未来",
+        societyTitle: "社会",
+        societyText: "投资知识与数字技能，支持未来并为每个人创造更好的机会。",
+        responsibilityTitle: "责任",
+        responsibilityText: "安全、工作标准与透明度是英特尔对社区的承诺。",
+        sustainabilityTitle: "可持续发展",
+        sustainabilityText: "英特尔持续降低能耗以提升长期可持续性，并在技术进步中坚持环保理念。",
+        learn: "了解更多",
+        subscribeTitle: "可持续发展通讯订阅",
+        emailLabel: "电子邮箱",
+        subscribeBtn: "订阅",
+        subscribeNote: "点击“订阅”将打开通讯订阅页面。",
+        footer: "© 2026 英特尔 — 保留所有权利"
+      },
+
+      fr: {
+        dir: "ltr", lang: "fr",
+        langLabel: "Choisir la langue :",
+        tagline: "L’avenir de l’innovation",
+        societyTitle: "La Société",
+        societyText: "Investir dans la connaissance et les compétences numériques pour soutenir l’avenir et offrir de meilleures opportunités à tous.",
+        responsibilityTitle: "Responsabilité",
+        responsibilityText: "La sécurité, les normes de travail et la transparence constituent l’engagement d’Intel envers la communauté.",
+        sustainabilityTitle: "Durabilité",
+        sustainabilityText: "Intel continue de réduire la consommation d’énergie afin d’améliorer la durabilité à long terme, tout en restant éco-responsable et innovant.",
+        learn: "En savoir plus",
+        subscribeTitle: "Abonnement à la newsletter Durabilité",
+        emailLabel: "E-mail",
+        subscribeBtn: "S’abonner",
+        subscribeNote: "En cliquant sur « S’abonner », vous ouvrirez la page d’abonnement.",
+        footer: "© 2026 Intel — Tous droits réservés"
+      },
+
+      es: {
+        dir: "ltr", lang: "es",
+        langLabel: "Elegir idioma:",
+        tagline: "El futuro de la innovación",
+        societyTitle: "La Sociedad",
+        societyText: "Invertir en conocimiento y habilidades digitales para apoyar el futuro y crear mejores oportunidades para todos.",
+        responsibilityTitle: "Responsabilidad",
+        responsibilityText: "La seguridad, los estándares laborales y la transparencia son el compromiso de Intel con la comunidad.",
+        sustainabilityTitle: "Sostenibilidad",
+        sustainabilityText: "Intel continúa enfocándose en reducir el consumo de energía para mejorar la sostenibilidad a largo plazo, siendo ecoamigable mientras avanza en tecnología.",
+        learn: "Más información",
+        subscribeTitle: "Suscripción al boletín de Sostenibilidad",
+        emailLabel: "Correo electrónico",
+        subscribeBtn: "Suscribirse",
+        subscribeNote: "Al hacer clic en “Suscribirse”, se abrirá la página de suscripción.",
+        footer: "© 2026 Intel — Todos los derechos reservados"
+      },
+
+      de: {
+        dir: "ltr", lang: "de",
+        langLabel: "Sprache wählen:",
+        tagline: "Die Zukunft der Innovation",
+        societyTitle: "Die Gesellschaft",
+        societyText: "Investitionen in Wissen und digitale Kompetenzen, um die Zukunft zu unterstützen und bessere Chancen für alle zu schaffen.",
+        responsibilityTitle: "Verantwortung",
+        responsibilityText: "Sicherheit, Arbeitsstandards und Transparenz sind Intels Verpflichtung gegenüber der Gemeinschaft.",
+        sustainabilityTitle: "Nachhaltigkeit",
+        sustainabilityText: "Intel konzentriert sich weiterhin darauf, den Energieverbrauch zu reduzieren, um langfristige Nachhaltigkeit zu verbessern und zugleich umweltfreundlich Innovationen voranzutreiben.",
+        learn: "Mehr erfahren",
+        subscribeTitle: "Nachhaltigkeits-Newsletter abonnieren",
+        emailLabel: "E-Mail",
+        subscribeBtn: "Abonnieren",
+        subscribeNote: "Durch Klicken auf „Abonnieren“ wird die Abo-Seite geöffnet.",
+        footer: "© 2026 Intel — Alle Rechte vorbehalten"
+      },
+
+      nl: {
+        dir: "ltr", lang: "nl",
+        langLabel: "Kies taal:",
+        tagline: "De toekomst van innovatie",
+        societyTitle: "De Samenleving",
+        societyText: "Investeren in kennis en digitale vaardigheden om de toekomst te ondersteunen en betere kansen voor iedereen te creëren.",
+        responsibilityTitle: "Verantwoordelijkheid",
+        responsibilityText: "Veiligheid, werkstandaarden en transparantie zijn Intels toewijding aan de gemeenschap.",
+        sustainabilityTitle: "Duurzaamheid",
+        sustainabilityText: "Intel blijft zich richten op het verminderen van energieverbruik om langdurige duurzaamheid te verbeteren en tegelijk milieuvriendelijk te innoveren.",
+        learn: "Meer informatie",
+        subscribeTitle: "Abonnement op Duurzaamheidsnieuwsbrief",
+        emailLabel: "E-mail",
+        subscribeBtn: "Abonneren",
+        subscribeNote: "Klik op “Abonneren” om naar de abonnementspagina te gaan.",
+        footer: "© 2026 Intel — Alle rechten voorbehouden"
+      },
+
+      vi: {
+        dir: "ltr", lang: "vi",
+        langLabel: "Chọn ngôn ngữ:",
+        tagline: "Tương lai của đổi mới",
+        societyTitle: "Xã hội",
+        societyText: "Đầu tư vào kiến thức và kỹ năng số để hỗ trợ tương lai và tạo cơ hội tốt hơn cho mọi người.",
+        responsibilityTitle: "Trách nhiệm",
+        responsibilityText: "An toàn, tiêu chuẩn lao động và minh bạch là cam kết của Intel với cộng đồng.",
+        sustainabilityTitle: "Bền vững",
+        sustainabilityText: "Intel tiếp tục tập trung giảm mức tiêu thụ điện năng để nâng cao tính bền vững lâu dài, thân thiện môi trường trong khi vẫn đổi mới công nghệ.",
+        learn: "Tìm hiểu thêm",
+        subscribeTitle: "Đăng ký Bản tin Bền vững",
         emailLabel: "Email",
-        subBtn: "Subscribe",
-        privacyHint: "We’ll only use your email for sustainability updates. Unsubscribe anytime.",
-        footer: "Course practice webpage",
-        modalTitle: "More Information",
-        modalBody: "This is a Bootstrap Modal to enhance interactivity and earn LevelUp points.",
-        close: "Close"
+        subscribeBtn: "Đăng ký",
+        subscribeNote: "Nhấp “Đăng ký” để mở trang đăng ký bản tin.",
+        footer: "© 2026 Intel — Bảo lưu mọi quyền"
       }
     };
 
-    function applyLang(lang) {
-      const isArabic = (lang === 'ar');
-      document.documentElement.lang = lang;
-      document.documentElement.dir = isArabic ? 'rtl' : 'ltr';
-      toggle.textContent = isArabic ? 'English' : 'العربية';
-      toggle.setAttribute('aria-pressed', isArabic ? 'false' : 'true');
+    const els = {
+      tagline: document.getElementById("tagline"),
+      langLabel: document.getElementById("langLabel"),
+      societyTitle: document.getElementById("societyTitle"),
+      societyText: document.getElementById("societyText"),
+      responsibilityTitle: document.getElementById("responsibilityTitle"),
+      responsibilityText: document.getElementById("responsibilityText"),
+      sustainabilityTitle: document.getElementById("sustainabilityTitle"),
+      sustainabilityText: document.getElementById("sustainabilityText"),
+      societyLearn: document.getElementById("societyLearn"),
+      responsibilityLearn: document.getElementById("responsibilityLearn"),
+      sustainabilityLearn: document.getElementById("sustainabilityLearn"),
+      subscribeTitle: document.getElementById("subscribeTitle"),
+      emailLabel: document.getElementById("emailLabel"),
+      subscribeBtn: document.getElementById("subscribeBtn"),
+      subscribeNote: document.getElementById("subscribeNote"),
+      footerText: document.getElementById("footerText")
+    };
 
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        el.textContent = i18n[lang][key] || el.textContent;
-      });
+    function applyLanguage(code) {
+      const t = langData[code] || langData.ar;
+
+      document.documentElement.lang = t.lang;
+      document.documentElement.dir = t.dir;
+
+      // Update text
+      els.langLabel.textContent = t.langLabel;
+      els.tagline.textContent = t.tagline;
+
+      els.societyTitle.textContent = t.societyTitle;
+      els.societyText.textContent = t.societyText;
+
+      els.responsibilityTitle.textContent = t.responsibilityTitle;
+      els.responsibilityText.textContent = t.responsibilityText;
+
+      els.sustainabilityTitle.textContent = t.sustainabilityTitle;
+      els.sustainabilityText.textContent = t.sustainabilityText;
+
+      els.societyLearn.textContent = t.learn;
+      els.responsibilityLearn.textContent = t.learn;
+      els.sustainabilityLearn.textContent = t.learn;
+
+      els.subscribeTitle.textContent = t.subscribeTitle;
+      els.emailLabel.textContent = t.emailLabel;
+      els.subscribeBtn.textContent = t.subscribeBtn;
+      els.subscribeNote.textContent = t.subscribeNote;
+      els.footerText.textContent = t.footer;
     }
 
-    // Auto-detect language (LevelUp)
-    const browserLang = (navigator.language || '').toLowerCase();
-    applyLang(browserLang.startsWith('ar') ? 'ar' : 'ar'); // keep Arabic default; toggle allows English
-
-    toggle.addEventListener('click', () => {
-      const current = document.documentElement.lang;
-      applyLang(current === 'ar' ? 'en' : 'ar');
+    document.getElementById("langSelect").addEventListener("change", (e) => {
+      applyLanguage(e.target.value);
     });
 
-    // Timeline Prev/Next buttons: scroll by one card width
-    function scrollByCards(dir) {
-      const card = timeline.querySelector('.milestone-card');
-      if (!card) return;
-      const gap = 16;
-      const amount = card.getBoundingClientRect().width + gap;
-      timeline.scrollBy({ left: dir * amount, behavior: 'smooth' });
-    }
-    prevBtn.addEventListener('click', () => scrollByCards(-1));
-    nextBtn.addEventListener('click', () => scrollByCards(1));
-
-    // Touch support: tap card to toggle details open/closed
-    document.querySelectorAll('.milestone-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        // don't toggle if user clicked a button/link inside
-        if (e.target.closest('button, a, input, label')) return;
-        card.classList.toggle('is-open');
-      });
-    });
+    // Default language on load
+    applyLanguage("ar");
   </script>
 </body>
 </html>
