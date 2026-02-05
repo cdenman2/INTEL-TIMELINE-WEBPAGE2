@@ -3,7 +3,7 @@
   --intel-blue: #0068B5;
   --intel-blue-dark: #005a9c;
 
-  /* USER REQUEST: grey background */
+  /* Background (grey) */
   --bg-light: #d0d0d0;
   --bg-light-2: #e6e6e6;
 
@@ -12,7 +12,7 @@
   --shadow: 0 10px 25px rgba(0,0,0,.12);
 }
 
-*{ box-sizing: border-box; }
+* { box-sizing: border-box; }
 
 html, body { height: 100%; }
 
@@ -21,7 +21,7 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: var(--bg-light);
-  font-weight: 800; /* USER REQUEST: all text bold */
+  font-weight: 800; /* all bold */
 }
 
 /* Screen-reader only text */
@@ -67,20 +67,6 @@ body{
   flex-wrap: wrap;
 }
 
-.lang-toggle{
-  border: 2px solid var(--intel-blue);
-  background: var(--white);
-  color: var(--intel-blue);
-  padding: 8px 12px;
-  border-radius: 10px;
-  cursor: pointer;
-  font-weight: 900;
-}
-.lang-toggle:focus{
-  outline: 3px solid rgba(0,104,181,.35);
-  outline-offset: 2px;
-}
-
 .lang-select{
   border: 2px solid var(--intel-blue);
   border-radius: 10px;
@@ -90,14 +76,14 @@ body{
   font-weight: 900;
 }
 
-/* Center header lines */
+/* Center header */
 .center-header{
   text-align: center;
   margin: 12px 0 6px;
 }
 
 .center-intel{
-  font-size: 24px;           /* USER REQUEST */
+  font-size: 24px;
   font-weight: 900;
   letter-spacing: 1px;
 }
@@ -119,7 +105,7 @@ body{
 
 .logo-figure{ margin:0; }
 
-/* Requested: 4in x 4in, BUT responsive clamp so tablets/phones show full image */
+/* 4in x 4in but responsive so it fits tablets/phones */
 .logo-img{
   width: 4in;
   height: 4in;
@@ -164,7 +150,7 @@ body{
   margin: 0;
   opacity: .98;
   font-size: 14px;
-  font-weight: 900; /* keep bold */
+  font-weight: 900;
 }
 
 /* ===== Main ===== */
@@ -175,7 +161,9 @@ body{
 }
 
 /* ===== Timeline ===== */
-.timeline-section{ margin-top: 14px; }
+.timeline-section{
+  margin-top: 14px;
+}
 
 .timeline-heading-row{
   display:flex;
@@ -197,7 +185,7 @@ body{
   gap: 8px;
 }
 
-/* Horizontal scroll area with visible scrollbar + snap */
+/* Horizontal scroll with scrollbar + snap */
 .timeline-scroll{
   background: linear-gradient(180deg, rgba(0,104,181,.20), rgba(0,104,181,.08));
   border-radius: 16px;
@@ -211,7 +199,7 @@ body{
   box-shadow: var(--shadow);
 }
 
-/* Ensure scrollbar shows */
+/* Visible scrollbar */
 .timeline-scroll::-webkit-scrollbar{ height: 10px; }
 .timeline-scroll::-webkit-scrollbar-thumb{
   background: rgba(0,90,156,.45);
@@ -238,7 +226,6 @@ body{
   outline: none;
 }
 
-/* Bonus: transform on hover */
 .milestone-card:hover{
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(0,0,0,.18);
@@ -262,7 +249,7 @@ body{
   font-size: 12px;
 }
 
-/* Media box + REQUIRED 2in x 2in image sizing */
+/* Media box + 2in x 2in image sizing */
 .card-media{
   background: rgba(255,255,255,.10);
   border: 1px solid rgba(255,255,255,.20);
@@ -291,7 +278,7 @@ body{
   font-size: 15px;
 }
 
-/* Details hidden by default; shown on hover OR keyboard focus OR tap (is-open) */
+/* Details hidden by default; shown on hover/focus/tap */
 .card-details{
   margin-top: 8px;
   background: rgba(0,0,0,.12);
@@ -321,7 +308,7 @@ body{
   font-weight: 900;
 }
 
-/* ===== 3-column Bootstrap section (custom look) ===== */
+/* ===== 3 blocks ===== */
 .info-card{
   background: var(--white);
   border-radius: 14px;
@@ -344,12 +331,11 @@ body{
   color: var(--intel-blue);
 }
 
-/* USER REQUEST: Society/Responsibility/Sustainability blocks darker grey */
+/* Darker grey blocks */
 .info-card-dark{
   background: #9b9b9b;
 }
 
-/* Make text readable on dark grey blocks */
 .info-card-dark,
 .info-card-dark p,
 .info-card-dark .info-title{
@@ -420,21 +406,12 @@ body{
   font-weight: 900;
 }
 
-/* ===== Responsive behavior (MEETS rubric) ===== */
+/* ===== Responsive ===== */
 @media (max-width: 768px){
-  /* stack logos more cleanly */
-  .logo-row{
-    flex-direction: column;
-  }
-  .logo-arrow{
-    transform: rotate(90deg);
-  }
+  .logo-row{ flex-direction: column; }
+  .logo-arrow{ transform: rotate(90deg); }
 
-  .lang-controls{
-    justify-content: flex-end;
-  }
-
-  /* Timeline stacks vertically on small screens */
+  /* stack timeline vertically on small screens */
   .timeline-scroll{
     flex-direction: column;
     overflow-x: hidden;
@@ -447,15 +424,22 @@ body{
     cursor: default;
   }
 
-  /* Keep images reasonable on small screens */
   .card-media img{
     width: min(2in, 80vw);
     height: min(2in, 80vw);
   }
 
-  /* Make logos fit tablets/phones */
   .logo-img{
     width: min(4in, 90vw);
     height: min(4in, 90vw);
   }
 }
+
+/* ===== Google Translate cleanup ===== */
+.gtranslate-hidden{ display:none !important; }
+.goog-te-banner-frame.skiptranslate{ display:none !important; }
+body{ top:0 !important; }
+.goog-logo-link, .goog-te-gadget{ display:none !important; }
+
+/* Keep INTEL from being translated */
+.notranslate{ translate: no; }
