@@ -21,7 +21,7 @@ body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   background: var(--intel-light);
   color:#0b1b2a;
-  text-align:start; /* RTL/LTR safe */
+  text-align:start;
 }
 
 img{ max-width:100%; height:auto; display:block; }
@@ -137,7 +137,7 @@ img{ max-width:100%; height:auto; display:block; }
   box-shadow: var(--shadow);
   margin: 0;
   width: 100%;
-  border: 3px solid var(--outline-dark); /* dark gray outline */
+  border: 3px solid var(--outline-dark);
 }
 
 .logo-card img{
@@ -181,28 +181,30 @@ html[dir="rtl"] .logo-arrow{
   }
 }
 
-/* TIMELINE HORIZONTAL SCROLL */
+/* TIMELINE HORIZONTAL SCROLL (THIS is the scrollbar) */
 .timeline-scroll{
-  overflow-x: auto;          /* this creates the left↔right scrollbar */
+  overflow-x: auto;
   overflow-y: hidden;
-  padding-bottom: 12px;
+  padding-bottom: 14px;
   -webkit-overflow-scrolling: touch;
 }
 
 .timeline{
   display:grid;
-  grid-auto-flow: column;    /* makes items go left-to-right */
-  grid-auto-columns: 560px;  /* width of each card */
+  grid-auto-flow: column;
+  grid-auto-columns: 560px;
   gap: 16px;
-  width: max-content;        /* forces overflow */
+  width: max-content;
   padding-bottom: 6px;
 }
 
+/* Timeline blocks MUST be Intel blue */
 .timeline-item{
-  background: var(--card);
+  background: var(--intel-blue);
+  color: #fff;
   border-radius: 18px;
   padding: 16px;
-  box-shadow: 0 10px 22px rgba(0,0,0,.08);
+  box-shadow: 0 10px 22px rgba(0,0,0,.14);
   width: 560px;
 
   display:grid;
@@ -213,8 +215,9 @@ html[dir="rtl"] .logo-arrow{
 
 .timeline-year{
   font-weight: 900;
-  color: var(--intel-dark);
+  color: #fff;
   font-size: 1.2rem;
+  opacity: .95;
 }
 
 .timeline-content{
@@ -226,17 +229,19 @@ html[dir="rtl"] .logo-arrow{
   height: 120px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 10px 20px rgba(0,0,0,.10);
+  box-shadow: 0 10px 20px rgba(0,0,0,.18);
   margin-top: 2px;
+  border: 2px solid rgba(255,255,255,.35);
 }
 
 .timeline-title{
   margin: 8px 0 4px;
+  color:#fff;
 }
 
 .timeline-text{
   margin: 0;
-  opacity: .92;
+  opacity: .95;
   max-width: 70ch;
 }
 
@@ -273,17 +278,19 @@ html[dir="rtl"] .logo-arrow{
 .icon{ font-size:1.6rem; }
 .impact-title{ margin:0; }
 
+/* Buttons/tabs under gray blocks MUST be Intel blue */
 .impact-btn{
   margin-top:12px;
   width:100%;
   padding:10px 12px;
   border-radius:12px;
-  border:1px solid rgba(255,255,255,.5);
-  background: rgba(255,255,255,.12);
+  border: 2px solid rgba(255,255,255,.35);
+  background: var(--intel-blue);
   color:#fff;
+  font-weight:900;
   cursor:pointer;
 }
-.impact-btn:hover{ background: rgba(255,255,255,.18); }
+.impact-btn:hover{ filter:brightness(.95); }
 
 .impact-panel{
   margin-top:12px;
