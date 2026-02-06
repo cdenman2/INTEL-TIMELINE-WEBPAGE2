@@ -46,7 +46,9 @@ const translations = {
     privacyNote: "نحترم خصوصيتك. يمكنك إلغاء الاشتراك في أي وقت.",
 
     footerIntel: "Intel",
-    footerNote: "مشروع تعليمي – توطين + إمكانية وصول."
+    footerNote: "مشروع تعليمي – توطين + إمكانية وصول.",
+
+    modalClose: "إغلاق"
   },
 
   he: {
@@ -94,7 +96,9 @@ const translations = {
     privacyNote: "אנחנו מכבדים את פרטיותך. ניתן לבטל בכל עת.",
 
     footerIntel: "Intel",
-    footerNote: "פרויקט לימודי – לוקליזציה + נגישות."
+    footerNote: "פרויקט לימודי – לוקליזציה + נגישות.",
+
+    modalClose: "סגור"
   },
 
   en: {
@@ -142,20 +146,40 @@ const translations = {
     privacyNote: "We respect your privacy. Unsubscribe anytime.",
 
     footerIntel: "Intel",
-    footerNote: "Educational project – localization + accessibility."
+    footerNote: "Educational project – localization + accessibility.",
+
+    modalClose: "Close"
   }
 };
 
+function toggleBootstrapDir(isRtl) {
+  const ltr = document.getElementById("bsLtr");
+  const rtl = document.getElementById("bsRtl");
+  if (!ltr || !rtl) return;
+
+  // enable one, disable the other
+  ltr.disabled = isRtl;
+  rtl.disabled = !isRtl;
+}
+
 function setLanguage(lang) {
   const chosen = translations[lang] ? lang : "ar";
+  const isRtl = RTL_LANGS.has(chosen);
+
   document.documentElement.lang = chosen;
-  document.documentElement.dir = RTL_LANGS.has(chosen) ? "rtl" : "ltr";
+  document.documentElement.dir = isRtl ? "rtl" : "ltr";
+
+  toggleBootstrapDir(isRtl);
 
   const dict = translations[chosen];
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];
   });
+
+  // Update modal close button text
+  const closeBtn = document.getElementById("impactModalCloseBtn");
+  if (closeBtn) closeBtn.textContent = dict.modalClose || "Close";
 }
 
 function wireLanguageSelector() {
@@ -164,30 +188,42 @@ function wireLanguageSelector() {
 
   selector.addEventListener("change", (e) => setLanguage(e.target.value));
 
+  // Start Arabic by default
   selector.value = "ar";
   setLanguage("ar");
 }
 
-function wireImpactToggles() {
-  document.querySelectorAll("button[data-toggle]").forEach(btn => {
+function wireImpactModal() {
+  const modalTitle = document.getElementById("impactModalLabel");
+  const modalBody = document.getElementById("impactModalBody");
+
+  document.querySelectorAll("button[data-impact]").forEach(btn => {
     btn.addEventListener("click", () => {
-      const id = btn.getAttribute("data-toggle");
-      const panel = document.getElementById(id);
-      if (!panel) return;
+      const lang = document.documentElement.lang || "ar";
+      const dict = translations[lang] || translations.ar;
 
-      const willOpen = panel.hasAttribute("hidden");
-      if (willOpen) panel.removeAttribute("hidden");
-      else panel.setAttribute("hidden", "");
+      const key = btn.getAttribute("data-impact");
+      if (!modalTitle || !modalBody) return;
 
-      btn.setAttribute("aria-expanded", String(willOpen));
+      if (key === "society") {
+        modalTitle.textContent = dict.societyTitle;
+        modalBody.textContent = dict.societyBody;
+      } else if (key === "responsibility") {
+        modalTitle.textContent = dict.responsibilityTitle;
+        modalBody.textContent = dict.responsibilityBody;
+      } else if (key === "sustainability") {
+        modalTitle.textContent = dict.sustainabilityTitle;
+        modalBody.textContent = dict.sustainabilityBody;
+      }
     });
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   wireLanguageSelector();
-  wireImpactToggles();
+  wireImpactModal();
 
+  // Keep form accessible; demo submit
   const form = document.querySelector("form.subscribe-card");
   if (form) {
     form.addEventListener("submit", (e) => {
