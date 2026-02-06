@@ -1,398 +1,193 @@
-:root{
-  --intel-blue: #0068B5;
-  --intel-blue-dark: #005a9c;
-  --bg-light: #d9ecff;
-  --bg-light-2: #eaf4ff;
-  --text: #0b1b2b;
-  --white: #ffffff;
-  --dark-grey: #2f3b46;
-  --shadow: 0 10px 25px rgba(0,0,0,.18);
-}
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <title>Intel Timeline</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-*{ box-sizing:border-box; }
+  <!-- Performance: no external CSS, no external fonts -->
+  <link rel="stylesheet" href="styles.css">
 
-html, body{ height:100%; }
+  <!-- Hint browser for translation + accessibility -->
+  <meta name="google" content="notranslate">
+</head>
+<body>
 
-body{
-  margin:0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--bg-light);
-  color: var(--text);
-  font-weight: 800;
-}
+<header class="header">
+  <h1 class="intel-title">INTEL</h1>
+  <h2 id="tagline" data-i18n="tagline">مستقبل الابتكار</h2>
 
-/* Accessibility helper */
-.sr-only{
-  position:absolute;
-  width:1px;height:1px;
-  padding:0;margin:-1px;
-  overflow:hidden;clip:rect(0,0,0,0);
-  border:0;
-}
+  <select id="langSelect" aria-label="Language selector">
+    <option value="ar" selected>العربية (Arabic)</option>
+    <option value="en">English</option>
+    <option value="he">עברית (Hebrew)</option>
+    <option value="de">Deutsch (German)</option>
+    <option value="es">Español (Spanish)</option>
+    <option value="hi">हिन्दी (Hindi)</option>
+  </select>
 
-/* Header layout */
-.page-header{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 18px 18px 0;
-}
+  <div class="logo-row">
+    <img src="images/logo-old.png" alt="Old Intel Logo" class="logo" width="256" height="256">
+    <span class="arrow">→</span>
+    <img src="images/logo-new.png" alt="New Intel Logo" class="logo" width="256" height="256">
+  </div>
+</header>
 
-.title-stack{
-  text-align:center;
-  margin-bottom: 10px;
-}
+<main>
 
-.intel-only{
-  font-size: 24px;
-  font-weight: 900;
-  letter-spacing: .5px;
-}
+<section class="timeline-section">
+  <h3 id="timelineTitle" data-i18n="timeline">الخط الزمني</h3>
 
-.subtitle{
-  font-size: 18px;
-  font-weight: 900;
-  opacity: .95;
-  margin-top: 2px;
-}
+  <div class="timeline">
 
-.lang-row{
-  display:flex;
-  justify-content:center;
-  margin: 10px 0 14px;
-}
+    <!-- 1968 -->
+    <article class="card">
+      <h4>1968</h4>
+      <img src="images/1968.png" alt="Intel building 1968" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span></p>
+      <div class="details" data-i18n="d1968">
+        تأسست Intel وبدأت رحلتها في صناعة أشباه الموصلات.
+      </div>
+    </article>
 
-.lang-select{
-  width: min(420px, 92vw);
-  padding: 10px 12px;
-  border-radius: 10px;
-  border: 2px solid rgba(0,0,0,.18);
-  background: var(--white);
-  font-weight: 900;
-  cursor: pointer;
-}
+    <!-- 1971 -->
+    <article class="card">
+      <h4>1971</h4>
+      <img src="images/1971.png" alt="Intel 4004" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span> 4004</p>
+      <div class="details" data-i18n="d1971">
+        أول معالج دقيق تجاري في العالم.
+      </div>
+    </article>
 
-/* Logos */
-.logo-row{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  gap: 14px;
-  margin-bottom: 10px;
-}
+    <!-- 1978 -->
+    <article class="card">
+      <h4>1978</h4>
+      <img src="images/1978.png" alt="Intel 8086" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span> 8086</p>
+      <div class="details" data-i18n="d1978">
+        أساس معمارية x86 للحواسيب الحديثة.
+      </div>
+    </article>
 
-.logo-arrow{
-  font-size: 28px;
-  font-weight: 900;
-  color: var(--intel-blue-dark);
-}
+    <!-- 1985 -->
+    <article class="card">
+      <h4>1985</h4>
+      <img src="images/1985.png" alt="Intel 80386" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span> 80386</p>
+      <div class="details" data-i18n="d1985">
+        معالج 32-بت أحدث نقلة نوعية في الأداء.
+      </div>
+    </article>
 
-.logo-img{
-  width: min(280px, 38vw);
-  height: auto;
-  aspect-ratio: 1 / 1;
-  object-fit: contain;
-  border-radius: 12px;
-  border: 5px solid var(--dark-grey);
-  background: var(--bg-light-2);
-  box-shadow: 0 6px 16px rgba(0,0,0,.18);
-}
+    <!-- 2006 -->
+    <article class="card">
+      <h4>2006</h4>
+      <img src="images/2006.png" alt="Intel Core 2 Duo" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span> Core 2 Duo</p>
+      <div class="details" data-i18n="d2006">
+        قفزة كبيرة في الأداء وكفاءة الطاقة.
+      </div>
+    </article>
 
-/* Hero */
-.hero{
-  display:flex;
-  justify-content:center;
-  padding: 10px 0 18px;
-}
+    <!-- 2020 -->
+    <article class="card">
+      <h4>2020</h4>
+      <img src="images/2020.png" alt="Intel Atom" width="256" height="256" loading="lazy">
+      <p class="card-title"><span class="intel-word">Intel</span> Atom</p>
+      <div class="details" data-i18n="d2020">
+        معالجات موفرة للطاقة للأجهزة الحديثة.
+      </div>
+    </article>
 
-.hero-box{
-  width: min(980px, 100%);
-  background: var(--intel-blue);
-  color: var(--white);
-  border-radius: 14px;
-  padding: 18px;
-  box-shadow: var(--shadow);
-  text-align:center;
-  border: 4px solid var(--dark-grey);
-}
+  </div>
+</section>
 
-.hero-title{
-  margin: 0 0 6px;
-  font-weight: 900;
-  letter-spacing: .2px;
-}
+<section class="three-boxes">
+  <div class="info-box">
+    <h3 data-i18n="society">المجتمع</h3>
+    <p data-i18n="societyText">الاستثمار في التعليم والمهارات الرقمية.</p>
+  </div>
+  <div class="info-box">
+    <h3 data-i18n="responsibility">المسؤولية</h3>
+    <p data-i18n="responsibilityText">الالتزام بالسلامة والمعايير والشفافية.</p>
+  </div>
+  <div class="info-box">
+    <h3 data-i18n="sustainability">الاستدامة</h3>
+    <p data-i18n="sustainabilityText">تقليل استهلاك الطاقة ودعم البيئة.</p>
+  </div>
+</section>
 
-.hero-sub{
-  margin:0;
-  font-size: 14px;
-  opacity:.95;
-  font-weight: 800;
-}
+<section class="subscribe">
+  <h3 data-i18n="subscribeTitle">الاشتراك في النشرة الإخبارية للاستدامة</h3>
+  <form>
+    <input type="text" placeholder="الاسم" required>
+    <input type="email" placeholder="البريد الإلكتروني" required>
+    <button type="submit" data-i18n="subscribeBtn">اشترك</button>
+  </form>
+</section>
 
-/* Main */
-.page-main{
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 14px 18px 28px;
-}
+<footer>
+  <p>© <span class="intel-word">Intel</span></p>
+</footer>
 
-/* Timeline heading */
-.timeline-heading-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
+</main>
 
-.timeline-heading{
-  margin: 0;
-  font-size: 20px;
-  font-weight: 900;
-  color: var(--intel-blue-dark);
-}
-
-/* Timeline scroll area (desktop horizontal + scrollbar) */
-.timeline-scroll{
-  background: rgba(0,90,156,.20);
-  border-radius: 16px;
-  padding: 14px;
-  display:flex;
-  gap: 14px;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-padding: 14px;
-  box-shadow: var(--shadow);
-  border: 4px solid var(--dark-grey);
-}
-
-/* visible scrollbar */
-.timeline-scroll::-webkit-scrollbar{ height: 10px; }
-.timeline-scroll::-webkit-scrollbar-thumb{
-  background: rgba(47,59,70,.70);
-  border-radius: 20px;
-}
-.timeline-scroll::-webkit-scrollbar-track{
-  background: rgba(255,255,255,.55);
-  border-radius: 20px;
-}
-
-/* Cards */
-.milestone-card{
-  scroll-snap-align: start;
-  flex: 0 0 auto;
-  width: 240px;
-  background: rgba(0,104,181,.92);
-  color: var(--white);
-  border-radius: 14px;
-  padding: 12px;
-  position: relative;
-  box-shadow: 0 10px 22px rgba(0,0,0,.18);
-  cursor: pointer;
-  transition: transform .18s ease, box-shadow .18s ease;
-  border: 4px solid var(--dark-grey);
-  outline: none;
-}
-
-.milestone-card:hover{
-  transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.22);
-}
-
-.milestone-card:focus{
-  outline: 3px solid rgba(255,255,255,.6);
-  outline-offset: 2px;
-}
-
-.card-year{
-  position:absolute;
-  top: 10px;
-  left: 10px;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.30);
-  padding: 4px 10px;
-  border-radius: 999px;
-  font-weight: 900;
-  font-size: 12px;
-}
-
-/* Media */
-.card-media{
-  background: rgba(255,255,255,.10);
-  border: 2px solid rgba(255,255,255,.25);
-  border-radius: 12px;
-  padding: 10px;
-  margin-top: 18px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-}
-
-.card-media img{
-  width: 190px;
-  height: 190px;
-  object-fit: cover;
-  border-radius: 10px;
-  background: var(--white);
-  border: 4px solid var(--dark-grey);
-}
-
-.card-title{
-  margin-top: 10px;
-  font-weight: 900;
-  font-size: 15px;
-}
-
-/* Details hidden by default -> hover/focus/tap */
-.card-details{
-  margin-top: 8px;
-  background: rgba(0,0,0,.16);
-  border: 2px solid rgba(255,255,255,.22);
-  border-radius: 12px;
-  padding: 10px;
-  font-size: 13px;
-  line-height: 1.35;
-
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition: max-height .25s ease, opacity .25s ease;
-}
-
-.milestone-card:hover .card-details,
-.milestone-card:focus-within .card-details,
-.milestone-card.is-open .card-details{
-  max-height: 220px;
-  opacity: 1;
-}
-
-.hint{
-  margin: 10px 4px 0;
-  font-size: 13px;
-  font-weight: 900;
-  color: rgba(11,27,43,.85);
-}
-
-/* Bottom three info cards */
-.info-card{
-  background: rgba(255,255,255,.92);
-  border-radius: 14px;
-  padding: 14px;
-  box-shadow: var(--shadow);
-  border: 4px solid var(--dark-grey);
-}
-
-.info-btn{
-  width: 100%;
-  border: none;
-  background: transparent;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  padding: 8px 6px;
-  font-weight: 900;
-  cursor: pointer;
-}
-
-.info-icon{
-  font-size: 22px;
-}
-
-.info-title{
-  font-size: 18px;
-  color: var(--intel-blue-dark);
-  font-weight: 900;
-}
-
-.info-body{
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 2px solid rgba(0,0,0,.10);
-}
-
-/* Subscription block (Intel blue + dark grey outline) */
-.subscribe-section{
-  margin-top: 24px;
-  padding-top: 10px;
-}
-
-.subscribe-box{
-  width: min(760px, 100%);
-  margin: 0 auto;
-  background: var(--intel-blue);
-  color: var(--white);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: var(--shadow);
-  border: 5px solid var(--dark-grey);
-}
-
-.subscribe-title{
-  margin: 0 0 10px;
-  font-weight: 900;
-  text-align:center;
-}
-
-.subscribe-form{
-  display:grid;
-  gap: 12px;
-}
-
-.form-row{
-  display:grid;
-  gap: 6px;
-}
-
-.form-row label{
-  font-weight: 900;
-}
-
-.form-row input{
-  padding: 10px 12px;
-  border-radius: 12px;
-  border: 2px solid rgba(0,0,0,.20);
-  font-weight: 900;
-}
-
-.form-hint{
-  margin: 0;
-  font-size: 12.5px;
-  font-weight: 900;
-  opacity: .92;
-  text-align:center;
-}
-
-.page-footer{
-  text-align:center;
-  margin-top: 14px;
-  font-weight: 900;
-  color: rgba(11,27,43,.75);
-}
-
-/* Responsive: phones stack timeline vertically */
-@media (max-width: 768px){
-  .logo-row{
-    flex-direction: column;
+<script>
+const translations = {
+  ar: {
+    tagline: "مستقبل الابتكار",
+    timeline: "الخط الزمني",
+    d1968: "تأسست Intel وبدأت رحلتها في صناعة أشباه الموصلات.",
+    d1971: "أول معالج دقيق تجاري في العالم.",
+    d1978: "أساس معمارية x86 للحواسيب الحديثة.",
+    d1985: "معالج 32-بت أحدث نقلة نوعية في الأداء.",
+    d2006: "قفزة كبيرة في الأداء وكفاءة الطاقة.",
+    d2020: "معالجات موفرة للطاقة للأجهزة الحديثة.",
+    society: "المجتمع",
+    societyText: "الاستثمار في التعليم والمهارات الرقمية.",
+    responsibility: "المسؤولية",
+    responsibilityText: "الالتزام بالسلامة والمعايير والشفافية.",
+    sustainability: "الاستدامة",
+    sustainabilityText: "تقليل استهلاك الطاقة ودعم البيئة.",
+    subscribeTitle: "الاشتراك في النشرة الإخبارية للاستدامة",
+    subscribeBtn: "اشترك"
+  },
+  en: {
+    tagline: "Future of Innovation",
+    timeline: "Timeline",
+    d1968: "Intel was founded and began its semiconductor journey.",
+    d1971: "The world’s first commercial microprocessor.",
+    d1978: "Foundation of the x86 architecture.",
+    d1985: "32-bit processor that changed PC performance.",
+    d2006: "Major leap in performance and efficiency.",
+    d2020: "Energy-efficient processors for modern devices.",
+    society: "Society",
+    societyText: "Investing in education and digital skills.",
+    responsibility: "Responsibility",
+    responsibilityText: "Commitment to safety, standards, and transparency.",
+    sustainability: "Sustainability",
+    sustainabilityText: "Reducing power usage and supporting the environment.",
+    subscribeTitle: "Sustainability Newsletter Subscription",
+    subscribeBtn: "Subscribe"
   }
-  .logo-arrow{
-    transform: rotate(90deg);
-  }
+};
 
-  .timeline-scroll{
-    flex-direction: column;
-    overflow-x: hidden;
-    overflow-y: visible;
-    scroll-snap-type: none;
-  }
+const select = document.getElementById("langSelect");
 
-  .milestone-card{
-    width: 100%;
-    cursor: default;
-  }
+select.addEventListener("change", () => {
+  const lang = select.value;
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === "ar" || lang === "he") ? "rtl" : "ltr";
 
-  .card-media img{
-    width: min(190px, 70vw);
-    height: min(190px, 70vw);
-  }
-}
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+});
+</script>
+
+</body>
+</html>
