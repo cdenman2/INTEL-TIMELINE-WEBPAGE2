@@ -2,6 +2,7 @@ const RTL_LANGS = new Set(["ar", "he"]);
 
 const translations = {
   ar: {
+    navLogos: "الشعارات",
     navTimeline: "الخط الزمني",
     navImpact: "الأثر",
     navSubscribe: "الاشتراك",
@@ -10,10 +11,13 @@ const translations = {
     heroTitle: "مستقبل الابتكار",
     heroSubtitle: "لمحة سريعة عن محطات Intel الرئيسية 1968–2020 ومجالات الأثر.",
 
+    logosTitle: "الشعارات",
     logoOldLabel: "الشعار القديم",
     logoNewLabel: "الشعار الجديد",
 
     timelineTitle: "الخط الزمني",
+    timelineHint: "استخدم شريط التمرير للتحرك يمينًا ويسارًا عبر المحطات.",
+
     t1968Title: "Intel",
     t1968Body: "تأسست Intel وبدأت رحلتها في أشباه الموصلات.",
     t1971Title: "Intel 4004",
@@ -46,6 +50,7 @@ const translations = {
   },
 
   he: {
+    navLogos: "לוגואים",
     navTimeline: "ציר זמן",
     navImpact: "השפעה",
     navSubscribe: "הרשמה",
@@ -54,10 +59,13 @@ const translations = {
     heroTitle: "עתיד החדשנות",
     heroSubtitle: "סקירה קצרה של אבני דרך מרכזיות של Intel לשנים 1968–2020 ותחומי השפעה.",
 
+    logosTitle: "לוגואים",
     logoOldLabel: "לוגו ישן",
     logoNewLabel: "לוגו חדש",
 
     timelineTitle: "ציר זמן",
+    timelineHint: "השתמש בסרגל הגלילה כדי לנוע ימינה ושמאלה בין התחנות.",
+
     t1968Title: "Intel",
     t1968Body: "Intel נוסדה והחלה את דרכה בתחום המוליכים למחצה.",
     t1971Title: "Intel 4004",
@@ -78,7 +86,7 @@ const translations = {
     responsibilityBody: "מחויבות לבטיחות, לתקנים ולשקיפות.",
     sustainabilityTitle: "קיימות",
     sustainabilityBody: "צמצום צריכת אנרגיה ותמיכה בסביבה.",
-    learnMore: "למד עוד",
+    learnMore: "למידע נוסף",
 
     subscribeTitle: "הרשמה לניוזלטר הקיימות",
     emailLabel: "כתובת אימייל",
@@ -90,6 +98,7 @@ const translations = {
   },
 
   en: {
+    navLogos: "Logos",
     navTimeline: "Timeline",
     navImpact: "Impact",
     navSubscribe: "Subscribe",
@@ -98,10 +107,13 @@ const translations = {
     heroTitle: "Future of Innovation",
     heroSubtitle: "A quick look at key Intel milestones 1968–2020 and impact areas.",
 
+    logosTitle: "Logos",
     logoOldLabel: "Old logo",
     logoNewLabel: "New logo",
 
     timelineTitle: "Timeline",
+    timelineHint: "Use the scrollbar to move left and right across the milestones.",
+
     t1968Title: "Intel",
     t1968Body: "Intel was founded and began its journey in semiconductors.",
     t1971Title: "Intel 4004",
@@ -136,6 +148,7 @@ const translations = {
 
 function setLanguage(lang) {
   const chosen = translations[lang] ? lang : "ar";
+
   document.documentElement.lang = chosen;
   document.documentElement.dir = RTL_LANGS.has(chosen) ? "rtl" : "ltr";
 
@@ -150,9 +163,11 @@ function wireLanguageSelector() {
   const selector = document.getElementById("languageSelector");
   if (!selector) return;
 
-  selector.addEventListener("change", (e) => setLanguage(e.target.value));
+  selector.addEventListener("change", (e) => {
+    setLanguage(e.target.value);
+  });
 
-  // Start in Arabic always
+  // Always start in Arabic
   selector.value = "ar";
   setLanguage("ar");
 }
@@ -177,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLanguageSelector();
   wireImpactToggles();
 
-  // Optional: keep form from navigating away
+  // Keep demo form from navigating away
   const form = document.querySelector("form.subscribe-card");
   if (form) {
     form.addEventListener("submit", (e) => {
