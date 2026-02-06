@@ -1,193 +1,279 @@
 <!doctype html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Intel Timeline</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Intel timeline and sustainability highlights with multilingual support (LTR/RTL)." />
 
-  <!-- Performance: no external CSS, no external fonts -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+        crossorigin="anonymous">
 
-  <!-- Hint browser for translation + accessibility -->
-  <meta name="google" content="notranslate">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
+  <a class="skip-link" href="#mainContent">Skip to content</a>
 
-<header class="header">
-  <h1 class="intel-title">INTEL</h1>
-  <h2 id="tagline" data-i18n="tagline">مستقبل الابتكار</h2>
+  <!-- Top bar / Language -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container">
+        <!-- INTEL must stay English: DO NOT translate this element -->
+        <a class="navbar-brand brand-mark" href="#" aria-label="Intel home">INTEL</a>
 
-  <select id="langSelect" aria-label="Language selector">
-    <option value="ar" selected>العربية (Arabic)</option>
-    <option value="en">English</option>
-    <option value="he">עברית (Hebrew)</option>
-    <option value="de">Deutsch (German)</option>
-    <option value="es">Español (Spanish)</option>
-    <option value="hi">हिन्दी (Hindi)</option>
-  </select>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMain"
+                aria-controls="navMain" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="logo-row">
-    <img src="images/logo-old.png" alt="Old Intel Logo" class="logo" width="256" height="256">
-    <span class="arrow">→</span>
-    <img src="images/logo-new.png" alt="New Intel Logo" class="logo" width="256" height="256">
-  </div>
-</header>
+        <div id="navMain" class="collapse navbar-collapse">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="#timeline" data-i18n="navTimeline">Timeline</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#impact" data-i18n="navImpact">Impact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#subscribe" data-i18n="navSubscribe">Subscribe</a>
+            </li>
+          </ul>
 
-<main>
-
-<section class="timeline-section">
-  <h3 id="timelineTitle" data-i18n="timeline">الخط الزمني</h3>
-
-  <div class="timeline">
-
-    <!-- 1968 -->
-    <article class="card">
-      <h4>1968</h4>
-      <img src="images/1968.png" alt="Intel building 1968" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span></p>
-      <div class="details" data-i18n="d1968">
-        تأسست Intel وبدأت رحلتها في صناعة أشباه الموصلات.
+          <div class="d-flex align-items-center gap-2">
+            <label for="languageSelector" class="form-label mb-0 text-white-75" data-i18n="languageLabel">Language</label>
+            <select id="languageSelector" class="form-select form-select-sm" aria-label="Select language">
+              <option value="en">English (English)</option>
+              <option value="ar">العربية (Arabic)</option>
+              <option value="he">עברית (Hebrew)</option>
+              <option value="vi">Tiếng Việt (Vietnamese)</option>
+              <option value="de">Deutsch (German)</option>
+              <option value="fr">Français (French)</option>
+              <option value="es">Español (Spanish)</option>
+              <option value="hi">हिन्दी (Indian)</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </article>
+    </nav>
 
-    <!-- 1971 -->
-    <article class="card">
-      <h4>1971</h4>
-      <img src="images/1971.png" alt="Intel 4004" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span> 4004</p>
-      <div class="details" data-i18n="d1971">
-        أول معالج دقيق تجاري في العالم.
+    <div class="hero container py-4">
+      <h1 class="display-5 fw-semibold mb-2" data-i18n="heroTitle">Future of Innovation</h1>
+      <p class="lead mb-0 text-white-75" data-i18n="heroSubtitle">
+        A quick timeline of key Intel milestones and a look at impact areas.
+      </p>
+    </div>
+  </header>
+
+  <main id="mainContent" class="container my-4">
+    <!-- Logos -->
+    <section class="mb-4" aria-label="Intel logos">
+      <div class="logos d-flex flex-wrap align-items-center gap-3">
+        <figure class="logo-card">
+          <img src="images/logo-old.png" alt="Old Intel logo" width="420" height="220" loading="lazy" decoding="async">
+          <figcaption data-i18n="logoOldLabel">Old logo</figcaption>
+        </figure>
+
+        <div class="logo-arrow" aria-hidden="true">→</div>
+
+        <figure class="logo-card">
+          <img src="images/logo-new.png" alt="New Intel logo" width="420" height="220" loading="lazy" decoding="async">
+          <figcaption data-i18n="logoNewLabel">New logo</figcaption>
+        </figure>
       </div>
-    </article>
+    </section>
 
-    <!-- 1978 -->
-    <article class="card">
-      <h4>1978</h4>
-      <img src="images/1978.png" alt="Intel 8086" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span> 8086</p>
-      <div class="details" data-i18n="d1978">
-        أساس معمارية x86 للحواسيب الحديثة.
+    <!-- Timeline -->
+    <section id="timeline" class="mb-5">
+      <h2 class="section-title" data-i18n="timelineTitle">Timeline</h2>
+
+      <div class="timeline">
+        <!-- 1968 -->
+        <article class="timeline-item">
+          <div class="timeline-year">1968</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1968.png" alt="Intel building in 1968"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t1968Title">Intel</h3>
+            <p class="mb-0" data-i18n="t1968Body">Intel was founded and began its journey in semiconductors.</p>
+          </div>
+        </article>
+
+        <!-- 1971 -->
+        <article class="timeline-item">
+          <div class="timeline-year">1971</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1971.png" alt="Intel 4004 processor"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t1971Title">Intel 4004</h3>
+            <p class="mb-0" data-i18n="t1971Body">The world’s first commercial microprocessor.</p>
+          </div>
+        </article>
+
+        <!-- 1978 -->
+        <article class="timeline-item">
+          <div class="timeline-year">1978</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1978.png" alt="Intel 8086 processor"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t1978Title">Intel 8086</h3>
+            <p class="mb-0" data-i18n="t1978Body">Foundation of the x86 architecture for modern computers.</p>
+          </div>
+        </article>
+
+        <!-- 1985 -->
+        <article class="timeline-item">
+          <div class="timeline-year">1985</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1985.png" alt="Intel 80386 processor"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t1985Title">Intel 80386</h3>
+            <p class="mb-0" data-i18n="t1985Body">A 32-bit processor that marked a major leap in performance.</p>
+          </div>
+        </article>
+
+        <!-- 2006 -->
+        <article class="timeline-item">
+          <div class="timeline-year">2006</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/2006.png" alt="Intel Core 2 Duo processor"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t2006Title">Intel Core 2 Duo</h3>
+            <p class="mb-0" data-i18n="t2006Body">A big jump in performance and energy efficiency.</p>
+          </div>
+        </article>
+
+        <!-- 2020 -->
+        <article class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/2020.png" alt="Intel Atom processor"
+                 width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="h5 mt-3 mb-1" data-i18n="t2020Title">Intel Atom</h3>
+            <p class="mb-0" data-i18n="t2020Body">Power-efficient processors for modern devices.</p>
+          </div>
+        </article>
       </div>
-    </article>
+    </section>
 
-    <!-- 1985 -->
-    <article class="card">
-      <h4>1985</h4>
-      <img src="images/1985.png" alt="Intel 80386" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span> 80386</p>
-      <div class="details" data-i18n="d1985">
-        معالج 32-بت أحدث نقلة نوعية في الأداء.
+    <!-- Impact: responsive 3-column + icons + click-to-reveal -->
+    <section id="impact" class="mb-5">
+      <h2 class="section-title" data-i18n="impactTitle">Society, Responsibility, Sustainability</h2>
+
+      <div class="row g-3">
+        <!-- Society -->
+        <div class="col-12 col-md-4">
+          <div class="impact-card h-100">
+            <div class="impact-head">
+              <i class="bi bi-people-fill" aria-hidden="true"></i>
+              <h3 class="h5 m-0" data-i18n="societyTitle">Society</h3>
+            </div>
+
+            <button class="btn btn-outline-light w-100 mt-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#societyText"
+                    aria-expanded="false"
+                    aria-controls="societyText">
+              <span data-i18n="learnMore">Learn More</span>
+            </button>
+
+            <div id="societyText" class="collapse mt-3">
+              <p class="mb-0" data-i18n="societyBody">Investing in education and digital skills.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Responsibility -->
+        <div class="col-12 col-md-4">
+          <div class="impact-card h-100">
+            <div class="impact-head">
+              <i class="bi bi-shield-check" aria-hidden="true"></i>
+              <h3 class="h5 m-0" data-i18n="responsibilityTitle">Responsibility</h3>
+            </div>
+
+            <button class="btn btn-outline-light w-100 mt-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#responsibilityText"
+                    aria-expanded="false"
+                    aria-controls="responsibilityText">
+              <span data-i18n="learnMore">Learn More</span>
+            </button>
+
+            <div id="responsibilityText" class="collapse mt-3">
+              <p class="mb-0" data-i18n="responsibilityBody">Commitment to safety, standards, and transparency.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sustainability -->
+        <div class="col-12 col-md-4">
+          <div class="impact-card h-100">
+            <div class="impact-head">
+              <i class="bi bi-leaf-fill" aria-hidden="true"></i>
+              <h3 class="h5 m-0" data-i18n="sustainabilityTitle">Sustainability</h3>
+            </div>
+
+            <button class="btn btn-outline-light w-100 mt-3"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#sustainabilityText"
+                    aria-expanded="false"
+                    aria-controls="sustainabilityText">
+              <span data-i18n="learnMore">Learn More</span>
+            </button>
+
+            <div id="sustainabilityText" class="collapse mt-3">
+              <p class="mb-0" data-i18n="sustainabilityBody">Reducing energy use and supporting the environment.</p>
+            </div>
+          </div>
+        </div>
       </div>
-    </article>
+    </section>
 
-    <!-- 2006 -->
-    <article class="card">
-      <h4>2006</h4>
-      <img src="images/2006.png" alt="Intel Core 2 Duo" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span> Core 2 Duo</p>
-      <div class="details" data-i18n="d2006">
-        قفزة كبيرة في الأداء وكفاءة الطاقة.
-      </div>
-    </article>
+    <!-- Subscribe -->
+    <section id="subscribe" class="mb-5">
+      <h2 class="section-title" data-i18n="subscribeTitle">Subscribe to the sustainability newsletter</h2>
 
-    <!-- 2020 -->
-    <article class="card">
-      <h4>2020</h4>
-      <img src="images/2020.png" alt="Intel Atom" width="256" height="256" loading="lazy">
-      <p class="card-title"><span class="intel-word">Intel</span> Atom</p>
-      <div class="details" data-i18n="d2020">
-        معالجات موفرة للطاقة للأجهزة الحديثة.
-      </div>
-    </article>
+      <form class="subscribe card p-3 p-md-4" aria-label="Subscription form">
+        <div class="row g-3 align-items-end">
+          <div class="col-12 col-md-6">
+            <label for="email" class="form-label" data-i18n="emailLabel">Email address</label>
+            <input id="email" class="form-control" type="email" placeholder="name@example.com"
+                   autocomplete="email" required>
+          </div>
 
-  </div>
-</section>
+          <div class="col-12 col-md-6">
+            <button class="btn btn-primary w-100" type="submit" data-i18n="subscribeBtn">Subscribe</button>
+          </div>
+        </div>
 
-<section class="three-boxes">
-  <div class="info-box">
-    <h3 data-i18n="society">المجتمع</h3>
-    <p data-i18n="societyText">الاستثمار في التعليم والمهارات الرقمية.</p>
-  </div>
-  <div class="info-box">
-    <h3 data-i18n="responsibility">المسؤولية</h3>
-    <p data-i18n="responsibilityText">الالتزام بالسلامة والمعايير والشفافية.</p>
-  </div>
-  <div class="info-box">
-    <h3 data-i18n="sustainability">الاستدامة</h3>
-    <p data-i18n="sustainabilityText">تقليل استهلاك الطاقة ودعم البيئة.</p>
-  </div>
-</section>
+        <p class="small text-muted mt-3 mb-0" data-i18n="privacyNote">
+          We respect your privacy. Unsubscribe anytime.
+        </p>
+      </form>
+    </section>
+  </main>
 
-<section class="subscribe">
-  <h3 data-i18n="subscribeTitle">الاشتراك في النشرة الإخبارية للاستدامة</h3>
-  <form>
-    <input type="text" placeholder="الاسم" required>
-    <input type="email" placeholder="البريد الإلكتروني" required>
-    <button type="submit" data-i18n="subscribeBtn">اشترك</button>
-  </form>
-</section>
+  <footer class="site-footer">
+    <div class="container py-3 d-flex flex-wrap justify-content-between gap-2">
+      <span>© <span data-i18n="footerIntel">Intel</span></span>
+      <span class="text-white-75" data-i18n="footerNote">Educational project – localization + accessibility.</span>
+    </div>
+  </footer>
 
-<footer>
-  <p>© <span class="intel-word">Intel</span></p>
-</footer>
+  <!-- Bootstrap JS (needed for collapse) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+          crossorigin="anonymous"></script>
 
-</main>
-
-<script>
-const translations = {
-  ar: {
-    tagline: "مستقبل الابتكار",
-    timeline: "الخط الزمني",
-    d1968: "تأسست Intel وبدأت رحلتها في صناعة أشباه الموصلات.",
-    d1971: "أول معالج دقيق تجاري في العالم.",
-    d1978: "أساس معمارية x86 للحواسيب الحديثة.",
-    d1985: "معالج 32-بت أحدث نقلة نوعية في الأداء.",
-    d2006: "قفزة كبيرة في الأداء وكفاءة الطاقة.",
-    d2020: "معالجات موفرة للطاقة للأجهزة الحديثة.",
-    society: "المجتمع",
-    societyText: "الاستثمار في التعليم والمهارات الرقمية.",
-    responsibility: "المسؤولية",
-    responsibilityText: "الالتزام بالسلامة والمعايير والشفافية.",
-    sustainability: "الاستدامة",
-    sustainabilityText: "تقليل استهلاك الطاقة ودعم البيئة.",
-    subscribeTitle: "الاشتراك في النشرة الإخبارية للاستدامة",
-    subscribeBtn: "اشترك"
-  },
-  en: {
-    tagline: "Future of Innovation",
-    timeline: "Timeline",
-    d1968: "Intel was founded and began its semiconductor journey.",
-    d1971: "The world’s first commercial microprocessor.",
-    d1978: "Foundation of the x86 architecture.",
-    d1985: "32-bit processor that changed PC performance.",
-    d2006: "Major leap in performance and efficiency.",
-    d2020: "Energy-efficient processors for modern devices.",
-    society: "Society",
-    societyText: "Investing in education and digital skills.",
-    responsibility: "Responsibility",
-    responsibilityText: "Commitment to safety, standards, and transparency.",
-    sustainability: "Sustainability",
-    sustainabilityText: "Reducing power usage and supporting the environment.",
-    subscribeTitle: "Sustainability Newsletter Subscription",
-    subscribeBtn: "Subscribe"
-  }
-};
-
-const select = document.getElementById("langSelect");
-
-select.addEventListener("change", () => {
-  const lang = select.value;
-  document.documentElement.lang = lang;
-  document.documentElement.dir = (lang === "ar" || lang === "he") ? "rtl" : "ltr";
-
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const key = el.getAttribute("data-i18n");
-    if (translations[lang] && translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-});
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
