@@ -16,7 +16,7 @@ const translations = {
     logoNewLabel: "الشعار الجديد",
 
     timelineTitle: "الخط الزمني",
-    timelineHint: "استخدم شريط التمرير للتحرك يمينًا ويسارًا عبر المحطات.",
+    timelineHint: "مرر المؤشر فوق كل بطاقة لإظهار النص. استخدم شريط التمرير للتحرك يمينًا ويسارًا.",
 
     t1968Title: "Intel",
     t1968Body: "تأسست Intel وبدأت رحلتها في أشباه الموصلات.",
@@ -64,7 +64,7 @@ const translations = {
     logoNewLabel: "לוגו חדש",
 
     timelineTitle: "ציר זמן",
-    timelineHint: "השתמש בסרגל הגלילה כדי לנוע ימינה ושמאלה בין התחנות.",
+    timelineHint: "רחף מעל כל כרטיס כדי להציג טקסט. השתמש בסרגל הגלילה כדי לנוע ימינה ושמאלה.",
 
     t1968Title: "Intel",
     t1968Body: "Intel נוסדה והחלה את דרכה בתחום המוליכים למחצה.",
@@ -112,7 +112,7 @@ const translations = {
     logoNewLabel: "New logo",
 
     timelineTitle: "Timeline",
-    timelineHint: "Use the scrollbar to move left and right across the milestones.",
+    timelineHint: "Hover over each card to reveal the text. Use the scrollbar to move left and right.",
 
     t1968Title: "Intel",
     t1968Body: "Intel was founded and began its journey in semiconductors.",
@@ -148,7 +148,6 @@ const translations = {
 
 function setLanguage(lang) {
   const chosen = translations[lang] ? lang : "ar";
-
   document.documentElement.lang = chosen;
   document.documentElement.dir = RTL_LANGS.has(chosen) ? "rtl" : "ltr";
 
@@ -163,11 +162,8 @@ function wireLanguageSelector() {
   const selector = document.getElementById("languageSelector");
   if (!selector) return;
 
-  selector.addEventListener("change", (e) => {
-    setLanguage(e.target.value);
-  });
+  selector.addEventListener("change", (e) => setLanguage(e.target.value));
 
-  // Always start in Arabic
   selector.value = "ar";
   setLanguage("ar");
 }
@@ -192,7 +188,6 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLanguageSelector();
   wireImpactToggles();
 
-  // Keep demo form from navigating away
   const form = document.querySelector("form.subscribe-card");
   if (form) {
     form.addEventListener("submit", (e) => {
