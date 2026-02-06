@@ -1,7 +1,7 @@
 :root{
   --intel-blue:#0068b5;
   --intel-dark:#014a80;
-  --intel-light:#d9efff;
+  --page-gray:#e6e6e6;       /* light grey background */
   --card:#ffffff;
   --shadow:0 10px 25px rgba(0,0,0,.10);
   --gray:#6c757d;
@@ -19,7 +19,7 @@ html, body{
 
 body{
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  background: var(--intel-light);
+  background: var(--page-gray);
   color:#0b1b2a;
   text-align:start;
 }
@@ -116,7 +116,6 @@ img{ max-width:100%; height:auto; display:block; }
   margin:0 0 14px;
   font-weight:800;
 }
-
 .hint{
   margin: 0 0 10px;
   opacity: .85;
@@ -152,7 +151,6 @@ img{ max-width:100%; height:auto; display:block; }
   color:#0b1b2a;
 }
 
-/* Arrow */
 .logo-arrow{
   font-size: 2rem;
   font-weight: 900;
@@ -160,28 +158,19 @@ img{ max-width:100%; height:auto; display:block; }
   line-height:1;
 }
 
-/* Stack logos on small screens */
 @media (max-width: 900px){
   .logos{
     grid-template-columns: 1fr;
     justify-items:center;
   }
-  .logo-arrow{
-    transform: rotate(90deg);
-  }
+  .logo-arrow{ transform: rotate(90deg); }
 }
-
-/* Flip arrow in RTL (desktop) */
-html[dir="rtl"] .logo-arrow{
-  transform: scaleX(-1);
-}
+html[dir="rtl"] .logo-arrow{ transform: scaleX(-1); }
 @media (max-width: 900px){
-  html[dir="rtl"] .logo-arrow{
-    transform: rotate(90deg);
-  }
+  html[dir="rtl"] .logo-arrow{ transform: rotate(90deg); }
 }
 
-/* TIMELINE HORIZONTAL SCROLL (THIS is the scrollbar) */
+/* TIMELINE HORIZONTAL SCROLL */
 .timeline-scroll{
   overflow-x: auto;
   overflow-y: hidden;
@@ -198,21 +187,30 @@ html[dir="rtl"] .logo-arrow{
   padding-bottom: 6px;
 }
 
-/* Timeline blocks MUST be Intel blue */
+/* Timeline blocks Intel blue + hover shadow */
 .timeline-item{
   background: var(--intel-blue);
   color: #fff;
   border-radius: 18px;
   padding: 16px;
-  box-shadow: 0 10px 22px rgba(0,0,0,.14);
   width: 560px;
 
   display:grid;
   grid-template-columns: 120px 1fr;
   gap:16px;
   align-items:start;
+
+  box-shadow: 0 10px 22px rgba(0,0,0,.14);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
+/* Hover effect */
+.timeline-item:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0,0,0,.28);
+}
+
+/* Always visible parts */
 .timeline-year{
   font-weight: 900;
   color: #fff;
@@ -234,18 +232,34 @@ html[dir="rtl"] .logo-arrow{
   border: 2px solid rgba(255,255,255,.35);
 }
 
+/* Title always visible */
 .timeline-title{
   margin: 8px 0 4px;
   color:#fff;
 }
 
+/* TEXT hidden until hover */
 .timeline-text{
   margin: 0;
-  opacity: .95;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity .18s ease, max-height .18s ease;
   max-width: 70ch;
 }
 
-/* Narrower cards on small screens */
+/* Show text on hover */
+.timeline-item:hover .timeline-text{
+  opacity: .95;
+  max-height: 200px;
+}
+
+/* If keyboard users tab into the card, also show text */
+.timeline-item:focus-within .timeline-text{
+  opacity: .95;
+  max-height: 200px;
+}
+
 @media (max-width: 600px){
   .timeline{ grid-auto-columns: 440px; }
   .timeline-item{ width: 440px; }
@@ -278,7 +292,7 @@ html[dir="rtl"] .logo-arrow{
 .icon{ font-size:1.6rem; }
 .impact-title{ margin:0; }
 
-/* Buttons/tabs under gray blocks MUST be Intel blue */
+/* Buttons under grey blocks Intel blue */
 .impact-btn{
   margin-top:12px;
   width:100%;
