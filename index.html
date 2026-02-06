@@ -5,46 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Intel Timeline Webpage</title>
 
-  <!-- Bootstrap (for rubric) -->
+  <!-- Bootstrap (for rubric grid/components) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
   <header class="page-header">
-    <!-- Centered INTEL + tagline -->
+    <!-- Top Title -->
     <div class="title-stack">
-      <div class="intel-top" lang="en" dir="ltr">INTEL</div>
-      <div class="tagline" data-i18n="tagline">مستقبل الابتكار</div>
+      <div class="intel-only" lang="en" dir="ltr">INTEL</div>
+      <div class="subtitle" data-i18n="topSubtitle">مستقبل الابتكار</div>
     </div>
 
-    <!-- Language dropdown (keeps Arabic default so browser translate works) -->
-    <div class="lang-row" aria-label="Language selection">
+    <!-- Language dropdown -->
+    <div class="lang-row">
       <label class="sr-only" for="langSelect">Language</label>
-      <select id="langSelect" class="lang-select" aria-label="Choose language">
-        <option value="ar">العربية (Arabic)</option>
-        <option value="en">English (English)</option>
+      <select id="langSelect" class="lang-select" aria-label="Language selector">
+        <option value="ar" selected>العربية (Arabic)</option>
         <option value="he">עברית (Hebrew)</option>
+        <option value="en">English (English)</option>
         <option value="de">Deutsch (German)</option>
         <option value="hi">हिन्दी (Hindi)</option>
         <option value="es">Español (Spanish)</option>
       </select>
     </div>
 
-    <!-- Logos row -->
+    <!-- Logos -->
     <div class="logo-row" aria-label="Intel logos">
       <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-old.png" alt="Old Intel logo" />
+        <img class="logo-img"
+             src="images/logo-old.png"
+             alt="Old Intel logo"
+             width="320" height="320"
+             decoding="async"
+             fetchpriority="high"
+             loading="eager" />
         <figcaption class="sr-only">Old Intel logo</figcaption>
       </figure>
 
       <div class="logo-arrow" aria-hidden="true">→</div>
 
       <figure class="logo-figure">
-        <img class="logo-img" src="images/logo-new.png" alt="Modern Intel logo" />
+        <img class="logo-img"
+             src="images/logo-new.png"
+             alt="Modern Intel logo"
+             width="320" height="320"
+             decoding="async"
+             fetchpriority="high"
+             loading="eager" />
         <figcaption class="sr-only">Modern Intel logo</figcaption>
       </figure>
     </div>
@@ -52,10 +62,7 @@
     <!-- Hero -->
     <section class="hero">
       <div class="hero-box">
-        <h2 class="hero-title">
-          <span class="intel-word" lang="en" dir="ltr">Intel</span>
-          — <span data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</span>
-        </h2>
+        <h2 class="hero-title" data-i18n="heroTitle">الإنتاج والابتكار عبر السنين</h2>
         <p class="hero-sub" data-i18n="heroSub">
           مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.
         </p>
@@ -64,18 +71,17 @@
   </header>
 
   <main class="page-main">
+
     <!-- Timeline -->
     <section class="timeline-section" aria-labelledby="timelineHeading">
       <div class="timeline-heading-row">
-        <h3 id="timelineHeading" class="timeline-heading">
-          <span data-i18n="timelineHeading">الخط الزمني</span>
-        </h3>
+        <h3 id="timelineHeading" class="timeline-heading" data-i18n="timelineHeading">الخط الزمني</h3>
 
         <div class="timeline-controls" aria-label="Timeline controls">
-          <button class="btn btn-outline-primary btn-sm" type="button" id="prevBtn">
+          <button class="btn btn-outline-light btn-sm" type="button" id="prevBtn">
             ◀ <span data-i18n="prev">السابق</span>
           </button>
-          <button class="btn btn-outline-primary btn-sm" type="button" id="nextBtn">
+          <button class="btn btn-outline-light btn-sm" type="button" id="nextBtn">
             <span data-i18n="next">التالي</span> ▶
           </button>
         </div>
@@ -86,15 +92,15 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1968</div>
           <div class="card-media">
-            <img src="images/1968.png" alt="Intel building construction (1968)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/1968.png" alt="Intel building under construction (1968)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span>
-            <span data-i18n="t1968Title">تأسست</span>
+            <span data-i18n="t1968Title">التأسيس</span>
           </div>
           <div class="card-details">
             <p data-i18n="t1968Body">
-              تأسست Intel وبدأت رحلة الابتكار في أشباه الموصلات وتقنيات الحوسبة.
+              تأسست Intel على يد روبرت نويس وجوردون مور، وبدأت رحلة الابتكار في أشباه الموصلات.
             </p>
           </div>
         </article>
@@ -103,15 +109,15 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1971</div>
           <div class="card-media">
-            <img src="images/1971.png" alt="Intel 4004 microprocessor (1971)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/1971.png" alt="Intel 4004 microprocessor (1971)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004
+            <span data-i18n="t1971Title">المعالج الدقيق 4004</span>
           </div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 4004</p>
             <p data-i18n="t1971Body">
-              أول معالج دقيق تجاري (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.
+              أول معالج دقيق تجاري (4-bit) ساعد في إطلاق عصر الحوسبة الحديثة.
             </p>
           </div>
         </article>
@@ -120,15 +126,15 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1978</div>
           <div class="card-media">
-            <img src="images/1978.png" alt="Intel 8086 microprocessor (1978)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/1978.png" alt="Intel 8086 microprocessor (1978)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086
+            <span data-i18n="t1978Title">المعالج الدقيق 8086</span>
           </div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 8086</p>
             <p data-i18n="t1978Body">
-              معالج أساسي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.
+              ساعد 8086 في انتشار الحواسيب الشخصية وأسّس لمعمارية x86.
             </p>
           </div>
         </article>
@@ -137,15 +143,15 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">1985</div>
           <div class="card-media">
-            <img src="images/1985.png" alt="Intel 80386 microprocessor (1985)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/1985.png" alt="Intel 80386 microprocessor (1985)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386
+            <span data-i18n="t1985Title">المعالج 80386</span>
           </div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> 80386</p>
             <p data-i18n="t1985Body">
-              معالج 32-bit (386) عزّز قدرات الحوسبة للأنظمة والحواسيب الشخصية.
+              قدم 80386 قدرات 32-bit ورفع إمكانيات الحوسبة الشخصية بشكل كبير.
             </p>
           </div>
         </article>
@@ -154,15 +160,15 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2006</div>
           <div class="card-media">
-            <img src="images/2006.png" alt="Intel Core 2 Duo microprocessor (2006)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/2006.png" alt="Intel Core 2 Duo (2006)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo
+            <span data-i18n="t2006Title">Core 2 Duo</span>
           </div>
           <div class="card-details">
-            <p><strong data-i18n="model">الطراز:</strong> <span class="intel-word" lang="en" dir="ltr">Intel</span> Core 2 Duo</p>
             <p data-i18n="t2006Body">
-              حسّن الأداء والكفاءة بشكل كبير لأجهزة اللابتوب والحواسيب المكتبية.
+              حسّن الأداء والكفاءة بشكل كبير وأثر في أجهزة اللابتوب والمكتبي.
             </p>
           </div>
         </article>
@@ -171,76 +177,68 @@
         <article class="milestone-card" tabindex="0">
           <div class="card-year">2020</div>
           <div class="card-media">
-            <img src="images/2020.png" alt="Intel Atom microprocessor (2020)" loading="lazy" decoding="async" width="384" height="384" />
+            <img src="images/2020.png" alt="Intel Atom microprocessor (2020)"
+                 width="512" height="512" loading="lazy" decoding="async" />
           </div>
           <div class="card-title">
-            <span class="intel-word" lang="en" dir="ltr">Intel</span> Atom
+            <span data-i18n="t2020Title">Intel Atom</span>
           </div>
           <div class="card-details">
             <p data-i18n="t2020Body">
-              منتجات منخفضة الاستهلاك للطاقة تدعم أجهزة متعددة الاستخدامات مع كفاءة أعلى.
+              ركزت Intel على حلول أكثر كفاءة للطاقة للأجهزة الحديثة والاستخدامات المتعددة.
             </p>
           </div>
         </article>
       </div>
 
       <p class="hint" data-i18n="hint">
-        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. مرّر المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.
+        مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.
       </p>
     </section>
 
-    <!-- 3 bottom blocks with icons + click-to-reveal -->
-    <section class="info-threecol container my-5" aria-label="Info section">
+    <!-- 3 cards section (Bootstrap grid) -->
+    <section class="info-threecol container my-4" aria-label="Info section">
       <div class="row g-4">
         <div class="col-12 col-md-4">
-          <button class="info-card h-100 info-btn" type="button" data-bs-toggle="collapse" data-bs-target="#sustainText" aria-expanded="false" aria-controls="sustainText">
-            <h3 class="info-title">
-              <i class="bi bi-leaf" aria-hidden="true"></i>
-              <span data-i18n="c1Title">الاستدامة</span>
-            </h3>
-            <div id="sustainText" class="collapse">
-              <p class="info-body" data-i18n="c1Body">
-                تواصل Intel تقليل استهلاك الطاقة وتحسين الكفاءة لدعم مستقبل أكثر استدامة.
+          <div class="info-card h-100">
+            <button class="info-btn" type="button" data-toggle="society" aria-expanded="false">
+              <span class="info-icon" aria-hidden="true">👥</span>
+              <span class="info-title" data-i18n="societyTitle">المجتمع</span>
+            </button>
+            <div class="info-body" id="societyBody" hidden>
+              <p data-i18n="societyBody">
+                الاستثمار في المعرفة والمهارات الرقمية لدعم مستقبل أفضل وفرص للجميع.
               </p>
             </div>
-            <div class="info-action">
-              <span class="info-link" data-i18n="clickToShow">اضغط لعرض النص</span>
-            </div>
-          </button>
+          </div>
         </div>
 
         <div class="col-12 col-md-4">
-          <button class="info-card h-100 info-btn" type="button" data-bs-toggle="collapse" data-bs-target="#respText" aria-expanded="false" aria-controls="respText">
-            <h3 class="info-title">
-              <i class="bi bi-shield-check" aria-hidden="true"></i>
-              <span data-i18n="c2Title">المسؤولية</span>
-            </h3>
-            <div id="respText" class="collapse">
-              <p class="info-body" data-i18n="c2Body">
+          <div class="info-card h-100">
+            <button class="info-btn" type="button" data-toggle="responsibility" aria-expanded="false">
+              <span class="info-icon" aria-hidden="true">🛡️</span>
+              <span class="info-title" data-i18n="respTitle">المسؤولية</span>
+            </button>
+            <div class="info-body" id="responsibilityBody" hidden>
+              <p data-i18n="respBody">
                 السلامة ومعايير العمل والشفافية هي التزام Intel تجاه المجتمع.
               </p>
             </div>
-            <div class="info-action">
-              <span class="info-link" data-i18n="clickToShow">اضغط لعرض النص</span>
-            </div>
-          </button>
+          </div>
         </div>
 
         <div class="col-12 col-md-4">
-          <button class="info-card h-100 info-btn" type="button" data-bs-toggle="collapse" data-bs-target="#socText" aria-expanded="false" aria-controls="socText">
-            <h3 class="info-title">
-              <i class="bi bi-people" aria-hidden="true"></i>
-              <span data-i18n="c3Title">المجتمع</span>
-            </h3>
-            <div id="socText" class="collapse">
-              <p class="info-body" data-i18n="c3Body">
-                الاستثمار في المعرفة والمهارات الرقمية لدعم فرص أفضل للجميع.
+          <div class="info-card h-100">
+            <button class="info-btn" type="button" data-toggle="sustainability" aria-expanded="false">
+              <span class="info-icon" aria-hidden="true">🌿</span>
+              <span class="info-title" data-i18n="susTitle">الاستدامة</span>
+            </button>
+            <div class="info-body" id="sustainabilityBody" hidden>
+              <p data-i18n="susBody">
+                تواصل Intel تقليل استهلاك الطاقة وتحسين الكفاءة لدعم مستقبل الشركة والبيئة مع التقدم التقني.
               </p>
             </div>
-            <div class="info-action">
-              <span class="info-link" data-i18n="clickToShow">اضغط لعرض النص</span>
-            </div>
-          </button>
+          </div>
         </div>
       </div>
     </section>
@@ -248,13 +246,11 @@
     <!-- Subscription -->
     <section id="subscribe" class="subscribe-section" aria-labelledby="subscribeHeading">
       <div class="subscribe-box">
-        <div class="subscribe-header">
-          <h3 id="subscribeHeading" class="subscribe-title" data-i18n="subHeading">
-            الاشتراك في نشرة الاستدامة
-          </h3>
-        </div>
+        <h3 id="subscribeHeading" class="subscribe-title" data-i18n="subTitle">
+          الاشتراك في نشرة الاستدامة
+        </h3>
 
-        <form class="subscribe-form" action="#" method="post" aria-label="Subscription form">
+        <form class="subscribe-form" action="subscription.html" method="get" aria-label="Subscription form">
           <div class="form-row">
             <label for="name" data-i18n="nameLabel">الاسم</label>
             <input id="name" name="name" type="text" autocomplete="name" required />
@@ -265,12 +261,12 @@
             <input id="email" name="email" type="email" autocomplete="email" required />
           </div>
 
-          <button class="btn btn-success w-100" type="submit">
+          <button class="btn btn-light w-100" type="submit">
             <span data-i18n="subBtn">اشترك</span>
           </button>
 
           <p class="form-hint" data-i18n="privacyHint">
-            سنستخدم بريدك فقط لإرسال تحديثات النشرة. يمكنك إلغاء الاشتراك في أي وقت.
+            سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.
           </p>
         </form>
       </div>
@@ -279,17 +275,243 @@
         <p data-i18n="footer">صفحة تدريبية للمقرر</p>
       </footer>
     </section>
+
   </main>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    // Timeline controls
     const timeline = document.getElementById('timelineScroll');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const langSelect = document.getElementById('langSelect');
 
+    const RTL_LANGS = new Set(['ar','he']);
+
+    const i18n = {
+      ar: {
+        topSubtitle: "مستقبل الابتكار",
+        heroTitle: "الإنتاج والابتكار عبر السنين",
+        heroSub: "مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.",
+        timelineHeading: "الخط الزمني",
+        prev: "السابق",
+        next: "التالي",
+        hint: "مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. حرّك المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.",
+        t1968Title: "التأسيس",
+        t1968Body: "تأسست Intel على يد روبرت نويس وجوردون مور، وبدأت رحلة الابتكار في أشباه الموصلات.",
+        t1971Title: "المعالج الدقيق 4004",
+        t1971Body: "أول معالج دقيق تجاري (4-bit) ساعد في إطلاق عصر الحوسبة الحديثة.",
+        t1978Title: "المعالج الدقيق 8086",
+        t1978Body: "ساعد 8086 في انتشار الحواسيب الشخصية وأسّس لمعمارية x86.",
+        t1985Title: "المعالج 80386",
+        t1985Body: "قدم 80386 قدرات 32-bit ورفع إمكانيات الحوسبة الشخصية بشكل كبير.",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "حسّن الأداء والكفاءة بشكل كبير وأثر في أجهزة اللابتوب والمكتبي.",
+        t2020Title: "Intel Atom",
+        t2020Body: "ركزت Intel على حلول أكثر كفاءة للطاقة للأجهزة الحديثة والاستخدامات المتعددة.",
+        societyTitle: "المجتمع",
+        societyBody: "الاستثمار في المعرفة والمهارات الرقمية لدعم مستقبل أفضل وفرص للجميع.",
+        respTitle: "المسؤولية",
+        respBody: "السلامة ومعايير العمل والشفافية هي التزام Intel تجاه المجتمع.",
+        susTitle: "الاستدامة",
+        susBody: "تواصل Intel تقليل استهلاك الطاقة وتحسين الكفاءة لدعم مستقبل الشركة والبيئة مع التقدم التقني.",
+        subTitle: "الاشتراك في نشرة الاستدامة",
+        nameLabel: "الاسم",
+        emailLabel: "البريد الإلكتروني",
+        subBtn: "اشترك",
+        privacyHint: "سنستخدم بريدك فقط لإرسال تحديثات الاستدامة. يمكنك إلغاء الاشتراك في أي وقت.",
+        footer: "صفحة تدريبية للمقرر"
+      },
+      he: {
+        topSubtitle: "עתיד החדשנות",
+        heroTitle: "ייצור וחדשנות לאורך השנים",
+        heroSub: "עם עליית הטכנולוגיה המודרנית, Intel ממשיכה להוביל כדי להישאר בקצב העתיד.",
+        timelineHeading: "ציר הזמן",
+        prev: "הקודם",
+        next: "הבא",
+        hint: "במסכים גדולים גלול אופקית. בטלפונים הכרטיסים מסתדרים אנכית. רחף (או השתמש ב-Tab) כדי לראות פרטים.",
+        t1968Title: "הקמה",
+        t1968Body: "Intel נוסדה על ידי רוברט נויס וגורדון מור והחלה מסע חדשנות בשבבים.",
+        t1971Title: "מיקרופרוססור 4004",
+        t1971Body: "המיקרופרוססור המסחרי הראשון (4-bit) שסייע לפתוח את עידן המחשוב המודרני.",
+        t1978Title: "מיקרופרוססור 8086",
+        t1978Body: "8086 סייע להפיץ מחשבים אישיים והניח את היסודות לארכיטקטורת x86.",
+        t1985Title: "80386",
+        t1985Body: "80386 הציג יכולות 32-bit והעצים משמעותית את יכולות המחשוב האישי.",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "שיפור גדול בביצועים וביעילות והשפעה משמעותית על מחשבים ניידים ושולחניים.",
+        t2020Title: "Intel Atom",
+        t2020Body: "Intel התמקדה בפתרונות חסכוניים יותר באנרגיה למכשירים ושימושים מודרניים.",
+        societyTitle: "החברה",
+        societyBody: "השקעה בידע ובכישורים דיגיטליים כדי לתמוך בעתיד טוב יותר והזדמנויות לכולם.",
+        respTitle: "אחריות",
+        respBody: "בטיחות, תקני עבודה ושקיפות הם מחויבות Intel לקהילה.",
+        susTitle: "קיימות",
+        susBody: "Intel ממשיכה להפחית צריכת אנרגיה ולשפר יעילות למען עתיד החברה והסביבה.",
+        subTitle: "הרשמה לניוזלטר קיימות",
+        nameLabel: "שם",
+        emailLabel: "אימייל",
+        subBtn: "הירשם",
+        privacyHint: "נשתמש באימייל שלך רק לעדכוני קיימות. ניתן לבטל בכל עת.",
+        footer: "עמוד תרגול לקורס"
+      },
+      en: {
+        topSubtitle: "THE FUTURE OF INNOVATION",
+        heroTitle: "Production and Innovation Through the Years",
+        heroSub: "With modern technology on the rise, Intel continues to stay ahead to keep pace with the future.",
+        timelineHeading: "Timeline",
+        prev: "Prev",
+        next: "Next",
+        hint: "Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) to reveal details.",
+        t1968Title: "Founded",
+        t1968Body: "Intel was founded by Robert Noyce and Gordon Moore, launching a new era of semiconductor innovation.",
+        t1971Title: "4004 Microprocessor",
+        t1971Body: "The first commercial microprocessor (4-bit), helping ignite the modern computing era.",
+        t1978Title: "8086 Microprocessor",
+        t1978Body: "The 8086 helped expand personal computing and laid the foundation for x86.",
+        t1985Title: "80386",
+        t1985Body: "The 80386 introduced 32-bit capabilities and boosted PC computing power.",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "Major gains in performance and efficiency for laptops and desktops.",
+        t2020Title: "Intel Atom",
+        t2020Body: "Intel focused on energy-efficient solutions for modern devices and use cases.",
+        societyTitle: "The Society",
+        societyBody: "Investing in knowledge and digital skills to support the future for better opportunities for everyone.",
+        respTitle: "Responsibility",
+        respBody: "Safety, work standards, and transparency is Intel's commitment to the community.",
+        susTitle: "Sustainability",
+        susBody: "Intel continues reducing power consumption to improve longevity while advancing eco-friendly technology.",
+        subTitle: "Sustainability Newsletter Subscription",
+        nameLabel: "Name",
+        emailLabel: "Email",
+        subBtn: "Subscribe",
+        privacyHint: "We’ll only use your email for sustainability updates. Unsubscribe anytime.",
+        footer: "Course practice webpage"
+      },
+      de: {
+        topSubtitle: "DIE ZUKUNFT DER INNOVATION",
+        heroTitle: "Produktion und Innovation im Laufe der Jahre",
+        heroSub: "Mit dem Aufstieg moderner Technologie bleibt Intel voraus, um mit der Zukunft Schritt zu halten.",
+        timelineHeading: "Zeitachse",
+        prev: "Zurück",
+        next: "Weiter",
+        hint: "Auf großen Bildschirmen horizontal scrollen. Auf Handys werden die Karten vertikal gestapelt. Hover/Tab zeigt Details.",
+        t1968Title: "Gründung",
+        t1968Body: "Intel wurde von Robert Noyce und Gordon Moore gegründet und startete eine neue Ära der Halbleiterinnovation.",
+        t1971Title: "4004 Mikroprozessor",
+        t1971Body: "Der erste kommerzielle Mikroprozessor (4-bit) – ein Startpunkt des modernen Computerzeitalters.",
+        t1978Title: "8086 Mikroprozessor",
+        t1978Body: "Der 8086 förderte Personal Computing und legte die Basis für x86.",
+        t1985Title: "80386",
+        t1985Body: "Der 80386 brachte 32-bit-Fähigkeiten und mehr Leistung für PCs.",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "Große Verbesserungen bei Leistung und Effizienz für Laptops und Desktops.",
+        t2020Title: "Intel Atom",
+        t2020Body: "Intel fokussierte energieeffiziente Lösungen für moderne Geräte und Anwendungen.",
+        societyTitle: "Die Gesellschaft",
+        societyBody: "Investitionen in Wissen und digitale Kompetenzen für bessere Chancen für alle.",
+        respTitle: "Verantwortung",
+        respBody: "Sicherheit, Arbeitsstandards und Transparenz sind Intels Verpflichtung gegenüber der Gemeinschaft.",
+        susTitle: "Nachhaltigkeit",
+        susBody: "Intel reduziert weiter den Energieverbrauch und verbessert die Effizienz – für Zukunft und Umwelt.",
+        subTitle: "Abo für Nachhaltigkeits-Newsletter",
+        nameLabel: "Name",
+        emailLabel: "E-Mail",
+        subBtn: "Abonnieren",
+        privacyHint: "Wir nutzen Ihre E-Mail nur für Nachhaltigkeitsupdates. Abmeldung jederzeit möglich.",
+        footer: "Übungsseite für den Kurs"
+      },
+      hi: {
+        topSubtitle: "नवाचार का भविष्य",
+        heroTitle: "वर्षों के दौरान उत्पादन और नवाचार",
+        heroSub: "आधुनिक तकनीक के बढ़ने के साथ, Intel भविष्य के साथ कदम मिलाने के लिए आगे बनी रहती है।",
+        timelineHeading: "समयरेखा",
+        prev: "पिछला",
+        next: "अगला",
+        hint: "बड़े स्क्रीन पर क्षैतिज स्क्रॉल करें। मोबाइल पर कार्ड लंबवत दिखेंगे। होवर/Tab से विवरण दिखेगा।",
+        t1968Title: "स्थापना",
+        t1968Body: "Intel की स्थापना रॉबर्ट नॉयस और गॉर्डन मूर ने की, जिसने सेमीकंडक्टर नवाचार का नया दौर शुरू किया।",
+        t1971Title: "4004 माइक्रोप्रोसेसर",
+        t1971Body: "पहला वाणिज्यिक माइक्रोप्रोसेसर (4-bit), जिसने आधुनिक कंप्यूटिंग युग को गति दी।",
+        t1978Title: "8086 माइक्रोप्रोसेसर",
+        t1978Body: "8086 ने पर्सनल कंप्यूटिंग को बढ़ावा दिया और x86 की नींव रखी।",
+        t1985Title: "80386",
+        t1985Body: "80386 ने 32-bit क्षमता लाकर PC कंप्यूटिंग शक्ति बढ़ाई।",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "लैपटॉप और डेस्कटॉप के लिए प्रदर्शन और दक्षता में बड़ा सुधार।",
+        t2020Title: "Intel Atom",
+        t2020Body: "आधुनिक डिवाइसों के लिए ऊर्जा-कुशल समाधान पर Intel का फोकस।",
+        societyTitle: "समाज",
+        societyBody: "ज्ञान और डिजिटल कौशल में निवेश ताकि सभी के लिए बेहतर अवसर बनें।",
+        respTitle: "जिम्मेदारी",
+        respBody: "सुरक्षा, कार्य मानक और पारदर्शिता समुदाय के प्रति Intel की प्रतिबद्धता है।",
+        susTitle: "स्थिरता",
+        susBody: "Intel ऊर्जा खपत कम करके दक्षता बढ़ाती है और पर्यावरण के अनुकूल तकनीक आगे बढ़ाती है।",
+        subTitle: "स्थिरता न्यूज़लेटर सदस्यता",
+        nameLabel: "नाम",
+        emailLabel: "ईमेल",
+        subBtn: "सदस्यता लें",
+        privacyHint: "हम आपका ईमेल केवल स्थिरता अपडेट के लिए उपयोग करेंगे। कभी भी सदस्यता रद्द करें।",
+        footer: "कोर्स प्रैक्टिस पेज"
+      },
+      es: {
+        topSubtitle: "EL FUTURO DE LA INNOVACIÓN",
+        heroTitle: "Producción e innovación a través de los años",
+        heroSub: "Con el auge de la tecnología moderna, Intel se mantiene adelante para seguir el ritmo del futuro.",
+        timelineHeading: "Línea de tiempo",
+        prev: "Anterior",
+        next: "Siguiente",
+        hint: "En pantallas grandes, desplázate horizontalmente. En móviles, las tarjetas se apilan verticalmente. Hover/Tab muestra detalles.",
+        t1968Title: "Fundación",
+        t1968Body: "Intel fue fundada por Robert Noyce y Gordon Moore, iniciando una nueva era de innovación en semiconductores.",
+        t1971Title: "Microprocesador 4004",
+        t1971Body: "El primer microprocesador comercial (4-bit), impulsando la era moderna de la computación.",
+        t1978Title: "Microprocesador 8086",
+        t1978Body: "El 8086 expandió la computación personal y estableció la base de x86.",
+        t1985Title: "80386",
+        t1985Body: "El 80386 introdujo capacidades de 32-bit y aumentó la potencia de los PCs.",
+        t2006Title: "Core 2 Duo",
+        t2006Body: "Grandes mejoras de rendimiento y eficiencia para laptops y escritorios.",
+        t2020Title: "Intel Atom",
+        t2020Body: "Intel se enfocó en soluciones de bajo consumo para dispositivos modernos.",
+        societyTitle: "La sociedad",
+        societyBody: "Invertir en conocimiento y habilidades digitales para mejores oportunidades para todos.",
+        respTitle: "Responsabilidad",
+        respBody: "Seguridad, estándares laborales y transparencia: el compromiso de Intel con la comunidad.",
+        susTitle: "Sostenibilidad",
+        susBody: "Intel reduce el consumo de energía y mejora la eficiencia mientras impulsa tecnología ecoamigable.",
+        subTitle: "Suscripción al boletín de sostenibilidad",
+        nameLabel: "Nombre",
+        emailLabel: "Correo",
+        subBtn: "Suscribirse",
+        privacyHint: "Usaremos tu correo solo para actualizaciones de sostenibilidad. Cancela cuando quieras.",
+        footer: "Página de práctica del curso"
+      }
+    };
+
+    function applyLang(lang) {
+      const isRTL = RTL_LANGS.has(lang);
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (i18n[lang] && i18n[lang][key]) {
+          el.textContent = i18n[lang][key];
+        }
+      });
+    }
+
+    // Default Arabic on load
+    applyLang('ar');
+
+    // Dropdown change
+    langSelect.addEventListener('change', (e) => {
+      applyLang(e.target.value);
+    });
+
+    // Prev/Next scroll (desktop horizontal)
     function scrollByCards(dir) {
       const card = timeline.querySelector('.milestone-card');
       if (!card) return;
@@ -300,224 +522,24 @@
     prevBtn.addEventListener('click', () => scrollByCards(-1));
     nextBtn.addEventListener('click', () => scrollByCards(1));
 
-    // Tap-to-open timeline details (mobile)
+    // Touch support: tap to toggle details
     document.querySelectorAll('.milestone-card').forEach(card => {
-      card.addEventListener('click', (e) => {
-        if (e.target.closest('button, a, input, label, select')) return;
+      card.addEventListener('click', (ev) => {
+        if (ev.target.closest('button, a, input, select, label')) return;
         card.classList.toggle('is-open');
       });
     });
 
-    // i18n text
-    const i18n = {
-      ar: {
-        tagline: "مستقبل الابتكار",
-        heroTitle: "الإنتاج والابتكار عبر السنين",
-        heroSub: "مع صعود التكنولوجيا الحديثة، تواصل Intel البقاء في المقدمة لضمان مواكبة المستقبل.",
-        timelineHeading: "الخط الزمني",
-        prev: "السابق",
-        next: "التالي",
-        hint: "مرّر أفقيًا على الشاشات الكبيرة. على الهواتف، سيتم ترتيب البطاقات عموديًا. مرّر المؤشر فوق البطاقة (أو استخدم Tab) لعرض التفاصيل.",
-        model: "الطراز:",
-        t1968Title: "تأسست",
-        t1968Body: "تأسست Intel وبدأت رحلة الابتكار في أشباه الموصلات وتقنيات الحوسبة.",
-        t1971Body: "أول معالج دقيق تجاري (4-bit)، وساهم في إطلاق عصر الحوسبة الحديثة.",
-        t1978Body: "معالج أساسي ساعد في انتشار الحواسيب الشخصية وبناء أساس معمارية x86.",
-        t1985Body: "معالج 32-bit (386) عزّز قدرات الحوسبة للأنظمة والحواسيب الشخصية.",
-        t2006Body: "حسّن الأداء والكفاءة بشكل كبير لأجهزة اللابتوب والحواسيب المكتبية.",
-        t2020Body: "منتجات منخفضة الاستهلاك للطاقة تدعم أجهزة متعددة الاستخدامات مع كفاءة أعلى.",
-        c1Title: "الاستدامة",
-        c1Body: "تواصل Intel تقليل استهلاك الطاقة وتحسين الكفاءة لدعم مستقبل أكثر استدامة.",
-        c2Title: "المسؤولية",
-        c2Body: "السلامة ومعايير العمل والشفافية هي التزام Intel تجاه المجتمع.",
-        c3Title: "المجتمع",
-        c3Body: "الاستثمار في المعرفة والمهارات الرقمية لدعم فرص أفضل للجميع.",
-        clickToShow: "اضغط لعرض النص",
-        subHeading: "الاشتراك في نشرة الاستدامة",
-        nameLabel: "الاسم",
-        emailLabel: "البريد الإلكتروني",
-        subBtn: "اشترك",
-        privacyHint: "سنستخدم بريدك فقط لإرسال تحديثات النشرة. يمكنك إلغاء الاشتراك في أي وقت.",
-        footer: "صفحة تدريبية للمقرر"
-      },
-      en: {
-        tagline: "THE FUTURE OF INNOVATION",
-        heroTitle: "Production and Innovation Through the Years",
-        heroSub: "With modern technology on the rise, Intel continues to stay ahead to keep pace with the future.",
-        timelineHeading: "Timeline",
-        prev: "Prev",
-        next: "Next",
-        hint: "Scroll horizontally on large screens. On phones, cards stack vertically. Hover (or Tab) a card to reveal details.",
-        model: "Model:",
-        t1968Title: "Founded",
-        t1968Body: "Intel was founded and began its journey of semiconductor and computing innovation.",
-        t1971Body: "The first commercial 4-bit microprocessor, helping ignite the modern computing era.",
-        t1978Body: "A key step toward widespread personal computing and the x86 architecture foundation.",
-        t1985Body: "The 32-bit 386 generation strengthened PC and operating system capabilities.",
-        t2006Body: "Major gains in performance and efficiency for laptops and desktops.",
-        t2020Body: "Low-power products supporting efficient computing across modern devices.",
-        c1Title: "Sustainability",
-        c1Body: "Intel continues reducing power consumption and improving efficiency for a more sustainable future.",
-        c2Title: "Responsibility",
-        c2Body: "Safety, work standards, and transparency are Intel’s commitment to the community.",
-        c3Title: "Community",
-        c3Body: "Investing in knowledge and digital skills to support better opportunities for everyone.",
-        clickToShow: "Click to show text",
-        subHeading: "Sustainability Newsletter Subscription",
-        nameLabel: "Name",
-        emailLabel: "Email",
-        subBtn: "Subscribe",
-        privacyHint: "We’ll only use your email for newsletter updates. You can unsubscribe anytime.",
-        footer: "Course practice webpage"
-      },
-      he: {
-        tagline: "עתיד החדשנות",
-        heroTitle: "ייצור וחדשנות לאורך השנים",
-        heroSub: "עם עליית הטכנולוגיה המודרנית, Intel ממשיכה להוביל כדי להישאר בקצב העתיד.",
-        timelineHeading: "ציר זמן",
-        prev: "הקודם",
-        next: "הבא",
-        hint: "גלול אופקית במסכים גדולים. בטלפונים הכרטיסים נערמים אנכית. רחף (או Tab) כדי להציג פרטים.",
-        model: "דגם:",
-        t1968Title: "הוקמה",
-        t1968Body: "Intel הוקמה והחלה את מסע החדשנות בשבבים ובמחשוב.",
-        t1971Body: "המיקרו-מעבד המסחרי הראשון (4-bit) שהניע את עידן המחשוב המודרני.",
-        t1978Body: "צעד מרכזי למחשוב אישי ולבסיס ארכיטקטורת x86.",
-        t1985Body: "דור ה-386 (32-bit) שיפר משמעותית יכולות מערכות ומחשבים אישיים.",
-        t2006Body: "שיפור גדול בביצועים וביעילות למחשבים ניידים ונייחים.",
-        t2020Body: "מוצרים חסכוניים באנרגיה לתמיכה במכשירים מודרניים.",
-        c1Title: "קיימות",
-        c1Body: "Intel ממשיכה להפחית צריכת אנרגיה ולשפר יעילות לעתיד בר-קיימא.",
-        c2Title: "אחריות",
-        c2Body: "בטיחות, סטנדרטים ושקיפות הם מחויבות Intel לקהילה.",
-        c3Title: "קהילה",
-        c3Body: "השקעה בידע ובכישורים דיגיטליים להזדמנויות טובות יותר לכולם.",
-        clickToShow: "לחץ להצגת הטקסט",
-        subHeading: "הרשמה לניוזלטר הקיימות",
-        nameLabel: "שם",
-        emailLabel: "אימייל",
-        subBtn: "הרשמה",
-        privacyHint: "נשתמש באימייל שלך רק לעדכונים. ניתן לבטל בכל עת.",
-        footer: "עמוד תרגול לקורס"
-      },
-      de: {
-        tagline: "DIE ZUKUNFT DER INNOVATION",
-        heroTitle: "Produktion und Innovation im Laufe der Jahre",
-        heroSub: "Mit dem Aufstieg moderner Technologie bleibt Intel vorne, um mit der Zukunft Schritt zu halten.",
-        timelineHeading: "Zeitachse",
-        prev: "Zurück",
-        next: "Weiter",
-        hint: "Auf großen Bildschirmen horizontal scrollen. Auf Handys stapeln sich die Karten vertikal. Hover/Tab zeigt Details.",
-        model: "Modell:",
-        t1968Title: "Gegründet",
-        t1968Body: "Intel wurde gegründet und startete seine Innovationsreise in Halbleitern und Computing.",
-        t1971Body: "Der erste kommerzielle 4-Bit-Mikroprozessor und Startschuss der modernen Computerära.",
-        t1978Body: "Ein wichtiger Schritt für PCs und die Grundlage der x86-Architektur.",
-        t1985Body: "Die 32-Bit-386-Generation stärkte PC- und Betriebssystemfähigkeiten.",
-        t2006Body: "Große Leistungs- und Effizienzsteigerungen für Laptops und Desktops.",
-        t2020Body: "Energieeffiziente Produkte für moderne Geräte.",
-        c1Title: "Nachhaltigkeit",
-        c1Body: "Intel reduziert weiter den Energieverbrauch und verbessert die Effizienz für eine nachhaltige Zukunft.",
-        c2Title: "Verantwortung",
-        c2Body: "Sicherheit, Arbeitsstandards und Transparenz sind Intels Verpflichtung gegenüber der Gemeinschaft.",
-        c3Title: "Gesellschaft",
-        c3Body: "Investitionen in Wissen und digitale Fähigkeiten für bessere Chancen für alle.",
-        clickToShow: "Klicken, um Text zu zeigen",
-        subHeading: "Nachhaltigkeits-Newsletter Anmeldung",
-        nameLabel: "Name",
-        emailLabel: "E-Mail",
-        subBtn: "Abonnieren",
-        privacyHint: "Wir nutzen deine E-Mail nur für Newsletter-Updates. Abmeldung jederzeit möglich.",
-        footer: "Übungsseite für den Kurs"
-      },
-      hi: {
-        tagline: "नवाचार का भविष्य",
-        heroTitle: "वर्षों में उत्पादन और नवाचार",
-        heroSub: "आधुनिक तकनीक के बढ़ने के साथ, Intel भविष्य के साथ कदम मिलाने के लिए आगे रहती है।",
-        timelineHeading: "समयरेखा",
-        prev: "पिछला",
-        next: "अगला",
-        hint: "बड़ी स्क्रीन पर क्षैतिज स्क्रॉल करें। फोन पर कार्ड लंबवत दिखेंगे। Hover/Tab से विवरण दिखेगा।",
-        model: "मॉडल:",
-        t1968Title: "स्थापना",
-        t1968Body: "Intel की स्थापना हुई और सेमीकंडक्टर व कंप्यूटिंग नवाचार की शुरुआत हुई।",
-        t1971Body: "पहला व्यावसायिक 4-bit माइक्रोप्रोसेसर, जिसने आधुनिक कंप्यूटिंग को आगे बढ़ाया।",
-        t1978Body: "पर्सनल कंप्यूटिंग और x86 आर्किटेक्चर की नींव के लिए महत्वपूर्ण कदम।",
-        t1985Body: "32-bit 386 पीढ़ी ने PC क्षमताओं को मजबूत बनाया।",
-        t2006Body: "लैपटॉप और डेस्कटॉप के लिए प्रदर्शन और दक्षता में बड़ा सुधार।",
-        t2020Body: "आधुनिक डिवाइसों के लिए ऊर्जा-कुशल उत्पाद।",
-        c1Title: "सस्टेनेबिलिटी",
-        c1Body: "Intel ऊर्जा खपत कम करने और दक्षता बढ़ाने पर ध्यान देती है।",
-        c2Title: "जिम्मेदारी",
-        c2Body: "सुरक्षा, कार्य मानक और पारदर्शिता Intel की प्रतिबद्धता है।",
-        c3Title: "समाज",
-        c3Body: "ज्ञान और डिजिटल कौशल में निवेश करके सबके लिए बेहतर अवसर।",
-        clickToShow: "टेक्स्ट दिखाने के लिए क्लिक करें",
-        subHeading: "सस्टेनेबिलिटी न्यूज़लेटर सब्सक्रिप्शन",
-        nameLabel: "नाम",
-        emailLabel: "ईमेल",
-        subBtn: "सब्सक्राइब",
-        privacyHint: "हम आपका ईमेल केवल न्यूज़लेटर के लिए उपयोग करेंगे। कभी भी अनसब्सक्राइब करें।",
-        footer: "कोर्स अभ्यास पेज"
-      },
-      es: {
-        tagline: "EL FUTURO DE LA INNOVACIÓN",
-        heroTitle: "Producción e innovación a través de los años",
-        heroSub: "Con el auge de la tecnología moderna, Intel sigue adelante para mantenerse al ritmo del futuro.",
-        timelineHeading: "Línea de tiempo",
-        prev: "Anterior",
-        next: "Siguiente",
-        hint: "Desplaza horizontalmente en pantallas grandes. En teléfonos, las tarjetas se apilan verticalmente. Hover/Tab muestra detalles.",
-        model: "Modelo:",
-        t1968Title: "Fundación",
-        t1968Body: "Intel fue fundada e inició su innovación en semiconductores y computación.",
-        t1971Body: "El primer microprocesador comercial de 4 bits, impulsando la era moderna.",
-        t1978Body: "Paso clave para el PC y la base de la arquitectura x86.",
-        t1985Body: "La generación 386 de 32 bits fortaleció las capacidades de PCs y sistemas.",
-        t2006Body: "Grandes mejoras de rendimiento y eficiencia para laptops y escritorios.",
-        t2020Body: "Productos de bajo consumo para dispositivos modernos.",
-        c1Title: "Sostenibilidad",
-        c1Body: "Intel continúa reduciendo el consumo de energía y mejorando la eficiencia para un futuro sostenible.",
-        c2Title: "Responsabilidad",
-        c2Body: "Seguridad, estándares laborales y transparencia: compromiso de Intel con la comunidad.",
-        c3Title: "Sociedad",
-        c3Body: "Invertir en conocimiento y habilidades digitales para mejores oportunidades para todos.",
-        clickToShow: "Haz clic para mostrar el texto",
-        subHeading: "Suscripción al boletín de sostenibilidad",
-        nameLabel: "Nombre",
-        emailLabel: "Correo",
-        subBtn: "Suscribirse",
-        privacyHint: "Usaremos tu correo solo para el boletín. Puedes darte de baja cuando quieras.",
-        footer: "Página de práctica del curso"
-      }
-    };
-
-    const langMeta = {
-      ar: { dir: "rtl" },
-      he: { dir: "rtl" },
-      en: { dir: "ltr" },
-      de: { dir: "ltr" },
-      hi: { dir: "ltr" },
-      es: { dir: "ltr" }
-    };
-
-    function applyLang(lang) {
-      // Keep default Arabic at load for browser translate;
-      // after user chooses, update html lang/dir so layout matches.
-      document.documentElement.lang = lang;
-      document.documentElement.dir = langMeta[lang]?.dir || "ltr";
-
-      document.querySelectorAll('[data-i18n]').forEach(el => {
-        const key = el.getAttribute('data-i18n');
-        if (i18n[lang] && i18n[lang][key]) el.textContent = i18n[lang][key];
+    // Bottom info cards: click to reveal text
+    document.querySelectorAll('.info-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.getAttribute('data-toggle');
+        const bodyId = target + "Body";
+        const panel = document.getElementById(bodyId);
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if (panel) panel.hidden = expanded;
       });
-    }
-
-    // Start Arabic (do NOT auto-force English)
-    applyLang("ar");
-
-    document.getElementById("langSelect").addEventListener("change", (e) => {
-      applyLang(e.target.value);
     });
   </script>
 </body>
