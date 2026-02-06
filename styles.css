@@ -215,6 +215,4 @@ html[dir="rtl"] .logo-arrow{ transform: scaleX(-1); }
 .footer-note{ opacity:.85; }
 
 /* Modal styling */
-.impact-modal{
-  border-radius:16px;
-}
+.impact-modal{ border-radius:16px; }
