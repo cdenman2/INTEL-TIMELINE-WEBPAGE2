@@ -156,8 +156,6 @@ function toggleBootstrapDir(isRtl) {
   const ltr = document.getElementById("bsLtr");
   const rtl = document.getElementById("bsRtl");
   if (!ltr || !rtl) return;
-
-  // enable one, disable the other
   ltr.disabled = isRtl;
   rtl.disabled = !isRtl;
 }
@@ -168,16 +166,15 @@ function setLanguage(lang) {
 
   document.documentElement.lang = chosen;
   document.documentElement.dir = isRtl ? "rtl" : "ltr";
-
   toggleBootstrapDir(isRtl);
 
   const dict = translations[chosen];
+
   document.querySelectorAll("[data-i18n]").forEach(el => {
     const key = el.getAttribute("data-i18n");
     if (dict[key]) el.textContent = dict[key];
   });
 
-  // Update modal close button text
   const closeBtn = document.getElementById("impactModalCloseBtn");
   if (closeBtn) closeBtn.textContent = dict.modalClose || "Close";
 }
@@ -223,7 +220,7 @@ document.addEventListener("DOMContentLoaded", () => {
   wireLanguageSelector();
   wireImpactModal();
 
-  // Keep form accessible; demo submit
+  // Demo submit (keeps form accessible)
   const form = document.querySelector("form.subscribe-card");
   if (form) {
     form.addEventListener("submit", (e) => {
