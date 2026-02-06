@@ -51,4 +51,139 @@
         <figcaption data-i18n="logoOldLabel">الشعار القديم</figcaption>
       </figure>
 
-      <div
+      <div class="logo-arrow" aria-hidden="true">→</div>
+
+      <figure class="logo-card">
+        <img src="images/logo-new.png" alt="New Intel logo" width="520" height="260" loading="lazy" decoding="async">
+        <figcaption data-i18n="logoNewLabel">الشعار الجديد</figcaption>
+      </figure>
+    </section>
+
+    <!-- Timeline -->
+    <section id="timeline" class="section">
+      <h2 class="section-title" data-i18n="timelineTitle">الخط الزمني</h2>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <div class="timeline-year">1968</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1968.png" alt="Intel in 1968" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t1968Title">Intel</h3>
+            <p class="timeline-text" data-i18n="t1968Body">تأسست Intel وبدأت رحلتها في أشباه الموصلات.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">1971</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1971.png" alt="Intel 4004 processor" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t1971Title">Intel 4004</h3>
+            <p class="timeline-text" data-i18n="t1971Body">أول معالج دقيق تجاري في العالم.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">1978</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1978.png" alt="Intel 8086 processor" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t1978Title">Intel 8086</h3>
+            <p class="timeline-text" data-i18n="t1978Body">أساس معمارية x86 للحواسيب الحديثة.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">1985</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/1985.png" alt="Intel 80386 processor" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t1985Title">Intel 80386</h3>
+            <p class="timeline-text" data-i18n="t1985Body">معالج 32-بت أحدث نقلة في الأداء.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">2006</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/2006.png" alt="Intel Core 2 Duo processor" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t2006Title">Intel Core 2 Duo</h3>
+            <p class="timeline-text" data-i18n="t2006Body">قفزة كبيرة في الأداء وكفاءة الطاقة.</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-year">2020</div>
+          <div class="timeline-content">
+            <img class="timeline-img" src="images/2020.png" alt="Intel Atom processor" width="720" height="720" loading="lazy" decoding="async">
+            <h3 class="timeline-title" data-i18n="t2020Title">Intel Atom</h3>
+            <p class="timeline-text" data-i18n="t2020Body">معالجات موفرة للطاقة للأجهزة الحديثة.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Impact (3 gray blocks + icons + click to show text) -->
+    <section id="impact" class="section">
+      <h2 class="section-title" data-i18n="impactTitle">المجتمع، المسؤولية، الاستدامة</h2>
+
+      <div class="impact-grid">
+        <div class="impact-card">
+          <div class="impact-head">
+            <span class="icon" aria-hidden="true">👥</span>
+            <h3 class="impact-title" data-i18n="societyTitle">المجتمع</h3>
+          </div>
+          <button class="impact-btn" type="button" data-toggle="societyPanel" aria-expanded="false">
+            <span data-i18n="learnMore">اعرف المزيد</span>
+          </button>
+          <div id="societyPanel" class="impact-panel" hidden>
+            <p data-i18n="societyBody">الاستثمار في التعليم والمهارات الرقمية.</p>
+          </div>
+        </div>
+
+        <div class="impact-card">
+          <div class="impact-head">
+            <span class="icon" aria-hidden="true">🛡️</span>
+            <h3 class="impact-title" data-i18n="responsibilityTitle">المسؤولية</h3>
+          </div>
+          <button class="impact-btn" type="button" data-toggle="responsibilityPanel" aria-expanded="false">
+            <span data-i18n="learnMore">اعرف المزيد</span>
+          </button>
+          <div id="responsibilityPanel" class="impact-panel" hidden>
+            <p data-i18n="responsibilityBody">الالتزام بالسلامة والمعايير والشفافية.</p>
+          </div>
+        </div>
+
+        <div class="impact-card">
+          <div class="impact-head">
+            <span class="icon" aria-hidden="true">🌿</span>
+            <h3 class="impact-title" data-i18n="sustainabilityTitle">الاستدامة</h3>
+          </div>
+          <button class="impact-btn" type="button" data-toggle="sustainabilityPanel" aria-expanded="false">
+            <span data-i18n="learnMore">اعرف المزيد</span>
+          </button>
+          <div id="sustainabilityPanel" class="impact-panel" hidden>
+            <p data-i18n="sustainabilityBody">تقليل استهلاك الطاقة ودعم البيئة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Subscribe -->
+    <section id="subscribe" class="section">
+      <h2 class="section-title" data-i18n="subscribeTitle">اشترك في نشرة الاستدامة</h2>
+
+      <form class="subscribe-card" aria-label="Subscription form">
+        <label for="email" class="field-label" data-i18n="emailLabel">البريد الإلكتروني</label>
+        <input id="email" class="field" type="email" placeholder="name@example.com" autocomplete="email" required>
+        <button class="primary-btn" type="submit" data-i18n="subscribeBtn">اشترك</button>
+        <p class="fineprint" data-i18n="privacyNote">نحترم خصوصيتك. يمكنك إلغاء الاشتراك في أي وقت.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span>© <span data-i18n="footerIntel">Intel</span></span>
+      <span class="footer-note" data-i18n="footerNote">مشروع تعليمي – توطين + إمكانية وصول.</span>
+    </div>
+  </footer>
+</body>
+</html>
