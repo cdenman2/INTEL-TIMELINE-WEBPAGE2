@@ -1,28 +1,27 @@
-/* ===== Base + Intel palette ===== */
 :root{
   --intel-blue: #0068B5;
   --intel-blue-dark: #005a9c;
-  --bg-light: #d9ecff;          /* light blue background */
+  --bg-light: #d9ecff;
   --bg-light-2: #eaf4ff;
   --text: #0b1b2b;
   --white: #ffffff;
-  --shadow: 0 10px 25px rgba(0,0,0,.12);
-  --dark-grey: #3a3f46;
+  --dark-grey: #2f3b46;
+  --shadow: 0 10px 25px rgba(0,0,0,.18);
 }
 
-* { box-sizing: border-box; }
+*{ box-sizing:border-box; }
 
-html, body { height: 100%; }
+html, body{ height:100%; }
 
 body{
-  margin: 0;
+  margin:0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  color: var(--text);
   background: var(--bg-light);
-  font-weight: 800; /* all text bold per your requirement */
+  color: var(--text);
+  font-weight: 800;
 }
 
-/* Screen-reader only text */
+/* Accessibility helper */
 .sr-only{
   position:absolute;
   width:1px;height:1px;
@@ -31,83 +30,71 @@ body{
   border:0;
 }
 
-/* ===== Header ===== */
+/* Header layout */
 .page-header{
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 18px 18px 0;
 }
 
-/* Centered title stack */
 .title-stack{
   text-align:center;
   margin-bottom: 10px;
 }
 
-.intel-top{
+.intel-only{
   font-size: 24px;
   font-weight: 900;
-  letter-spacing: 1px;
-  color: var(--intel-blue-dark);
+  letter-spacing: .5px;
 }
 
-.tagline{
-  margin-top: 4px;
+.subtitle{
   font-size: 18px;
   font-weight: 900;
-  color: rgba(11,27,43,.85);
+  opacity: .95;
+  margin-top: 2px;
 }
 
-/* Intel word styling (keep English) */
-.intel-word{
-  font-weight: 900;
-  letter-spacing: .3px;
-}
-
-/* Language select */
 .lang-row{
   display:flex;
   justify-content:center;
-  margin: 10px 0 10px;
+  margin: 10px 0 14px;
 }
 
 .lang-select{
-  width: min(360px, 100%);
+  width: min(420px, 92vw);
   padding: 10px 12px;
   border-radius: 10px;
   border: 2px solid rgba(0,0,0,.18);
   background: var(--white);
   font-weight: 900;
+  cursor: pointer;
 }
 
-/* Logos row */
+/* Logos */
 .logo-row{
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   gap: 14px;
-  margin: 12px 0 10px;
-}
-
-.logo-figure{ margin: 0; }
-
-/* Logos outlined dark grey; responsive sizing */
-.logo-img{
-  width: 4in;
-  height: 4in;
-  max-width: min(44vw, 320px);
-  max-height: min(44vw, 320px);
-  object-fit: contain;
-  border-radius: 10px;
-  border: 4px solid var(--dark-grey);
-  box-shadow: 0 6px 18px rgba(0,0,0,.10);
-  background: var(--bg-light-2);
+  margin-bottom: 10px;
 }
 
 .logo-arrow{
   font-size: 28px;
-  color: var(--intel-blue-dark);
   font-weight: 900;
+  color: var(--intel-blue-dark);
+}
+
+.logo-img{
+  width: min(280px, 38vw);
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 5px solid var(--dark-grey);
+  background: var(--bg-light-2);
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
 }
 
 /* Hero */
@@ -131,29 +118,28 @@ body{
 .hero-title{
   margin: 0 0 6px;
   font-weight: 900;
+  letter-spacing: .2px;
 }
 
 .hero-sub{
-  margin: 0;
-  opacity: .95;
+  margin:0;
   font-size: 14px;
+  opacity:.95;
   font-weight: 800;
 }
 
-/* ===== Main ===== */
+/* Main */
 .page-main{
-  max-width: 1200px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 14px 18px 28px;
 }
 
-/* ===== Timeline ===== */
-.timeline-section{ margin-top: 14px; }
-
+/* Timeline heading */
 .timeline-heading-row{
   display:flex;
-  align-items:center;
   justify-content:space-between;
+  align-items:center;
   gap: 10px;
   margin-bottom: 10px;
 }
@@ -165,14 +151,9 @@ body{
   color: var(--intel-blue-dark);
 }
 
-.timeline-controls{
-  display:flex;
-  gap: 8px;
-}
-
-/* Horizontal scroll area with visible scrollbar + snap */
+/* Timeline scroll area (desktop horizontal + scrollbar) */
 .timeline-scroll{
-  background: linear-gradient(180deg, rgba(0,104,181,.20), rgba(0,104,181,.08));
+  background: rgba(0,90,156,.20);
   border-radius: 16px;
   padding: 14px;
   display:flex;
@@ -185,10 +166,10 @@ body{
   border: 4px solid var(--dark-grey);
 }
 
-/* Ensure scrollbar shows */
+/* visible scrollbar */
 .timeline-scroll::-webkit-scrollbar{ height: 10px; }
 .timeline-scroll::-webkit-scrollbar-thumb{
-  background: rgba(58,63,70,.7);
+  background: rgba(47,59,70,.70);
   border-radius: 20px;
 }
 .timeline-scroll::-webkit-scrollbar-track{
@@ -200,46 +181,45 @@ body{
 .milestone-card{
   scroll-snap-align: start;
   flex: 0 0 auto;
-  width: 260px;
-  background: var(--intel-blue);
+  width: 240px;
+  background: rgba(0,104,181,.92);
   color: var(--white);
   border-radius: 14px;
   padding: 12px;
   position: relative;
-  box-shadow: 0 10px 22px rgba(0,0,0,.12);
+  box-shadow: 0 10px 22px rgba(0,0,0,.18);
   cursor: pointer;
   transition: transform .18s ease, box-shadow .18s ease;
-  outline: none;
   border: 4px solid var(--dark-grey);
+  outline: none;
 }
 
 .milestone-card:hover{
   transform: translateY(-3px);
-  box-shadow: 0 14px 28px rgba(0,0,0,.18);
+  box-shadow: 0 14px 28px rgba(0,0,0,.22);
 }
 
 .milestone-card:focus{
-  outline: 3px solid rgba(255,255,255,.55);
+  outline: 3px solid rgba(255,255,255,.6);
   outline-offset: 2px;
 }
 
-/* Year badge (auto flips with RTL/LTR using logical props) */
 .card-year{
   position:absolute;
   top: 10px;
-  inset-inline-start: 10px;
+  left: 10px;
   background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.28);
+  border: 1px solid rgba(255,255,255,.30);
   padding: 4px 10px;
   border-radius: 999px;
   font-weight: 900;
   font-size: 12px;
 }
 
-/* Media box + image sizing */
+/* Media */
 .card-media{
   background: rgba(255,255,255,.10);
-  border: 2px solid rgba(58,63,70,.8);
+  border: 2px solid rgba(255,255,255,.25);
   border-radius: 12px;
   padding: 10px;
   margin-top: 18px;
@@ -249,27 +229,25 @@ body{
 }
 
 .card-media img{
-  width: 2in;
-  height: 2in;
-  max-width: 100%;
-  max-height: 100%;
+  width: 190px;
+  height: 190px;
   object-fit: cover;
   border-radius: 10px;
   background: var(--white);
+  border: 4px solid var(--dark-grey);
 }
 
-/* Title line */
 .card-title{
   margin-top: 10px;
   font-weight: 900;
   font-size: 15px;
 }
 
-/* Details hidden by default; shown on hover/focus/tap */
+/* Details hidden by default -> hover/focus/tap */
 .card-details{
   margin-top: 8px;
-  background: rgba(0,0,0,.12);
-  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.16);
+  border: 2px solid rgba(255,255,255,.22);
   border-radius: 12px;
   padding: 10px;
   font-size: 13px;
@@ -284,68 +262,56 @@ body{
 .milestone-card:hover .card-details,
 .milestone-card:focus-within .card-details,
 .milestone-card.is-open .card-details{
-  max-height: 260px;
+  max-height: 220px;
   opacity: 1;
 }
 
 .hint{
   margin: 10px 4px 0;
   font-size: 13px;
+  font-weight: 900;
   color: rgba(11,27,43,.85);
-  font-weight: 800;
 }
 
-/* ===== 3-column section ===== */
+/* Bottom three info cards */
 .info-card{
-  background: #6b6f76; /* darker grey blocks */
+  background: rgba(255,255,255,.92);
   border-radius: 14px;
-  padding: 16px;
+  padding: 14px;
   box-shadow: var(--shadow);
   border: 4px solid var(--dark-grey);
-  color: white;
-  text-align: start;
 }
 
 .info-btn{
   width: 100%;
   border: none;
+  background: transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 8px 6px;
+  font-weight: 900;
   cursor: pointer;
 }
 
-.info-title{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  margin: 0 0 8px;
-  font-weight: 900;
-  color: white;
+.info-icon{
+  font-size: 22px;
 }
 
-.info-title i{
-  font-size: 22px;
-  color: white;
+.info-title{
+  font-size: 18px;
+  color: var(--intel-blue-dark);
+  font-weight: 900;
 }
 
 .info-body{
-  margin: 10px 0 0;
-  font-weight: 800;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid rgba(0,0,0,.10);
 }
 
-.info-action{
-  margin-top: 14px;
-  opacity: .95;
-}
-
-.info-link{
-  display:inline-block;
-  background: rgba(255,255,255,.18);
-  border: 1px solid rgba(255,255,255,.25);
-  padding: 6px 10px;
-  border-radius: 10px;
-  font-weight: 900;
-}
-
-/* ===== Subscription ===== */
+/* Subscription block (Intel blue + dark grey outline) */
 .subscribe-section{
   margin-top: 24px;
   padding-top: 10px;
@@ -354,28 +320,21 @@ body{
 .subscribe-box{
   width: min(760px, 100%);
   margin: 0 auto;
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  border: 4px solid var(--dark-grey);
-  overflow: hidden;
-}
-
-/* Intel-blue header block */
-.subscribe-header{
   background: var(--intel-blue);
-  color: white;
-  padding: 14px 16px;
+  color: var(--white);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  border: 5px solid var(--dark-grey);
 }
 
 .subscribe-title{
-  margin: 0;
+  margin: 0 0 10px;
   font-weight: 900;
-  text-align: center;
+  text-align:center;
 }
 
 .subscribe-form{
-  padding: 16px;
   display:grid;
   gap: 12px;
 }
@@ -387,38 +346,31 @@ body{
 
 .form-row label{
   font-weight: 900;
-  color: rgba(11,27,43,.9);
 }
 
 .form-row input{
   padding: 10px 12px;
   border-radius: 12px;
-  border: 2px solid rgba(0,0,0,.18);
-  font-weight: 800;
-}
-
-.form-row input:focus{
-  outline: 3px solid rgba(0,104,181,.25);
-  border-color: rgba(0,104,181,.55);
+  border: 2px solid rgba(0,0,0,.20);
+  font-weight: 900;
 }
 
 .form-hint{
   margin: 0;
   font-size: 12.5px;
-  color: rgba(11,27,43,.75);
-  font-weight: 800;
-  text-align: center;
+  font-weight: 900;
+  opacity: .92;
+  text-align:center;
 }
 
 .page-footer{
   text-align:center;
-  margin-top: 16px;
-  color: rgba(11,27,43,.7);
-  font-size: 13px;
+  margin-top: 14px;
   font-weight: 900;
+  color: rgba(11,27,43,.75);
 }
 
-/* ===== Responsive behavior ===== */
+/* Responsive: phones stack timeline vertically */
 @media (max-width: 768px){
   .logo-row{
     flex-direction: column;
@@ -427,7 +379,6 @@ body{
     transform: rotate(90deg);
   }
 
-  /* Timeline stacks vertically on small screens */
   .timeline-scroll{
     flex-direction: column;
     overflow-x: hidden;
@@ -441,7 +392,7 @@ body{
   }
 
   .card-media img{
-    width: min(2in, 80vw);
-    height: min(2in, 80vw);
+    width: min(190px, 70vw);
+    height: min(190px, 70vw);
   }
 }
